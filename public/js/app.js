@@ -60977,7 +60977,12 @@ function Layout(_ref) {
     };
   }, [menuOpen]);
   var handleLogout = function handleLogout() {
-    post(route('logout'));
+    post('/logout', {
+      preserveScroll: true,
+      onSuccess: function onSuccess() {
+        window.location.href = '/login';
+      }
+    });
   };
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "min-h-screen bg-gray-100"

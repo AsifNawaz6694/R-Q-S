@@ -14,7 +14,6 @@ export default function Layout({ children, auth, url = window.location.pathname 
         return currentPath === path || (path === '/dashboard' && currentPath === '/');
     };
 
-
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (menuOpen && !event.target.closest('#user-menu')) {
@@ -27,7 +26,12 @@ export default function Layout({ children, auth, url = window.location.pathname 
     }, [menuOpen]);
 
     const handleLogout = () => {
-        post(route('logout'));
+        post('/logout', {
+            preserveScroll: true,
+            onSuccess: () => {
+                window.location.href = '/login';
+            }
+        });
     };
 
     return (
