@@ -1,0 +1,8267 @@
+=== Stock Results - 2025-06-26 12:39:33 ===
+
+Array
+(
+    [0] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 0102
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [1] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 1000811
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [2] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 1000833
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [3] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 1048W
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [4] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 1131-000U
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [5] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 1200-UP
+            [QTY] => 4.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [6] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 12-40702DT-D
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [7] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 12-40745E
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [8] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 124-20
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [9] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 1302-1
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [10] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 136T
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [11] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 1637
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [12] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 1842NK3
+            [QTY] => 4.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [13] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 1848NK3
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [14] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 1860NK3
+            [QTY] => 20.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [15] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 1872NK3
+            [QTY] => 2.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [16] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 1872NK3
+            [QTY] => 20.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [17] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 1933
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [18] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 20.20ESG-D
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [19] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 2160NK3
+            [QTY] => 12.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [20] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 2460NC
+            [QTY] => 8.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [21] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 250-00058
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [22] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 35614800
+            [QTY] => 6.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [23] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 35C+S
+            [QTY] => 1.00000
+            [STATUS] => DAMAGE
+            [WhseID] => WHSE1
+        )
+
+    [24] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 38420250
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [25] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 401 110V
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [26] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 409336
+            [QTY] => 9.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [27] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 414-16-3-18L
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [28] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 49000003
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [29] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 4T183674NC
+            [QTY] => 5.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [30] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 4T186074NC
+            [QTY] => 9.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [31] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 4T187274NK3
+            [QTY] => 4.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [32] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 4T214274NC
+            [QTY] => 6.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [33] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 4T214874NC
+            [QTY] => 2.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [34] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 4T214874NC
+            [QTY] => 7.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [35] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 4T215474NC
+            [QTY] => 17.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [36] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 4T216074NC
+            [QTY] => 3.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [37] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 4T217274NK3
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [38] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 4T243674NC
+            [QTY] => 8.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [39] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 4T244274NC
+            [QTY] => 4.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [40] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 4T244874NC
+            [QTY] => 6.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [41] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 4T245474NC
+            [QTY] => 7.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [42] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 500-1D
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [43] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 500-S-PASS-THRU
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [44] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 5016088
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [45] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 5026388
+            [QTY] => 14.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [46] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 5136CD
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [47] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 536TGF
+            [QTY] => 3.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [48] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 5MBX
+            [QTY] => 20.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [49] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 60.73.943
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [50] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 6036CBF
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [51] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 6310-2-240
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [52] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 70020228113
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [53] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 7030A-2240
+            [QTY] => 2.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [54] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 704101
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [55] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 74PK3
+            [QTY] => 56.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [56] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 7-PS-62-2X
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [57] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 7-PS-62-2X
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [58] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 7-PS-66-2X
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [59] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 7-PS-80
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [60] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 7-PS-80
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [61] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 7-PS-85
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [62] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 8036CB
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [63] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 810292
+            [QTY] => 21.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [64] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 8600130999-BASIN
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [65] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 88100-CB-3
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [66] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 909
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [67] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 91605
+            [QTY] => 2.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [68] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 9-FSC-20
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [69] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 9-OP-28
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [70] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 9PF/EI150
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [71] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => A1-53C-47S
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [72] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => ACM 126AS
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [73] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => AFN-251-I
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [74] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => AFP-251-I
+            [QTY] => 3.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [75] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => AH800EDP
+            [QTY] => 3.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [76] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => AKM6220C
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [77] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => AL100A
+            [QTY] => 6.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [78] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => ALAHLI-3D-UC-CHILER
+            [QTY] => 12.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [79] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => AMV 7412
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [80] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => AMXS 60223029
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [81] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => AOS101GCY2
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [82] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => APPIA II COMPACT S 2GR-BLACK
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [83] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => APPIA II COMPACT V 2GR-BLACK
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [84] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => APPIA II VOL 2GR-BLACK
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [85] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => APPIA II VOL 2GR-BLACK
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [86] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => APPIA V 2G
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [87] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => AS4
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [88] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => ATM-161 CD
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [89] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => AXIOM-APS 38700.0037
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [90] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => B-40
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [91] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => BANCOOL-UPRIGHT-CHILER-2D
+            [QTY] => 10.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [92] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => BB-210
+            [QTY] => 8.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [93] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => BB60-R1-XSH(LR)
+            [QTY] => 5.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [94] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => BE84GLL
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [95] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => BG74GLL
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [96] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => BG74GRR
+            [QTY] => 2.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [97] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => BLACK EAGLE-2GR
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [98] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => BLT 1220 EB
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [99] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => BPDHT-3-240
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [100] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => BPM-40EC
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [101] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => BPXP-EG-36I
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [102] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => BPXP-GCB-48I
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [103] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => BPXP-GGT-36I
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [104] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => BR9-8GF
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [105] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => BR9-8GI
+            [QTY] => 2.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [106] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => BSB225T166F/RQN
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [107] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => BSB225T166F/RQN
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [108] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => BT40F
+            [QTY] => 1.00000
+            [STATUS] => MP
+            [WhseID] => WHSE1
+        )
+
+    [109] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => BW-50
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [110] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => BZSTEWI
+            [QTY] => 2.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [111] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => C0630MA
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [112] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => C0830MA
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [113] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => C0830MA
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [114] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => C600B4301-A1GA1A
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [115] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => C60E
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [116] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => C60E
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [117] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => C825D4301-B1GB1D
+            [QTY] => 1.00000
+            [STATUS] => MP
+            [WhseID] => WHSE1
+        )
+
+    [118] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => CADDIES
+            [QTY] => 1.00000
+            [STATUS] => MP
+            [WhseID] => WHSE1
+        )
+
+    [119] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => CADDIES
+            [QTY] => 12.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [120] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => CAFP-1602
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [121] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => CAP 10-230/60/1
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [122] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => CAP 10-230/60/1
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [123] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => CAP 12 - 230/60/1
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [124] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => CBH2121C
+            [QTY] => 1.00000
+            [STATUS] => MP
+            [WhseID] => WHSE1
+        )
+
+    [125] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => CBU185472V4
+            [QTY] => 12.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [126] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => CBU214272V4
+            [QTY] => 8.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [127] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => CBU243672V4
+            [QTY] => 5.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [128] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => CDO-17
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [129] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => CE60
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [130] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => CEBIV4YO
+            [QTY] => 2.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [131] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => CEBIV4YO
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [132] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => CECIM40YO
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [133] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => CG86HPS
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [134] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => C-G941
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [135] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => CK50
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [136] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => CL 50E
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [137] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => CMFP-135-BP
+            [QTY] => 3.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [138] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => CMFP-225-BP-19029524 60HZ
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [139] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => COFFEE ART-SCA P+(220/60/3)
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [140] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => COLD KITCHEN
+            [QTY] => 5.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [141] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => CPM60A
+            [QTY] => 1.00000
+            [STATUS] => DAMAGE
+            [WhseID] => WHSE1
+        )
+
+    [142] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => CRP1
+            [QTY] => 3.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [143] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => CRP38
+            [QTY] => 4.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [144] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => CS-8
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [145] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => CS8-237
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [146] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => CSR-210
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [147] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => CTB
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [148] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => CTC20-10E
+            [QTY] => 1.00000
+            [STATUS] => DAMAGE
+            [WhseID] => WHSE1
+        )
+
+    [149] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => CTC20-10E
+            [QTY] => 7.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [150] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => CTX4-10E
+            [QTY] => 1.00000
+            [STATUS] => MP
+            [WhseID] => WHSE1
+        )
+
+    [151] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => CTX4-10E
+            [QTY] => 3.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [152] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => CW-2
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [153] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => CW-4-110V
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [154] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => CWTFA35-APS
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [155] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => D156-3/D15-3
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [156] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => D7215-10FRE
+            [QTY] => 3.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [157] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => D775D4301-A1GA1A
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [158] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => D-8B
+            [QTY] => 5.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [159] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => DAC-5
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [160] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => DAKAR-2230
+            [QTY] => 9.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [161] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => DBQ220SO
+            [QTY] => 1.00000
+            [STATUS] => DAMAGE
+            [WhseID] => WHSE1
+        )
+
+    [162] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => DBQ220SO
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [163] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => DCM-120KE G60
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [164] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => DD-8B
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [165] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => DDSBSS1208090(SQ20)SACM
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [166] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => DDSBSS1408090(SQ20)SACM
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [167] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => DECANTER BLACK
+            [QTY] => 4.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [168] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => DF36
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [169] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => DFG-100 SGL
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [170] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => DRC32ECOMAR
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [171] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => DUAL-20900.0063
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [172] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => E111-38-I
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [173] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => E2412
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [174] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => E600B4301-A1GA1A
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [175] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => E600B4301-A1GA1A
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [176] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => E7F10-8BS
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [177] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => E80
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [178] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => E-950-48
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [179] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => E9BM8M
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [180] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => E9CP40
+            [QTY] => 4.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [181] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => E9FL8M-2
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [182] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => E9P15IA
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [183] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => E9PQ6+FE1
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [184] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => E9PQ6M
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [185] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => EAR716PS
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [186] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => EC-30
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [187] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => EC401
+            [QTY] => 2.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [188] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => EC403
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [189] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => ECG-60R
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [190] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => ECM56 AS
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [191] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => ECO-F504-32B
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [192] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => ECOH-PT
+            [QTY] => 2.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [193] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => ECOH-PT
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [194] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => EFS-40
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [195] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => EG-36I
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [196] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => EG-48I
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [197] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => EK43/1 - BLACK
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [198] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => EKK43 BLACK
+            [QTY] => 1.00000
+            [STATUS] => DAMAGE
+            [WhseID] => WHSE1
+        )
+
+    [199] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => ELTS-40(380/60/3)
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [200] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => EM-20/13 SINGLE
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [201] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => EMFP-180-GN
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [202] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => EMG50E24G20A003K0001
+            [QTY] => 1.00000
+            [STATUS] => DAMAGE
+            [WhseID] => WHSE1
+        )
+
+    [203] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => EMG50E24G20A003K0001
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [204] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => EMG50E24G20A003K0951
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [205] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => EMP.SPO.01
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [206] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => ENCORE 2
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [207] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => EP700H
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [208] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => EP700L
+            [QTY] => 8.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [209] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => ERMU-250
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [210] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => ERMU-350
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [211] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => E-SG1300-49D
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [212] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => ETA18
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [213] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => EV932401
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [214] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => EV932401
+            [QTY] => 3.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [215] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => EWB-8200342
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [216] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => F-30
+            [QTY] => 5.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [217] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => F318
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [218] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => FDL-48H (I)
+            [QTY] => 9.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [219] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => FE72112
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [220] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => FG72115
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [221] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => FIRE EXTINGUISHER
+            [QTY] => 27.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [222] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => FLY KILLER CHINA
+            [QTY] => 5.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [223] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => FRP38
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [224] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => G-13
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [225] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => G-19
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [226] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => G-23
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [227] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => G4SM-23
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [228] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => G9CP40.
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [229] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => G9F6+T
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [230] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => GARBAGE BIN-SELA
+            [QTY] => 22.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [231] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => GBK 60
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [232] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => GCB-48I
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [233] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => GCRB-24I
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [234] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => GDM-7F-110 VOLT
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [235] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => GEORGIA CUBE 1000 NEUTRAL
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [236] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => GEORGIA CUBE 1500 NEUT-LD
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [237] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => GEORGIA CUBE 1500 NEUT-LD
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [238] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => GEORGIA CUBE 1500 REF-LD (GOLD)
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [239] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => GGM-36I
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [240] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => GL10+10B
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [241] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => GL84AGC
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [242] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => GLASS RACKS
+            [QTY] => 50.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [243] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => GLOBAL CABINET TC
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [244] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => GP22E7
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [245] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => GR14IB
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [246] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => GR-48
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [247] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => GRA-36
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [248] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => GRBW-30
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [249] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => GRFFB
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [250] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => GSACPN2
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [251] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => GSF201G
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [252] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => GTD3SG-C(6700-40007)
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [253] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => GX10IS
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [254] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => GX20IS
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [255] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => GXR-14B
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [256] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => GXR-7400WB
+            [QTY] => 5.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [257] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => GXR-814N
+            [QTY] => 8.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [258] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => HA4022
+            [QTY] => 4.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [259] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => HAAM-MICROWAVE
+            [QTY] => 3.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [260] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => HAND WASH SINK
+            [QTY] => 4.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [261] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => HBB908-UK
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [262] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => HDG-60
+            [QTY] => 1.00000
+            [STATUS] => MP
+            [WhseID] => WHSE1
+        )
+
+    [263] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => HDW-2
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [264] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => HL200-2STD
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [265] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => HMD400-CE
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [266] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => HML2-12A
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [267] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => HOT KITCHEN
+            [QTY] => 3.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [268] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => HOT KITCHEN-HOOD
+            [QTY] => 3.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [269] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => HOV3-14UV
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [270] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => HPA3-3Q
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [271] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => HPDE1H-230V
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [272] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => HRS-200
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [273] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => HSB-12
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [274] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => HSB-12-AD
+            [QTY] => 4.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [275] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => ICE-1800
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [276] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => ICOMBI PRO 6-1/1
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [277] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => ICOMBI PRO XS 6-2/3
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [278] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => IFS-40
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [279] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => IFS-40E-240/60/3
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [280] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => IG950
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [281] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => IM-100CNE G60
+            [QTY] => 1.00000
+            [STATUS] => DAMAGE
+            [WhseID] => WHSE1
+        )
+
+    [282] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => IM-100CNE G60
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [283] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => IM-240ANE G60
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [284] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => IM-45CNE G60
+            [QTY] => 1.00000
+            [STATUS] => MP
+            [WhseID] => WHSE1
+        )
+
+    [285] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => IM-45CNE G60
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [286] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => IRNGPC130SBBSSA
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [287] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => ISB1280101
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [288] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => ISB7680101
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [289] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => J100
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [290] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => JAZZ -BASIC
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [291] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => JN1206
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [292] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => JOY
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [293] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => K375
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [294] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => KFT8ELR
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [295] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => KFT8ER
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [296] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => KGWW-90
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [297] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => KL67-6012
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [298] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => KODA 16
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [299] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => KODA 16
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [300] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => KPI15E
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [301] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => L-ASR-CD-006
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [302] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => LAV
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [303] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => LBK 6
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [304] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => LD3
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [305] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => L-DAILY FOOD(K11B-K11.2B-K11.3B)
+            [QTY] => 5.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [306] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => L-DAILY FOOD(K11-K11.2-K11.3)
+            [QTY] => 5.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [307] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => LM-44
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [308] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => LP46
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [309] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => LPG
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [310] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => LT6X
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [311] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MAC ELLE-2GR
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [312] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MAHLKONIG PEAK ESPRESSO GRINDER
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [313] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MAPPCS1VOL02QR0001
+            [QTY] => 2.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [314] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MAPPCS1VOL02QR0001
+            [QTY] => 3.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [315] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MAPPI19VOL02RQ0001
+            [QTY] => 3.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [316] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MAURE18PLS020034
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [317] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MCS10TSSA
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [318] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MDX
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [319] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MDX ONDEMAND
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [320] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MDX ONDEMAND
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [321] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MDX ONDEMAND
+            [QTY] => 5.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [322] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => M-E915BM
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [323] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MICROBAR
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [324] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MINI MP 190 V.V.
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [325] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MOSCA21TEM010041
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [326] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MP 350 ULTRA
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [327] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MSG1400
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [328] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MVA358AVDG02 -(BLACK)
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [329] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MVA388WST302RQ0001
+            [QTY] => 1.00000
+            [STATUS] => DAMAGE
+            [WhseID] => WHSE1
+        )
+
+    [330] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MVA388WST302RQ0001
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [331] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MVA388WST303RQ0001
+            [QTY] => 1.00000
+            [STATUS] => DAMAGE
+            [WhseID] => WHSE1
+        )
+
+    [332] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MVA388WST303RQ0001
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [333] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MVA388WST303RQ0001
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [334] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MVAEGL1VN302RQ0002
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [335] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MWB30-50
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [336] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MWDG2500
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [337] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MX1500XTXSEKSDI
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [338] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MYTHOS 1 EAGLE -BLK
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [339] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MYTHOS 1 EAGLE -BLK
+            [QTY] => 7.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [340] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MYTHOS ONE
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [341] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => NGO (SOTA)400V/60HZ/3PH
+            [QTY] => 3.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [342] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => NGO(400V/60HZ/3PH)
+            [QTY] => 1.00000
+            [STATUS] => DAMAGE
+            [WhseID] => WHSE1
+        )
+
+    [343] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => OF49C
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [344] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => OFS-32
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [345] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => OSCAR II BLUE
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [346] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => PCA1807090
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [347] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => PD 50
+            [QTY] => 9.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [348] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => PF46C
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [349] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => PG-22-2L
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [350] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => PI 2.5 KW
+            [QTY] => 6.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [351] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => PLATE RACKS
+            [QTY] => 18.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [352] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => PM 351ED
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [353] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => PM 721
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [354] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => PR59500151
+            [QTY] => 12.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [355] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => PROF ABF 20
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [356] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => PRONTOBAR
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [357] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => PRONTOBAR
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [358] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => PS1290
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [359] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => PS-22
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [360] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => PS-32 S/S
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [361] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => PS640
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [362] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => PS640 (220V/60HZ/3PH)
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [363] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => PSDU50-SLCT
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [364] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => PTA1008090SS
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [365] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => PTA1107090
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [366] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => PTA1507563
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [367] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => PTA1807090
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [368] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => PTA2207090BS-K
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [369] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => PTA807090SS
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [370] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => PTS-IHOPK71
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [371] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => QAVAEM001
+            [QTY] => 1.00000
+            [STATUS] => DAMAGE
+            [WhseID] => WHSE1
+        )
+
+    [372] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => QAVAEM001
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [373] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => QCS1-500B
+            [QTY] => 2.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [374] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => QR7
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [375] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => QY-0134A
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [376] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => R3D3000
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [377] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => R4A
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [378] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => RA99904463
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [379] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => RAQ-AL MOHEISEN-8A
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [380] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => RAQ-AL SALAM-11400.44
+            [QTY] => 9.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [381] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => RAQ-AMOH-13B(850)
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [382] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => RAQ-BARISTA-B16 (1800)
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [383] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => RAQ-BARISTA-F1(2400)
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [384] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => RAQ-BARISTAS-L
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [385] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => RAQ-DAKAR(1800)21
+            [QTY] => 4.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [386] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => RAQ-DARK2020(1800)SL-1
+            [QTY] => 14.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [387] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => RAQ-DARK2020(1800)SL-1.1
+            [QTY] => 8.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [388] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => RAQ-EMMY-W1
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [389] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => RAQ-G5-BC7(600)
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [390] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => RAQ-GOOD-EC.1A.1
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [391] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => RAQ-S5
+            [QTY] => 3.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [392] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => RAQ-SDW-1950
+            [QTY] => 11.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [393] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => RAQ-SDW-SIDE-S
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [394] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => RAQ-S-PS640(1029)
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [395] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => RAQ-TIMH-177
+            [QTY] => 2.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [396] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => RE501A1W07
+            [QTY] => 1.00000
+            [STATUS] => MP
+            [WhseID] => WHSE1
+        )
+
+    [397] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => RE501A1W07
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [398] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => RE501A1W07
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [399] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => RE792R1A07
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [400] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => RE792R1A07
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [401] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => RF-78N
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [402] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => RG99104418
+            [QTY] => 2.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [403] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => RG99104420
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [404] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => R-IHOP-21.1(1200)
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [405] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => ROUND-WASTE-BIN
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [406] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => RU-1000
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [407] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => RU-150
+            [QTY] => 3.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [408] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => RU-150
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [409] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => RU-150
+            [QTY] => 4.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [410] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => RU-300
+            [QTY] => 2.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [411] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => RU-300
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [412] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => RU-300
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [413] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SA/E60
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [414] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SAHARA FOLDING DEHYDRATOR
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [415] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SAL806025
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [416] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SB SINGLE SH DBC
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [417] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SB SINGLE SH DBC
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [418] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SB-E915 I M
+            [QTY] => 4.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [419] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SBM-41608090-SG
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [420] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SBS11851050(SQ20)B
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [421] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SCA-P-2(COFFEE ART PLUS)
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [422] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SCC-WE61
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [423] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SCH1085
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [424] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SCS153040153
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [425] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SDW221250
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [426] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SDW801350
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [427] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SE14S
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [428] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SE14T-D-S
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [429] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SE18S/FD (DIGITAL CONTROLLER)
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [430] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SE36D-TTT
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [431] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SE-420
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [432] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SFD849096
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [433] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SFG-307
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [434] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SFG-367
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [435] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SFS458090(BS40)BB
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [436] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SG14S-C-FF-FD
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [437] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SG96CRA
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [438] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SG99/2
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [439] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SG9CP80
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [440] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SH-S SERVER
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [441] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SINGLE SH DBC
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [442] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SIT127690(BS40)S2CR
+            [QTY] => 4.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [443] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SIT227690(BS40)B3GR
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [444] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SKB142525C
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [445] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SMP454535
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [446] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SMP594035
+            [QTY] => 3.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [447] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SMP-6064562
+            [QTY] => 6.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [448] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SMPT
+            [QTY] => 4.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [449] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SMPT
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [450] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SMS1107090(BS40)
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [451] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SMS1127090(BS40)L
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [452] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SMS1127090(BS40)R
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [453] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SMS1147090(BS40)R
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [454] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SMS1147090(BS40)W
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [455] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SMS1157090(BS40)L
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [456] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SMS1157090(BS40)R
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [457] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SMS1187090(BS40)W
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [458] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SMS1707090(BS40)W
+            [QTY] => 3.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [459] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SMS1907090(BS40)RP
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [460] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SMS2137090(BS40)
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [461] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SMS2157090(BS40)BR
+            [QTY] => 6.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [462] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SMS2157090(BS40)LCP
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [463] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SMS2159090(BS40)L
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [464] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SMS2207090(BS40)W
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [465] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SMS3116090(BS40)
+            [QTY] => 7.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [466] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SMS3187090(BS40)WS
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [467] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SMS3217090(BS40)WS
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [468] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SOS12350702
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [469] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SOS1305040302SB
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [470] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SOS184060A1-H
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [471] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SOS185050S1
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [472] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SOS9250702
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [473] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SOT107690(BS40)BL
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [474] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SOT9007690(BS40)BL
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [475] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SOUDA-RDC-600-BLK
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [476] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SOUDA-RDC-600-BLK
+            [QTY] => 3.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [477] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SQ20M0N0
+            [QTY] => 9.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [478] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SRM12-220V
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [479] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SSS1040122
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [480] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SSS13035121
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [481] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SSS15040121
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [482] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SSS20035122
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [483] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SSS2335121
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [484] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SSS28035121
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [485] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SSS-60L
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [486] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SSS-72L
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [487] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SSW201350
+            [QTY] => 3.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [488] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SSW321150
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [489] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SSW801230LP
+            [QTY] => 3.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [490] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STL12035121
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [491] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STL6035121
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [492] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STONE BLACK
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [493] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STS 13508090(SQ20)SB
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [494] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STS107090(BS40)DB
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [495] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STS107090DB
+            [QTY] => 3.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [496] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STS107090SB
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [497] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STS107090SB
+            [QTY] => 11.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [498] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STS11105090DB
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [499] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STS127090(BS40)SB
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [500] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STS127090SB
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [501] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STS128090(SQ20)SB
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [502] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STS138090(BS40)BB
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [503] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STS141190BB
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [504] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STS147090(BS40)BB
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [505] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STS147090(BS40)S
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [506] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STS147090(BS40)SB
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [507] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STS157090(BS40)SB
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [508] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STS167090(SQ20)SC
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [509] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STS18507090(BS40)SB
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [510] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STS186090SB
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [511] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STS187090(BS40)SB
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [512] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STS187090SB
+            [QTY] => 3.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [513] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STS188090SC
+            [QTY] => 35.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [514] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STS207090(BS40)SB
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [515] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STS207090SB
+            [QTY] => 3.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [516] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STS208090BB
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [517] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STS228090BB
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [518] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STS228090SB
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [519] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STS408090(BS40)BB
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [520] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STS707090(BS40)DB
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [521] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STS707090(BS40)SB
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [522] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STS708090(BS10)SB
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [523] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STS807065(BS40)SB
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [524] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STS9010650B
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [525] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STUS3072-3-NSF
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [526] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SV-420T
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [527] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SWBS
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [528] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SX36-6B
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [529] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => T-12F
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [530] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => T-23-220V
+            [QTY] => 4.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [531] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => T-23F-220V
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [532] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => T-23F-TRUEAIR01
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [533] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => T-23-TRUEAIR01
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [534] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => T30B
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [535] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => T-35F-220V
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [536] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => T-49-220V
+            [QTY] => 20.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [537] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => T-49-4-220V
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [538] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => T-49F-220V
+            [QTY] => 2.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [539] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => T-49F-220V
+            [QTY] => 3.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [540] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => T-49-TRUEAIR01
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [541] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => T-72F-220V
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [542] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TALENTO
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [543] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TALENTO CUPWRM
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [544] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TC-5
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [545] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TCS180AS
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [546] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TD4T
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [547] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TEFF-14-G05
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [548] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TF40(CPL40)
+            [QTY] => 3.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [549] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TGM3
+            [QTY] => 3.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [550] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TK-72
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [551] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TM-24F-220V
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [552] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TM-52F
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [553] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TM6
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [554] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TM60(CPL60)
+            [QTY] => 2.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [555] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TOAM-30GS-HC-NSL01
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [556] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TR18A
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [557] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TR20A
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [558] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TR-220
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [559] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TSM370NTV
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [560] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TSSU-36-8-220V
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [561] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TSSU-36-8-220V
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [562] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TSSU-48-12-220V
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [563] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TSSU-48-12-220V
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [564] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TSSU-48-12D-2 (220/60/1)
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [565] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TSSU-60-16-220V
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [566] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TSSU-72-30M-B-DS-ST 220/60/1
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [567] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TUC-27F-LP-220V
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [568] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TUC-27-LP-220V
+            [QTY] => 3.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [569] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TUC-48F-220V
+            [QTY] => 3.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [570] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TUC-48F-TRUAIR01 220/60
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [571] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TUC-48G-LP-220V
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [572] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TUC-60-220V
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [573] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TUC-60D-2
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [574] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TUC-72-220V
+            [QTY] => 11.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [575] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TWT-27-220V
+            [QTY] => 3.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [576] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TWT-36-220V
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [577] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TWT-72-220V
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [578] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TWT-93D-6
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [579] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => UC-21-B
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [580] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => UC-21-B
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [581] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => VC4ED
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [582] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => VC4GD
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [583] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => VC4GD
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [584] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => VCW-2
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [585] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => VP17A-2
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [586] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => VP17A-2
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [587] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => VP17A-3
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [588] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => WB-10-60
+            [QTY] => 3.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [589] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => WB-10-60
+            [QTY] => 3.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [590] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => WB-2-220V
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [591] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => WD-20
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [592] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => WFPE-30F
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [593] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => W-TANK-1200
+            [QTY] => 6.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [594] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => XCHEF60E
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [595] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => XCPM5FA
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE1
+        )
+
+    [596] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => XCW-120L
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [597] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => XDL40FA
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [598] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => XECO20A
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [599] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => XR20
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [600] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => XT50A
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [601] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => Z MULTIFRUIT BLACK
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [602] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => Z SPEED PRO
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [603] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => ZEPH-100-E SGL
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE1
+        )
+
+    [604] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => ZUMEX MINEX ORANGE
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE1
+        )
+
+    [605] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 1131-000U
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE6
+        )
+
+    [606] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 124-20
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE6
+        )
+
+    [607] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 1946
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [608] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 4T187274NC
+            [QTY] => 1.00000
+            [STATUS] => DAMAGE
+            [WhseID] => WHSE6
+        )
+
+    [609] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 4T214274NC
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [610] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 4T217274NK3
+            [QTY] => 6.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [611] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 4T244874NC
+            [QTY] => 3.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [612] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 500-3D
+            [QTY] => 2.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE6
+        )
+
+    [613] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 536TGF
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [614] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 70020217751
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE6
+        )
+
+    [615] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 7-PS-60
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [616] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 7-PS-85
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [617] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 9971-14C
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE6
+        )
+
+    [618] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => A147
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [619] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => ACM 126AS
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [620] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => AF103 AS
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [621] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => AF80AS
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE6
+        )
+
+    [622] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => AFN-251-I
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [623] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => AH800EDP
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [624] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => ALAHLI-3D-UC-CHILER
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [625] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => AMV 7412
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE6
+        )
+
+    [626] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => APPIA COMPACT S
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [627] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => APPIA II VOL 2GR-BLACK
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [628] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => BANCOOL-UPRIGHT-CHILER-2D
+            [QTY] => 1.00000
+            [STATUS] => DAMAGE
+            [WhseID] => WHSE6
+        )
+
+    [629] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => BANCOOL-UPRIGHT-CHILER-2D
+            [QTY] => 3.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE6
+        )
+
+    [630] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => BANCOOL-UPRIGHT-CHILER-2D
+            [QTY] => 10.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [631] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => BB-210
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [632] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => BLACK EAGLE-2GR
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [633] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => BLACK EAGLE-3GR
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [634] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => BLT 1220 EB
+            [QTY] => 4.00000
+            [STATUS] => USED
+            [WhseID] => WHSE6
+        )
+
+    [635] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => BM-5
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [636] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => BMC5WC
+            [QTY] => 1.00000
+            [STATUS] => MP
+            [WhseID] => WHSE6
+        )
+
+    [637] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => BMC5WC
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [638] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => BSB225T166F/RQN
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [639] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => BZ-FRTAP
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE6
+        )
+
+    [640] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => C0630MA
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [641] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => C211191
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [642] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => C600B4301-A1GA1A
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [643] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => C825D4301-B1GB1A
+            [QTY] => 3.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [644] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => CAP 10-230/60/1
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [645] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => CBH2121C
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [646] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => CD2020
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [647] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => CE60
+            [QTY] => 4.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [648] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => CGR-751-S
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [649] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => CTB
+            [QTY] => 3.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [650] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => CTD406062
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [651] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => D256-3/D25-3
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [652] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => D451
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [653] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => DAKAR-2230
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [654] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => DBQ220SO
+            [QTY] => 1.00000
+            [STATUS] => DAMAGE
+            [WhseID] => WHSE6
+        )
+
+    [655] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => DBQ220SO
+            [QTY] => 8.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [656] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => DDSBSS2188090(SQ20)SACM
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE6
+        )
+
+    [657] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => DECANTER BLACK
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [658] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => E111-38-I
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [659] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => E131-38-I2
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [660] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => E7F10-8BS
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [661] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => E9CP40
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [662] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => E9FM8M-2
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE6
+        )
+
+    [663] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => E9P15I
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [664] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => E9PQ2M
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE6
+        )
+
+    [665] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => E9PQ4+FE
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [666] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => E9PQ6+FE
+            [QTY] => 3.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [667] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => ECOH-PT
+            [QTY] => 5.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [668] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => EM-20/02-TRIPLE
+            [QTY] => 1.00000
+            [STATUS] => DAMAGE
+            [WhseID] => WHSE6
+        )
+
+    [669] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => EMFN-135-GN
+            [QTY] => 2.00000
+            [STATUS] => USED
+            [WhseID] => WHSE6
+        )
+
+    [670] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => EMFP-180-GN GR + EMIT-180
+            [QTY] => 1.00000
+            [STATUS] => MP
+            [WhseID] => WHSE6
+        )
+
+    [671] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => EP1440H
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [672] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => EP700H
+            [QTY] => 2.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE6
+        )
+
+    [673] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => EP700L
+            [QTY] => 1.00000
+            [STATUS] => DAMAGE
+            [WhseID] => WHSE6
+        )
+
+    [674] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => EP700L
+            [QTY] => 3.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE6
+        )
+
+    [675] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => EP700L
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [676] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => EPP300110
+            [QTY] => 4.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [677] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => ERM-250
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [678] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => ERMU-350
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE6
+        )
+
+    [679] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => ET-SW-04
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [680] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => EV997027
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE6
+        )
+
+    [681] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => EV997035
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE6
+        )
+
+    [682] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => EWB-8200342
+            [QTY] => 3.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [683] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => F-30
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [684] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => FKECOD615T
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [685] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => FPB7
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE6
+        )
+
+    [686] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => G-19
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [687] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => G-23
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE6
+        )
+
+    [688] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => G-23
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [689] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => G9BR8/I
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [690] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => G9F6PW+T
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [691] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => GEORGIA CUBE 1500 NEUT-LD
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [692] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => GGM-36I
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [693] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => GGT-36H
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [694] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => GRBW-30
+            [QTY] => 3.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [695] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => GRFFB
+            [QTY] => 3.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE6
+        )
+
+    [696] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => GRFFB
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [697] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => GX14IS/110V
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE6
+        )
+
+    [698] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => GX20IGS
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE6
+        )
+
+    [699] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => GXR-7400WB
+            [QTY] => 3.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE6
+        )
+
+    [700] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => HAAM-MICROWAVE
+            [QTY] => 2.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE6
+        )
+
+    [701] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => HAND WASH SINK
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE6
+        )
+
+    [702] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => HAND WASH SINK
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [703] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => HDCL-60
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [704] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => HEG36E
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE6
+        )
+
+    [705] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => HNC-150BE-L
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE6
+        )
+
+    [706] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => HR360
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [707] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => HRS-200
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [708] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => HT6
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [709] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => HWS4
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [710] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => IH3
+            [QTY] => 3.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [711] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => IM-100NE G60
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [712] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => IM-240ANE G60
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [713] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => IM-30CNE G60
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE6
+        )
+
+    [714] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => J100 ULTRA
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [715] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => KM-1301SAH
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE6
+        )
+
+    [716] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => KM-1601SAH
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE6
+        )
+
+    [717] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => L-DAILY FOOD(K11-K11.2-K11.3)
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE6
+        )
+
+    [718] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => L-DAILY FOOD(K11-K11.2-K11.3)
+            [QTY] => 5.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [719] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => LG2/315SD84
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [720] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => LGD-15 (D480)
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE6
+        )
+
+    [721] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => LP46
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [722] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MAPPI19VOL02RQ0001
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [723] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MCD3502F
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [724] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MCS10TS
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE6
+        )
+
+    [725] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MCS10TSSA
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [726] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MDC182
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [727] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MDX
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [728] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MDX ONDEMAND
+            [QTY] => 2.00000
+            [STATUS] => USED
+            [WhseID] => WHSE6
+        )
+
+    [729] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MDX ONDEMAND
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [730] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MFS18TSSA
+            [QTY] => 1.00000
+            [STATUS] => DAMAGE
+            [WhseID] => WHSE6
+        )
+
+    [731] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MIR-COOLINC-26
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [732] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MIR-COOLINC-57
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [733] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MIR-COOLINC-AL-01
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [734] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MIR-COOLINC-BO5
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [735] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MOSCA22TEM010019
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE6
+        )
+
+    [736] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MVA358AVDG02 -(BLACK)
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [737] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => P44S
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [738] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => PCB5070180
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [739] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => PD 50
+            [QTY] => 4.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [740] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => PI 2.5 KW
+            [QTY] => 2.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE6
+        )
+
+    [741] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => PI 2.5 KW
+            [QTY] => 3.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [742] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => PS-32 S/S
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [743] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => PTA1507090
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE6
+        )
+
+    [744] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => PTA1507563
+            [QTY] => 2.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE6
+        )
+
+    [745] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => PTA1507563
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [746] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => PTA807090SS
+            [QTY] => 4.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE6
+        )
+
+    [747] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => PTA807090SS
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [748] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => PTS-IHOPK71
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE6
+        )
+
+    [749] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => QR7
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [750] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => R4A
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [751] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => RAQ-AUSSIE-30-1900L
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE6
+        )
+
+    [752] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => RAQ-BARISTA-B16 (1800)
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE6
+        )
+
+    [753] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => RAQ-DARK2020(1800)SL-1
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [754] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => RAQ-EMMY-W1
+            [QTY] => 3.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE6
+        )
+
+    [755] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => RAQ-FCR-PW2
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE6
+        )
+
+    [756] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => RE501A1C07
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE6
+        )
+
+    [757] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => RE501A1W07
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE6
+        )
+
+    [758] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => RE792R1A07
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [759] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => S2Q PA/2
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE6
+        )
+
+    [760] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SA/E60
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [761] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SAL806025
+            [QTY] => 2.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE6
+        )
+
+    [762] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SAL806025
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [763] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SBS168090(SQ20)CSM
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [764] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SBSS1208090(SQ20)SACM
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE6
+        )
+
+    [765] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SCR1085
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [766] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SE14S
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [767] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SE14S-C-FF-FD
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [768] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SE36D-TTT
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [769] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SFG-307
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [770] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SFS408090(BS40)DB
+            [QTY] => 20.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [771] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SIT127690(BS40)S2CR
+            [QTY] => 2.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE6
+        )
+
+    [772] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SIT127690(BS40)S2CR
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [773] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SIT2177690(BS40)B2GL
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [774] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SKB142525C
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [775] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SMP454535
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [776] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SMP-6064562
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE6
+        )
+
+    [777] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SMS1157090(BS40)R
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [778] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SMS1707090(BS40)W
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [779] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SMS2157090(BS40)BR
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [780] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SMS3116090(BS40)
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [781] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SOS12350702
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE6
+        )
+
+    [782] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SOT107690(BS40)BL
+            [QTY] => 3.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE6
+        )
+
+    [783] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SOT107690(BS40)BR
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE6
+        )
+
+    [784] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SOUDA-RDC-600-BLK
+            [QTY] => 1.00000
+            [STATUS] => DAMAGE
+            [WhseID] => WHSE6
+        )
+
+    [785] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SOUDA-RDC-600-BLK
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [786] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SP-II-220-W
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE6
+        )
+
+    [787] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SQ10TCC-STAND
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE6
+        )
+
+    [788] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SSH55T-D
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE6
+        )
+
+    [789] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SSS10035121
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE6
+        )
+
+    [790] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SSS15040121
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE6
+        )
+
+    [791] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SSS20035121
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [792] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STS107090SB
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [793] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STS127090SB
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [794] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STS128090(SQ20)SB
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [795] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STS138090(BS40)BB
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [796] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STS147090(BS40)BB
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [797] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STS186090SB
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [798] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STS188090SC
+            [QTY] => 4.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [799] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STS207090(BS40)SB
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [800] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STS207090BB
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [801] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STS207090SB
+            [QTY] => 1.00000
+            [STATUS] => DAMAGE
+            [WhseID] => WHSE6
+        )
+
+    [802] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STS207090SB
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [803] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STS217090SB
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [804] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STS807070SF
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [805] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STUS2496-4-NSF
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE6
+        )
+
+    [806] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SX-34EC
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE6
+        )
+
+    [807] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => T-23-220V
+            [QTY] => 7.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [808] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => T-23F-220V
+            [QTY] => 2.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE6
+        )
+
+    [809] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => T-23-TRUEAIR01
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE6
+        )
+
+    [810] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => T-49-220V
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE6
+        )
+
+    [811] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => T-49-220V
+            [QTY] => 3.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [812] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => T-49F-220V
+            [QTY] => 2.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE6
+        )
+
+    [813] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => T-49F-220V
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [814] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => T-49-TRUEAIR01
+            [QTY] => 2.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE6
+        )
+
+    [815] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TANZANIA
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [816] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TB3QA
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [817] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TPP-67
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE6
+        )
+
+    [818] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TRCB-36-220/60/1
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [819] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TRCB-48 220V
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [820] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TRCB-52-220V
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE6
+        )
+
+    [821] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TSSU-27-12M-C
+            [QTY] => 1.00000
+            [STATUS] => MP
+            [WhseID] => WHSE6
+        )
+
+    [822] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TSSU-27-12M-C
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [823] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TSSU-27-8-50HZ
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [824] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TSSU-48-12D-2 (220/60/1)
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [825] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TSSU-60-12-220V
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [826] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TUC-27D-2-HC-MC
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE6
+        )
+
+    [827] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TUC-27F-LP-220V
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [828] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TUC-27-LP-220V
+            [QTY] => 1.00000
+            [STATUS] => DAMAGE
+            [WhseID] => WHSE6
+        )
+
+    [829] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TUC-27-LP-220V
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [830] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TUC-27-TRUAIR01 220/60
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [831] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TUC-48F-TRUAIR01 220/60
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [832] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TUC-60-220V
+            [QTY] => 1.00000
+            [STATUS] => DAMAGE
+            [WhseID] => WHSE6
+        )
+
+    [833] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TUC-60-220V
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [834] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TUC-60F-220V
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [835] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TUC-60G
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE6
+        )
+
+    [836] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TUC-72-220V
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [837] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TWT-48-220V
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [838] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TWT-60F-220V
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [839] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => VP17A-1
+            [QTY] => 1.00000
+            [STATUS] => MP
+            [WhseID] => WHSE6
+        )
+
+    [840] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => VP17A-1
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [841] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => VP17A-3
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [842] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => WB-10-60
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [843] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => WB-14-60
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [844] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => XECO10A
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [845] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => XECO30E
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [846] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => ZEPH-100-E SGL
+            [QTY] => 3.00000
+            [STATUS] => 
+            [WhseID] => WHSE6
+        )
+
+    [847] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 1848NC
+            [QTY] => 2.00000
+            [STATUS] => USED
+            [WhseID] => WHSE10
+        )
+
+    [848] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 1860NC
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE10
+        )
+
+    [849] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 1860NC
+            [QTY] => 4.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [850] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 1872NC
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [851] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 4.10ESI EXPRESSTOUCH
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [852] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 40-609-61
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [853] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 4T217274NK3
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [854] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => 5006184
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [855] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => AFP-251-I
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [856] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => AH800EDP
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [857] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => BANCOOL-UPRIGHT-CHILER-2D
+            [QTY] => 3.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [858] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => BT40F
+            [QTY] => 1.00000
+            [STATUS] => DAMAGE
+            [WhseID] => WHSE10
+        )
+
+    [859] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => CAP 12-220/60/3
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [860] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => CCB-20
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE10
+        )
+
+    [861] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => CTC20-10E
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [862] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => CTC20-20E
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [863] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => D256-3/D25-3
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [864] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => D7215-10FRE
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [865] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => E131-38-I2
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [866] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => ECOH-PT
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [867] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => ERM-250
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [868] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => GARBAGE BIN-SELA
+            [QTY] => 1.00000
+            [STATUS] => MP
+            [WhseID] => WHSE10
+        )
+
+    [869] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => GARBAGE BIN-SELA
+            [QTY] => 4.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [870] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => GDM-23-220V
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [871] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => GECID3CO
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [872] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => GPP153
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE10
+        )
+
+    [873] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => GRFFB
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [874] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => GX10IG
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [875] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => HAAM-MICROWAVE
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [876] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => HP2236PD
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [877] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => HP2248PD
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [878] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => HRS-200
+            [QTY] => 1.00000
+            [STATUS] => MP
+            [WhseID] => WHSE10
+        )
+
+    [879] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => IFS-40
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [880] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => J2 STYLE
+            [QTY] => 1.00000
+            [STATUS] => REMARK
+            [WhseID] => WHSE10
+        )
+
+    [881] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => KML-631MAH
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [882] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => LD4
+            [QTY] => 3.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [883] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MAPPI19VOL02RQ0001
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [884] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MDX ONDEMAND
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [885] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MVA358AVDG02 (WHITE- PEARL)
+            [QTY] => 1.00000
+            [STATUS] => DAMAGE
+            [WhseID] => WHSE10
+        )
+
+    [886] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MVA358AVDG02 (WHITE- PEARL)
+            [QTY] => 1.00000
+            [STATUS] => MP
+            [WhseID] => WHSE10
+        )
+
+    [887] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MVA358AVDG02 (WHITE- PEARL)
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [888] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => MYTHOS 1 EAGLE -BLK
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [889] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => PF46C
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [890] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => PTA1507563
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [891] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => PTA807090SS
+            [QTY] => 14.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [892] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => QAVAEM001
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [893] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => R-30-(380/60/3)
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [894] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => RICE COOKER 5LT
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [895] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SA/E60
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [896] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SBSS1108090(SQ20)SACM
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [897] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SBSS1558090(SQ20)WC
+            [QTY] => 6.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [898] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SG700S-30
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [899] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SMP594035
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [900] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SMS1487090(BS40)W
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [901] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SMS2157090(BS40)W
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [902] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SP-II-220-W
+            [QTY] => 1.00000
+            [STATUS] => DAMAGE
+            [WhseID] => WHSE10
+        )
+
+    [903] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => SSS7535121
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [904] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => STYLE-14
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [905] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => T-23F-220V
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [906] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => T-23-TRUEAIR01
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [907] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => T30B
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [908] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => T-49-220V
+            [QTY] => 2.00000
+            [STATUS] => DAMAGE
+            [WhseID] => WHSE10
+        )
+
+    [909] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TBB-24-48G 220/60/1
+            [QTY] => 1.00000
+            [STATUS] => OK
+            [WhseID] => WHSE10
+        )
+
+    [910] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TUC-27D-2-LP-220 VOLT
+            [QTY] => 1.00000
+            [STATUS] => DAMAGE
+            [WhseID] => WHSE10
+        )
+
+    [911] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TUC-48F-220V
+            [QTY] => 2.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [912] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => TUC-60F-220V
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [913] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => VP17A-1
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [914] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => WB-10-60
+            [QTY] => 1.00000
+            [STATUS] => OK
+            [WhseID] => WHSE10
+        )
+
+    [915] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => WB-10-60
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [916] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => XCPM5FA
+            [QTY] => 1.00000
+            [STATUS] => 
+            [WhseID] => WHSE10
+        )
+
+    [917] => Array
+        (
+            [STORER] => RENTAL
+            [SKU] => ZEPH-100-E SGL
+            [QTY] => 1.00000
+            [STATUS] => USED
+            [WhseID] => WHSE10
+        )
+
+)

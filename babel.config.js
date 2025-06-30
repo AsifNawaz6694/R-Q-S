@@ -1,0 +1,10 @@
+module.exports = {
+    presets: [
+        '@babel/preset-react',
+        '@babel/preset-env'
+    ],
+    plugins: [
+        '@babel/plugin-transform-class-properties',
+        '@babel/plugin-transform-react-jsx'
+    ]
+};
