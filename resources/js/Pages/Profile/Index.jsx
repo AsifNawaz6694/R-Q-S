@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useForm } from '@inertiajs/react';
 
 /**
  * Show the user profile for the authenticated user.
@@ -8,7 +9,7 @@ import React, { useState, useEffect } from 'react';
  * @return {ReactElement}
  */
 export default function Profile({ auth, title = 'Profile' }) {
-    const [data, setData] = useState({
+    const { data, setData, post, put, processing, errors } = useForm({
         name: '',
         email: '',
         company_name: '',
@@ -20,7 +21,6 @@ export default function Profile({ auth, title = 'Profile' }) {
         password: '',
         password_confirmation: ''
     });
-    const [errors, setErrors] = useState({});
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -47,37 +47,19 @@ export default function Profile({ auth, title = 'Profile' }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const formData = new FormData();
-        formData.append('name', data.name);
-        formData.append('email', data.email);
-        formData.append('current_password', data.current_password);
-        formData.append('password', data.password);
-        formData.append('password_confirmation', data.password_confirmation);
-        formData.append('company_name', data.company_name);
-        formData.append('contact_name', data.contact_name);
-        formData.append('contact_number', data.contact_number);
-        formData.append('contact_email', data.contact_email);
-        formData.append('vat_number', data.vat_number);
-        
-        fetch('/profile/update', {
-            method: 'PUT',
-            headers: {
-                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
+        put('/profile', {
+            preserveScroll: true,
+            onSuccess: () => {
+                setData(prev => ({
+                    ...prev,
+                    current_password: '',
+                    password: '',
+                    password_confirmation: ''
+                }));
             },
-            body: formData
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                // Refresh session
-                window.location.href = '/profile';
-            } else {
-                // Handle errors
-                console.error('Update failed:', data.errors);
+            onError: (err) => {
+                console.error('Update failed:', err);
             }
-        })
-        .catch(error => {
-            console.error('Error:', error);
         });
     };
 
@@ -97,7 +79,7 @@ export default function Profile({ auth, title = 'Profile' }) {
                                 type="text"
                                 name="name"
                                 value={data.name}
-                                onChange={(e) => setData({ ...data, name: e.target.value })}
+                                onChange={(e) => setData('name', e.target.value)}
                                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                             />
                             {errors.name && (

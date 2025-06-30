@@ -12,6 +12,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ Profile)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _inertiajs_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/react */ "./node_modules/@inertiajs/react/dist/index.esm.js");
 function _typeof(o) {
   "@babel/helpers - typeof";
 
@@ -114,6 +115,7 @@ function _arrayWithHoles(r) {
 }
 
 
+
 /**
  * Show the user profile for the authenticated user.
  *
@@ -125,7 +127,7 @@ function Profile(_ref) {
   var auth = _ref.auth,
     _ref$title = _ref.title,
     title = _ref$title === void 0 ? 'Profile' : _ref$title;
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+  var _useForm = (0,_inertiajs_react__WEBPACK_IMPORTED_MODULE_1__.useForm)({
       name: '',
       email: '',
       company_name: '',
@@ -137,17 +139,16 @@ function Profile(_ref) {
       password: '',
       password_confirmation: ''
     }),
+    data = _useForm.data,
+    setData = _useForm.setData,
+    post = _useForm.post,
+    put = _useForm.put,
+    processing = _useForm.processing,
+    errors = _useForm.errors;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
     _useState2 = _slicedToArray(_useState, 2),
-    data = _useState2[0],
-    setData = _useState2[1];
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
-    _useState4 = _slicedToArray(_useState3, 2),
-    errors = _useState4[0],
-    setErrors = _useState4[1];
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
-    _useState6 = _slicedToArray(_useState5, 2),
-    loading = _useState6[0],
-    setLoading = _useState6[1];
+    loading = _useState2[0],
+    setLoading = _useState2[1];
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     var _auth$user$profile, _auth$user$profile2, _auth$user$profile3, _auth$user$profile4, _auth$user$profile5;
     if (!auth || !auth.user) return;
@@ -170,35 +171,20 @@ function Profile(_ref) {
   };
   var handleSubmit = function handleSubmit(e) {
     e.preventDefault();
-    var formData = new FormData();
-    formData.append('name', data.name);
-    formData.append('email', data.email);
-    formData.append('current_password', data.current_password);
-    formData.append('password', data.password);
-    formData.append('password_confirmation', data.password_confirmation);
-    formData.append('company_name', data.company_name);
-    formData.append('contact_name', data.contact_name);
-    formData.append('contact_number', data.contact_number);
-    formData.append('contact_email', data.contact_email);
-    formData.append('vat_number', data.vat_number);
-    fetch('/profile/update', {
-      method: 'PUT',
-      headers: {
-        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
+    put('/profile', {
+      preserveScroll: true,
+      onSuccess: function onSuccess() {
+        setData(function (prev) {
+          return _objectSpread(_objectSpread({}, prev), {}, {
+            current_password: '',
+            password: '',
+            password_confirmation: ''
+          });
+        });
       },
-      body: formData
-    }).then(function (response) {
-      return response.json();
-    }).then(function (data) {
-      if (data.success) {
-        // Refresh session
-        window.location.href = '/profile';
-      } else {
-        // Handle errors
-        console.error('Update failed:', data.errors);
+      onError: function onError(err) {
+        console.error('Update failed:', err);
       }
-    })["catch"](function (error) {
-      console.error('Error:', error);
     });
   };
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -220,9 +206,7 @@ function Profile(_ref) {
     name: "name",
     value: data.name,
     onChange: function onChange(e) {
-      return setData(_objectSpread(_objectSpread({}, data), {}, {
-        name: e.target.value
-      }));
+      return setData('name', e.target.value);
     },
     className: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
   }), errors.name && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
