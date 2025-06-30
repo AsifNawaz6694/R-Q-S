@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import { createInertiaApp } from '@inertiajs/react';
 import './bootstrap';
 import { resolvePageComponent } from './resolvePage';
@@ -13,31 +13,25 @@ createInertiaApp({
         return Component;
     },
     setup({ el, App, props }) {
-        // Initialize the app with standard Inertia configuration
-        return createInertiaApp({
-            el,
-            App,
-            props,
-            resolve: resolvePageComponent,
-            setup: ({ el, App, props }) => {
-                const root = ReactDOM.createRoot(el);
-                root.render(
-                    <React.StrictMode>
-                        <App
-                            initialPage={props}
-                            resolveComponent={resolvePageComponent}
-                        />
-                    </React.StrictMode>
-                );
-            }
-        });
+        const root = document.createElement('div');
+        el.appendChild(root);
+        
+        ReactDOM.render(
+            <React.StrictMode>
+                <App
+                    {...props}
+                    resolveComponent={resolvePageComponent}
+                />
+            </React.StrictMode>,
+            root
+        );
     },
     version: () => '1.0.0',
     progress: {
         color: '#4B5563',
-        showSpinner: true,
+        showSpinner: true
     },
-    onError: (error) => {
+    onError(error) {
         console.error(error);
     }
 });

@@ -1,4 +1,5 @@
 import React from 'react';
+import Layout from '@/layouts/layout';
 
 const pages = {
     'Auth/Login': () => import('@/Pages/Auth/Login'),
@@ -28,6 +29,18 @@ export function resolvePageComponent(name) {
             console.error('Module:', module);
             return null;
         }
+
+        // Wrap the page component with Layout
+        const WrappedComponent = (props) => (
+            <Layout 
+                auth={props.auth} 
+                url={props.url || window.location.pathname}
+            >
+                <Component {...props} />
+            </Layout>
+        );
+
+        return WrappedComponent;
         return Component;
     }).catch(error => {
         console.error(`Error loading page ${name}:`, error);
