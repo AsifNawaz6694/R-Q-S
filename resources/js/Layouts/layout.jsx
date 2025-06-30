@@ -14,6 +14,7 @@ export default function Layout({ children, auth, url = window.location.pathname 
         return currentPath === path || (path === '/dashboard' && currentPath === '/');
     };
 
+
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (menuOpen && !event.target.closest('#user-menu')) {
