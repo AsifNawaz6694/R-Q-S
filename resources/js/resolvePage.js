@@ -11,6 +11,7 @@ const pages = {
     'users/create': () => import('@/Pages/Auth/UserManagementCreate'),
     'users/edit': () => import('@/Pages/Auth/UserManagementEdit'),
     'profile': () => import('@/Pages/Profile/Index'),
+    'Profile/Index': () => import('@/Pages/Profile/Index'),
     'products': () => import('@/Pages/Products/Index'),
     'products/create': () => import('@/Pages/Products/Create')
 };
@@ -36,12 +37,11 @@ export function resolvePageComponent(name) {
                 auth={props.auth} 
                 url={props.url || window.location.pathname}
             >
-                <Component {...props} />
+                <Component {...props} auth={props.auth} />
             </Layout>
         );
 
         return WrappedComponent;
-        return Component;
     }).catch(error => {
         console.error(`Error loading page ${name}:`, error);
         return null;

@@ -61063,6 +61063,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _layouts_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/layouts/layout */ "./resources/js/layouts/layout.jsx");
+function _extends() {
+  return _extends = Object.assign ? Object.assign.bind() : function (n) {
+    for (var e = 1; e < arguments.length; e++) {
+      var t = arguments[e];
+      for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]);
+    }
+    return n;
+  }, _extends.apply(null, arguments);
+}
 
 
 var pages = {
@@ -61093,6 +61102,9 @@ var pages = {
   'profile': function profile() {
     return __webpack_require__.e(/*! import() */ "resources_js_Pages_Profile_Index_jsx").then(__webpack_require__.bind(__webpack_require__, /*! @/Pages/Profile/Index */ "./resources/js/Pages/Profile/Index.jsx"));
   },
+  'Profile/Index': function Profile_Index() {
+    return __webpack_require__.e(/*! import() */ "resources_js_Pages_Profile_Index_jsx").then(__webpack_require__.bind(__webpack_require__, /*! @/Pages/Profile/Index */ "./resources/js/Pages/Profile/Index.jsx"));
+  },
   'products': function products() {
     return __webpack_require__.e(/*! import() */ "resources_js_Pages_Products_Index_jsx").then(__webpack_require__.bind(__webpack_require__, /*! @/Pages/Products/Index */ "./resources/js/Pages/Products/Index.jsx"));
   },
@@ -61119,11 +61131,11 @@ function resolvePageComponent(name) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_layouts_layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
         auth: props.auth,
         url: props.url || window.location.pathname
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Component, props));
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Component, _extends({}, props, {
+        auth: props.auth
+      })));
     };
     return WrappedComponent;
-    // removed by dead control flow
-{}
   })["catch"](function (error) {
     console.error("Error loading page ".concat(name, ":"), error);
     return null;
