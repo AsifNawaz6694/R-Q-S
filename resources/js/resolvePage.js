@@ -2,16 +2,28 @@ import React from 'react';
 import Layout from '@/layouts/layout';
 
 const pages = {
+    // Login
     'Auth/Login': () => import('@/Pages/Auth/Login'),
     'login': () => import('@/Pages/Auth/Login'),
+    
+    // Dashboard
     'Auth/Dashboard': () => import('@/Pages/Auth/Dashboard'),
     'Dashboard': () => import('@/Pages/Auth/Dashboard'),
     'dashboard': () => import('@/Pages/Auth/Dashboard'),
+    
+    // Users Management
+    'Auth/UserManagement': () => import('@/Pages/Auth/UserManagement'),
+    'Auth/UserManagementCreate': () => import('@/Pages/Auth/UserManagementCreate'),
+    'Auth/UserManagementEdit': () => import('@/Pages/Auth/UserManagementEdit'),
     'users': () => import('@/Pages/Auth/UserManagement'),
     'users/create': () => import('@/Pages/Auth/UserManagementCreate'),
     'users/edit': () => import('@/Pages/Auth/UserManagementEdit'),
+    
+    // Profile
     'profile': () => import('@/Pages/Profile/Index'),
     'Profile/Index': () => import('@/Pages/Profile/Index'),
+    
+    // Products
     'products': () => import('@/Pages/Products/Index'),
     'products/create': () => import('@/Pages/Products/Create')
 };

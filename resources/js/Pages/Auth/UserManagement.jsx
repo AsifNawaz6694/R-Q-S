@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useMemo } from 'react';
-import { Head, Link, useForm } from '@inertiajs/react';
-import Layout from '@/Components/Layout';
+import { Head, Link, useForm, usePage } from '@inertiajs/react';
+
 export default function UserManagement({ users, filters }) {
     const { post, delete: inertiaDelete } = useForm();
     const [search, setSearch] = useState(filters.search || '');
@@ -37,17 +37,23 @@ export default function UserManagement({ users, filters }) {
         const nextPage = direction === 'next' ? currentPage + 1 : currentPage - 1;
 
         if (direction === 'next' && users.next_page_url) {
-            Inertia.get('/users', {
-                page: nextPage,
-                search: search,
+            const page = usePage();
+            page.props.value.get('/users', {
+                data: {
+                    page: nextPage,
+                    search: search
+                },
                 preserveState: true,
                 preserveScroll: true,
                 only: ['users']
             });
         } else if (direction === 'prev' && users.prev_page_url) {
-            Inertia.get('/users', {
-                page: nextPage,
-                search: search,
+            const page = usePage();
+            page.props.value.get('/users', {
+                data: {
+                    page: nextPage,
+                    search: search
+                },
                 preserveState: true,
                 preserveScroll: true,
                 only: ['users']
@@ -68,9 +74,8 @@ export default function UserManagement({ users, filters }) {
     }, []);
 
     return (
-        <Layout>
+        <div>
             <Head title="Users" />
-
             <div className="py-12">
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -176,6 +181,6 @@ export default function UserManagement({ users, filters }) {
                     </div>
                 </div>
             </div>
-        </Layout>
-    );
+        </div>
+    )
 }

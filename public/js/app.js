@@ -61075,12 +61075,14 @@ function _extends() {
 
 
 var pages = {
+  // Login
   'Auth/Login': function Auth_Login() {
     return __webpack_require__.e(/*! import() */ "resources_js_Pages_Auth_Login_jsx").then(__webpack_require__.bind(__webpack_require__, /*! @/Pages/Auth/Login */ "./resources/js/Pages/Auth/Login.jsx"));
   },
   'login': function login() {
     return __webpack_require__.e(/*! import() */ "resources_js_Pages_Auth_Login_jsx").then(__webpack_require__.bind(__webpack_require__, /*! @/Pages/Auth/Login */ "./resources/js/Pages/Auth/Login.jsx"));
   },
+  // Dashboard
   'Auth/Dashboard': function Auth_Dashboard() {
     return __webpack_require__.e(/*! import() */ "resources_js_Pages_Auth_Dashboard_jsx").then(__webpack_require__.bind(__webpack_require__, /*! @/Pages/Auth/Dashboard */ "./resources/js/Pages/Auth/Dashboard.jsx"));
   },
@@ -61089,6 +61091,16 @@ var pages = {
   },
   'dashboard': function dashboard() {
     return __webpack_require__.e(/*! import() */ "resources_js_Pages_Auth_Dashboard_jsx").then(__webpack_require__.bind(__webpack_require__, /*! @/Pages/Auth/Dashboard */ "./resources/js/Pages/Auth/Dashboard.jsx"));
+  },
+  // Users Management
+  'Auth/UserManagement': function Auth_UserManagement() {
+    return __webpack_require__.e(/*! import() */ "resources_js_Pages_Auth_UserManagement_jsx").then(__webpack_require__.bind(__webpack_require__, /*! @/Pages/Auth/UserManagement */ "./resources/js/Pages/Auth/UserManagement.jsx"));
+  },
+  'Auth/UserManagementCreate': function Auth_UserManagementCreate() {
+    return __webpack_require__.e(/*! import() */ "resources_js_Pages_Auth_UserManagementCreate_jsx").then(__webpack_require__.bind(__webpack_require__, /*! @/Pages/Auth/UserManagementCreate */ "./resources/js/Pages/Auth/UserManagementCreate.jsx"));
+  },
+  'Auth/UserManagementEdit': function Auth_UserManagementEdit() {
+    return __webpack_require__.e(/*! import() */ "resources_js_Pages_Auth_UserManagementEdit_jsx").then(__webpack_require__.bind(__webpack_require__, /*! @/Pages/Auth/UserManagementEdit */ "./resources/js/Pages/Auth/UserManagementEdit.jsx"));
   },
   'users': function users() {
     return __webpack_require__.e(/*! import() */ "resources_js_Pages_Auth_UserManagement_jsx").then(__webpack_require__.bind(__webpack_require__, /*! @/Pages/Auth/UserManagement */ "./resources/js/Pages/Auth/UserManagement.jsx"));
@@ -61099,12 +61111,14 @@ var pages = {
   'users/edit': function users_edit() {
     return __webpack_require__.e(/*! import() */ "resources_js_Pages_Auth_UserManagementEdit_jsx").then(__webpack_require__.bind(__webpack_require__, /*! @/Pages/Auth/UserManagementEdit */ "./resources/js/Pages/Auth/UserManagementEdit.jsx"));
   },
+  // Profile
   'profile': function profile() {
     return __webpack_require__.e(/*! import() */ "resources_js_Pages_Profile_Index_jsx").then(__webpack_require__.bind(__webpack_require__, /*! @/Pages/Profile/Index */ "./resources/js/Pages/Profile/Index.jsx"));
   },
   'Profile/Index': function Profile_Index() {
     return __webpack_require__.e(/*! import() */ "resources_js_Pages_Profile_Index_jsx").then(__webpack_require__.bind(__webpack_require__, /*! @/Pages/Profile/Index */ "./resources/js/Pages/Profile/Index.jsx"));
   },
+  // Products
   'products': function products() {
     return __webpack_require__.e(/*! import() */ "resources_js_Pages_Products_Index_jsx").then(__webpack_require__.bind(__webpack_require__, /*! @/Pages/Products/Index */ "./resources/js/Pages/Products/Index.jsx"));
   },

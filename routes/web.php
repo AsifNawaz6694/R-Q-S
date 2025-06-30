@@ -65,7 +65,7 @@ Route::middleware(['auth'])->group(function () {
             'destroy' => 'users.destroy'
         ]);
     
-    // Add the show route with a different name to avoid conflicts
+    // Add the view route with a different name to avoid conflicts
     Route::get('/users/{user}', [UserManagementController::class, 'show'])
         ->name('users.view');
     

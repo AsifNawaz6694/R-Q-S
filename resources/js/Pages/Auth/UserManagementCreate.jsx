@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
-import Layout from '@/Components/Layout';
+import React from 'react';
+import { Link, useForm } from '@inertiajs/react';
+
 import Button from '@/Components/Button';
 import Input from '@/Components/Input';
 import Label from '@/Components/Label';
 
 export default function UserManagementCreate() {
-    const [data, setData] = useState({
+    const { data, setData, post, processing } = useForm({
+        errors: {},
         name: '',
         email: '',
         password: '',
@@ -18,44 +20,24 @@ export default function UserManagementCreate() {
     });
 
     const handleChange = (event) => {
-        setData({ ...data, [event.target.name]: event.target.value });
+        setData(event.target.name, event.target.value);
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const formData = new FormData();
-        formData.append('name', data.name);
-        formData.append('email', data.email);
-        formData.append('password', data.password);
-        formData.append('password_confirmation', data.password_confirmation);
-        formData.append('company_name', data.company_name);
-        formData.append('contact_name', data.contact_name);
-        formData.append('contact_number', data.contact_number);
-        formData.append('contact_email', data.contact_email);
-        formData.append('vat_number', data.vat_number);
-
-        fetch('/users', {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
-            }
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
+        post('/users', {
+            preserveScroll: true,
+            onSuccess: () => {
                 window.location.href = '/users';
-            } else {
-                // Handle errors
+            },
+            onError: (errors) => {
+                console.error('Create failed:', errors);
             }
-        })
-        .catch(error => {
-            console.error('Error:', error);
         });
     };
 
     return (
-        <Layout>
+        <div>
             <div className="py-12">
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -81,7 +63,7 @@ export default function UserManagementCreate() {
                                             handleChange={handleChange}
                                             required
                                         />
-                                        {errors.name && <p className="mt-1 text-sm text-red-600">{errors.name}</p>}
+                                        {data.errors?.name && <p className="mt-1 text-sm text-red-600">{data.errors.name}</p>}
                                     </div>
                                     <div>
                                         <Label forInput="email" value="Email" />
@@ -93,7 +75,7 @@ export default function UserManagementCreate() {
                                             handleChange={handleChange}
                                             required
                                         />
-                                        {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email}</p>}
+                                        {data.errors?.email && <p className="mt-1 text-sm text-red-600">{data.errors.email}</p>}
                                     </div>
                                     <div>
                                         <Label forInput="password" value="Password" />
@@ -105,7 +87,7 @@ export default function UserManagementCreate() {
                                             handleChange={handleChange}
                                             required
                                         />
-                                        {errors.password && <p className="mt-1 text-sm text-red-600">{errors.password}</p>}
+                                        {data.errors?.password && <p className="mt-1 text-sm text-red-600">{data.errors.password}</p>}
                                     </div>
                                     <div>
                                         <Label forInput="password_confirmation" value="Confirm Password" />
@@ -186,6 +168,6 @@ export default function UserManagementCreate() {
                     </div>
                 </div>
             </div>
-        </Layout>
-    );
+        </div>
+    )
 }

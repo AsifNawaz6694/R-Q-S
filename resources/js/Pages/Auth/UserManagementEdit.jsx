@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
-import Layout from '@/Components/Layout';
+import React, { useState, useEffect } from 'react';
+import { useForm, Link } from '@inertiajs/react';
+
 import Button from '@/Components/Button';
 import Input from '@/Components/Input';
 import Label from '@/Components/Label';
 
 export default function UserManagementEdit({ user }) {
     const [errorMessages, setErrorMessages] = React.useState({});
-    const [data, setData] = React.useState({
+    const { data, setData, put, reset, errors, processing } = useForm({
         name: user.name || '',
         email: user.email || '',
         password: '',
@@ -40,17 +41,17 @@ export default function UserManagementEdit({ user }) {
                 // Navigate back to users list
                 window.location.href = '/users';
             },
-            onError: (errors) => {
+            onError: () => {
                 // Handle validation errors
                 console.error('Update failed:', errors);
                 // Show error messages
-                setErrorMessages(errors);
+                // Error messages are automatically handled by Inertia's errors state
             }
         });
     };
 
     return (
-        <Layout>
+        <div>
             <Head title="Edit User" />
 
             <div className="py-12">
@@ -177,7 +178,7 @@ export default function UserManagementEdit({ user }) {
                                 </div>
 
                                 {/* Error messages */}
-                                {errorMessages && Object.keys(errorMessages).length > 0 && (
+                                {errors && Object.keys(errors).length > 0 && (
                                     <div className="mt-4">
                                         <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded">
                                             <ul>
@@ -195,6 +196,6 @@ export default function UserManagementEdit({ user }) {
                     </div>
                 </div>
             </div>
-        </Layout>
+        </div>
     );
 }
