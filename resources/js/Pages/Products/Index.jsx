@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Head, Link, router } from '@inertiajs/react';
-import { useState } from 'react';
 import ProductsLayout from '@/layouts/products-layout';
 
 const Products = ({ products }) => {
     const [search, setSearch] = useState('');
     const [statusFilter, setStatusFilter] = useState('');
     const [showTrashed, setShowTrashed] = useState(false);
+    const [isToggling, setIsToggling] = useState(false);
+    const isUnmountedRef = useRef(false);
 
     const handleSearchInput = (e) => {
         const value = e.target.value;
@@ -41,6 +42,62 @@ const Products = ({ products }) => {
             });
         }
     };
+
+    // Function to toggle between trashed and untrashed states
+    const toggleTrashedState = () => {
+        if (isToggling) return;
+        setIsToggling(true);
+    
+        const newState = !showTrashed;
+        setShowTrashed(newState);
+    
+        // Prepare query params
+        const params = {
+            preserveScroll: true,
+            preserveState: true,
+        };
+    
+        // Conditionally add the `trashed` param
+        if (newState) {
+            params.trashed = 'only';
+        }
+    
+        // Preserve current filters
+        if (search) {
+            params.search = search;
+        }
+        if (statusFilter) {
+            params.status = statusFilter;
+        }
+    
+        // Update the URL and reload
+        router.get('/products', params, {
+            preserveScroll: true,
+            preserveState: true,
+            onSuccess: () => {
+                if (!isUnmountedRef.current) {
+                    setIsToggling(false);
+                }
+            },
+        });
+    };
+
+    // Track component mount state
+    // useEffect(() => {
+    //     return () => {
+    //         isUnmountedRef.current = true;
+    //     };
+    // }, []);
+
+    useEffect(() => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const trashedParam = urlParams.get('trashed');
+        setShowTrashed(trashedParam === 'only');
+    
+        return () => {
+            isUnmountedRef.current = true;
+        };
+    }, []);
 
     return (
         <ProductsLayout>
@@ -92,23 +149,15 @@ const Products = ({ products }) => {
                                 </select>
                             </div>
                             <div className="flex items-center space-x-2">
-                                <button
-                                    type="button"
-                                    onClick={() => {
-                                        setShowTrashed(!showTrashed);
-                                        router.get('/products', {
-                                            trashed: !showTrashed ? 'only' : '',
-                                            preserveScroll: true,
-                                            preserveState: true,
-                                            only: ['products']
-                                        });
-                                    }}
-                                    className={`inline-flex items-center w-48 px-4 py-2 border border-gray-300 rounded-md text-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${
-                                        showTrashed ? 'bg-indigo-600 text-white hover:bg-indigo-700' : 'text-gray-700 hover:bg-gray-50'
-                                    }`}
+                            <button
+                                type="button"
+                                onClick={toggleTrashedState}
+                                className={`inline-flex items-center w-48 px-4 py-2 border border-gray-300 rounded-md text-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${
+                                    showTrashed ? 'bg-indigo-600 text-white hover:bg-indigo-700' : 'text-gray-700 hover:bg-gray-50'
+                                }`}
                                 >
-                                    {showTrashed ? 'Show Active' : 'Show Trashed'}
-                                </button>
+                                {showTrashed ? 'Show Active' : 'Show Trashed'}
+                            </button>
                             </div>
                         </div>
                     </div>

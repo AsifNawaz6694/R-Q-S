@@ -65,7 +65,6 @@ function _arrayWithHoles(r) {
 
 
 
-
 var Products = function Products(_ref) {
   var products = _ref.products;
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
@@ -80,6 +79,11 @@ var Products = function Products(_ref) {
     _useState6 = _slicedToArray(_useState5, 2),
     showTrashed = _useState6[0],
     setShowTrashed = _useState6[1];
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState8 = _slicedToArray(_useState7, 2),
+    isToggling = _useState8[0],
+    setIsToggling = _useState8[1];
+  var isUnmountedRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(false);
   var handleSearchInput = function handleSearchInput(e) {
     var value = e.target.value;
     setSearch(value);
@@ -111,6 +115,60 @@ var Products = function Products(_ref) {
       });
     }
   };
+
+  // Function to toggle between trashed and untrashed states
+  var toggleTrashedState = function toggleTrashedState() {
+    if (isToggling) return;
+    setIsToggling(true);
+    var newState = !showTrashed;
+    setShowTrashed(newState);
+
+    // Prepare query params
+    var params = {
+      preserveScroll: true,
+      preserveState: true
+    };
+
+    // Conditionally add the `trashed` param
+    if (newState) {
+      params.trashed = 'only';
+    }
+
+    // Preserve current filters
+    if (search) {
+      params.search = search;
+    }
+    if (statusFilter) {
+      params.status = statusFilter;
+    }
+
+    // Update the URL and reload
+    _inertiajs_react__WEBPACK_IMPORTED_MODULE_1__.router.get('/products', params, {
+      preserveScroll: true,
+      preserveState: true,
+      onSuccess: function onSuccess() {
+        if (!isUnmountedRef.current) {
+          setIsToggling(false);
+        }
+      }
+    });
+  };
+
+  // Track component mount state
+  // useEffect(() => {
+  //     return () => {
+  //         isUnmountedRef.current = true;
+  //     };
+  // }, []);
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    var urlParams = new URLSearchParams(window.location.search);
+    var trashedParam = urlParams.get('trashed');
+    setShowTrashed(trashedParam === 'only');
+    return function () {
+      isUnmountedRef.current = true;
+    };
+  }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_layouts_products_layout__WEBPACK_IMPORTED_MODULE_2__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex justify-between items-center mb-6"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -161,15 +219,7 @@ var Products = function Products(_ref) {
     className: "flex items-center space-x-2"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
     type: "button",
-    onClick: function onClick() {
-      setShowTrashed(!showTrashed);
-      _inertiajs_react__WEBPACK_IMPORTED_MODULE_1__.router.get('/products', {
-        trashed: !showTrashed ? 'only' : '',
-        preserveScroll: true,
-        preserveState: true,
-        only: ['products']
-      });
-    },
+    onClick: toggleTrashedState,
     className: "inline-flex items-center w-48 px-4 py-2 border border-gray-300 rounded-md text-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ".concat(showTrashed ? 'bg-indigo-600 text-white hover:bg-indigo-700' : 'text-gray-700 hover:bg-gray-50')
   }, showTrashed ? 'Show Active' : 'Show Trashed'))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
     href: "/products/create",
