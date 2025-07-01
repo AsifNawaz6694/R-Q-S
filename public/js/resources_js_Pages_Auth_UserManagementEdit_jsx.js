@@ -222,30 +222,21 @@ function UserManagementEdit(_ref) {
       }
     });
   };
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Head, {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_react__WEBPACK_IMPORTED_MODULE_1__.Head, {
     title: "Edit User"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "py-12"
+    className: "min-h-screen bg-gray-100"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "max-w-7xl mx-auto sm:px-6 lg:px-8"
+    className: "max-w-7xl mx-auto py-6 sm:px-6 lg:px-8"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "bg-white overflow-hidden shadow-sm sm:rounded-lg"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "p-6 text-gray-900"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "flex justify-between items-center mb-6"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
-    className: "text-2xl font-bold"
-  }, "Edit User"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "flex space-x-4"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-    href: "/users",
-    className: "inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-  }, "Back to Users"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", {
+    className: "p-6"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", {
+    className: "text-2xl font-semibold text-gray-900 mb-6"
+  }, "Edit User"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", {
     onSubmit: handleSubmit,
-    className: "mb-6"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "grid grid-cols-1 md:grid-cols-2 gap-6"
+    className: "space-y-6"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Components_Label__WEBPACK_IMPORTED_MODULE_4__["default"], {
     forInput: "name",
     value: "Name"
@@ -264,30 +255,8 @@ function UserManagementEdit(_ref) {
     value: data.email,
     className: "mt-1 block w-full",
     handleChange: handleChange
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Components_Label__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    forInput: "password",
-    value: "Password"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    type: "password",
-    name: "password",
-    value: data.password,
-    className: "mt-1 block w-full",
-    handleChange: handleChange
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Components_Label__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    forInput: "password_confirmation",
-    value: "Confirm Password"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    type: "password",
-    name: "password_confirmation",
-    value: data.password_confirmation,
-    className: "mt-1 block w-full",
-    handleChange: handleChange
-  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "mt-4"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", {
-    className: "text-lg font-semibold mb-4"
-  }, "Profile Information"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "grid grid-cols-1 md:grid-cols-2 gap-6"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "grid grid-cols-1 md:grid-cols-3 gap-6"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Components_Label__WEBPACK_IMPORTED_MODULE_4__["default"], {
     forInput: "company_name",
     value: "Company Name"
@@ -295,15 +264,6 @@ function UserManagementEdit(_ref) {
     type: "text",
     name: "company_name",
     value: data.company_name,
-    className: "mt-1 block w-full",
-    handleChange: handleChange
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Components_Label__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    forInput: "vat_number",
-    value: "VAT Number"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    type: "text",
-    name: "vat_number",
-    value: data.vat_number,
     className: "mt-1 block w-full",
     handleChange: handleChange
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Components_Label__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -335,11 +295,25 @@ function UserManagementEdit(_ref) {
     value: data.contact_email,
     className: "mt-1 block w-full",
     handleChange: handleChange
-  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "col-span-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Components_Label__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    forInput: "vat_number",
+    value: "VAT Number"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    type: "text",
+    name: "vat_number",
+    value: data.vat_number,
+    className: "mt-1 block w-full",
+    handleChange: handleChange
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "mt-4 flex justify-end"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
     processing: processing
-  }, processing ? 'Updating...' : 'Update User')), errors && Object.keys(errors).length > 0 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, processing ? 'Updating...' : 'Update User'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+    href: "/users",
+    className: "inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+  }, "Back to Users")), errors && Object.keys(errors).length > 0 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "mt-4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded"
