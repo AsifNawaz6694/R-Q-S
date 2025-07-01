@@ -219,7 +219,7 @@ function UserManagement(_ref) {
       disabled: !(user !== null && user !== void 0 && user.id)
     }, "Edit"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
       onClick: function onClick() {
-        return deleteUser(user === null || user === void 0 ? void 0 : user.id);
+        return handleDelete(user === null || user === void 0 ? void 0 : user.id);
       },
       className: "text-red-600 hover:text-red-900",
       disabled: !(user !== null && user !== void 0 && user.id)
