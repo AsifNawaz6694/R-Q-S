@@ -109,11 +109,9 @@ export default function Layout({ children, auth, url = window.location.pathname 
                 </div>
             </nav>
 
-            <main>
-                <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-                    {children}
-                </div>
-            </main>
+            <div className="max-w-7xl mx-auto">
+                {children}
+            </div>
         </div>
     );
 }

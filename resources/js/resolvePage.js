@@ -25,7 +25,9 @@ const pages = {
     
     // Products
     'products': () => import('@/Pages/Products/Index'),
-    'products/create': () => import('@/Pages/Products/Create')
+    'products/create': () => import('@/Pages/Products/Create'),
+    'Products/Index': () => import('@/Pages/Products/Index'),
+    'Products/Create': () => import('@/Pages/Products/Create')
 };
 
 export function resolvePageComponent(name) {

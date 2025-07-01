@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Layout from '@/layouts/layout';
 
-export default function Create() {
+export default () => {
     const [data, setData] = useState({
         name: '',
         description: '',
@@ -46,7 +46,10 @@ export default function Create() {
     };
 
     return (
-        <Layout>
+        <Layout
+            title="Create Product"
+            description="Add a new product"
+        >
             <div className="py-12">
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">

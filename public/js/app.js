@@ -61043,9 +61043,9 @@ function Layout(_ref) {
     onClick: handleLogout,
     className: "w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100",
     role: "menuitem"
-  }, "Sign out"))))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("main", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "max-w-7xl mx-auto py-6 sm:px-6 lg:px-8"
-  }, children)));
+  }, "Sign out"))))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "max-w-7xl mx-auto"
+  }, children));
 }
 
 /***/ }),
@@ -61123,6 +61123,12 @@ var pages = {
     return __webpack_require__.e(/*! import() */ "resources_js_Pages_Products_Index_jsx").then(__webpack_require__.bind(__webpack_require__, /*! @/Pages/Products/Index */ "./resources/js/Pages/Products/Index.jsx"));
   },
   'products/create': function products_create() {
+    return __webpack_require__.e(/*! import() */ "resources_js_Pages_Products_Create_jsx").then(__webpack_require__.bind(__webpack_require__, /*! @/Pages/Products/Create */ "./resources/js/Pages/Products/Create.jsx"));
+  },
+  'Products/Index': function Products_Index() {
+    return __webpack_require__.e(/*! import() */ "resources_js_Pages_Products_Index_jsx").then(__webpack_require__.bind(__webpack_require__, /*! @/Pages/Products/Index */ "./resources/js/Pages/Products/Index.jsx"));
+  },
+  'Products/Create': function Products_Create() {
     return __webpack_require__.e(/*! import() */ "resources_js_Pages_Products_Create_jsx").then(__webpack_require__.bind(__webpack_require__, /*! @/Pages/Products/Create */ "./resources/js/Pages/Products/Create.jsx"));
   }
 };

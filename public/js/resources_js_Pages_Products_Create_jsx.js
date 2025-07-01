@@ -9,7 +9,7 @@
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Create)
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _layouts_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/layouts/layout */ "./resources/js/layouts/layout.jsx");
@@ -63,7 +63,7 @@ function _arrayWithHoles(r) {
 }
 
 
-function Create() {
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function () {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
       name: '',
       description: '',
@@ -106,7 +106,10 @@ function Create() {
       console.error('Error:', error);
     });
   };
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_layouts_layout__WEBPACK_IMPORTED_MODULE_1__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_layouts_layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    title: "Create Product",
+    description: "Add a new product"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "py-12"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "max-w-7xl mx-auto sm:px-6 lg:px-8"
@@ -231,7 +234,7 @@ function Create() {
     disabled: processing,
     className: "inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50"
   }, processing ? 'Creating...' : 'Create Product'))))))));
-}
+});
 
 /***/ })
 
