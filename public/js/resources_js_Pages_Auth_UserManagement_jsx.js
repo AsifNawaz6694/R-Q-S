@@ -13,6 +13,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _inertiajs_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/react */ "./node_modules/@inertiajs/react/dist/index.esm.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_2__);
 function _slicedToArray(r, e) {
   return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest();
 }
@@ -63,6 +65,7 @@ function _arrayWithHoles(r) {
 }
 
 
+
 function UserManagement(_ref) {
   var users = _ref.users,
     filters = _ref.filters;
@@ -76,15 +79,18 @@ function UserManagement(_ref) {
   var handleSearch = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (e) {
     var value = e.target.value;
     setSearch(value);
+  }, []);
+  var handleSearchSubmit = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (e) {
+    var value = e.target.value;
     if (value === '') {
-      Inertia.get('/users', {
+      _inertiajs_react__WEBPACK_IMPORTED_MODULE_1__.router.get('/users', {
         preserveState: true,
         preserveScroll: true,
         only: ['users']
       });
       return;
     }
-    Inertia.get('/users', {
+    _inertiajs_react__WEBPACK_IMPORTED_MODULE_1__.router.get('/users', {
       search: value,
       preserveState: true,
       preserveScroll: true,
@@ -99,31 +105,29 @@ function UserManagement(_ref) {
 
   // Handle pagination
   var handlePagination = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (direction) {
-    var currentPage = users.current_page;
+    var currentPage = (users === null || users === void 0 ? void 0 : users.current_page) || 1;
     var nextPage = direction === 'next' ? currentPage + 1 : currentPage - 1;
-    if (direction === 'next' && users.next_page_url) {
-      Inertia.get('/users', {
-        page: nextPage,
-        search: search,
-        preserveState: true,
-        preserveScroll: true,
-        only: ['users']
-      });
-    } else if (direction === 'prev' && users.prev_page_url) {
-      Inertia.get('/users', {
-        page: nextPage,
-        search: search,
-        preserveState: true,
-        preserveScroll: true,
-        only: ['users']
-      });
+
+    // Make sure we have valid pagination data
+    if (!(users !== null && users !== void 0 && users.current_page) || !(users !== null && users !== void 0 && users.last_page)) {
+      return;
     }
+
+    // Make the request with proper query parameters
+    _inertiajs_react__WEBPACK_IMPORTED_MODULE_1__.router.get('/users', {
+      page: nextPage,
+      search: search
+    }, {
+      preserveState: true,
+      preserveScroll: true,
+      only: ['users']
+    });
   }, [users, search]);
 
   // Handle clear search
   var clearSearch = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function () {
     setSearch('');
-    Inertia.get('/users', {
+    _inertiajs_react__WEBPACK_IMPORTED_MODULE_1__.router.get('/users', {
       search: '',
       page: 1,
       preserveState: true,
@@ -153,6 +157,12 @@ function UserManagement(_ref) {
     type: "text",
     value: search,
     onChange: handleSearch,
+    onBlur: handleSearchSubmit,
+    onKeyDown: function onKeyDown(e) {
+      if (e.key === 'Enter') {
+        handleSearchSubmit(e);
+      }
+    },
     placeholder: "Search users...",
     className: "block w-64 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
   }), search && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
@@ -189,47 +199,49 @@ function UserManagement(_ref) {
     className: "px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
   }, "Actions"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("tbody", {
     className: "bg-white divide-y divide-gray-200"
-  }, users.data.map(function (user) {
+  }, ((users === null || users === void 0 ? void 0 : users.data) || []).map(function (user) {
     var _user$profile, _user$profile2;
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", {
       key: user.id
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", {
       className: "px-6 py-4 whitespace-nowrap"
-    }, user.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", {
+    }, (user === null || user === void 0 ? void 0 : user.name) || 'N/A'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", {
       className: "px-6 py-4 whitespace-nowrap"
-    }, user.email), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", {
+    }, (user === null || user === void 0 ? void 0 : user.email) || 'N/A'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", {
       className: "px-6 py-4 whitespace-nowrap"
-    }, ((_user$profile = user.profile) === null || _user$profile === void 0 ? void 0 : _user$profile.company_name) || 'N/A'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", {
+    }, (user === null || user === void 0 || (_user$profile = user.profile) === null || _user$profile === void 0 ? void 0 : _user$profile.company_name) || 'N/A'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", {
       className: "px-6 py-4 whitespace-nowrap"
-    }, ((_user$profile2 = user.profile) === null || _user$profile2 === void 0 ? void 0 : _user$profile2.contact_name) || 'N/A'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", {
+    }, (user === null || user === void 0 || (_user$profile2 = user.profile) === null || _user$profile2 === void 0 ? void 0 : _user$profile2.contact_name) || 'N/A'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", {
       className: "px-6 py-4 whitespace-nowrap text-right text-sm font-medium"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-      href: "/users/".concat(user.id, "/edit"),
-      className: "text-indigo-600 hover:text-indigo-900 mr-2"
+      href: "/users/".concat(user === null || user === void 0 ? void 0 : user.id, "/edit"),
+      className: "text-indigo-600 hover:text-indigo-900 mr-2",
+      disabled: !(user !== null && user !== void 0 && user.id)
     }, "Edit"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
       onClick: function onClick() {
-        return deleteUser(user.id);
+        return deleteUser(user === null || user === void 0 ? void 0 : user.id);
       },
-      className: "text-red-600 hover:text-red-900"
+      className: "text-red-600 hover:text-red-900",
+      disabled: !(user !== null && user !== void 0 && user.id)
     }, "Delete")));
   })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex justify-between items-center mt-6"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "text-sm text-gray-500"
-  }, "Showing ", users.from, " to ", users.to, " of ", users.total, " results"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, "Showing ", (users === null || users === void 0 ? void 0 : users.from) || 0, " to ", (users === null || users === void 0 ? void 0 : users.to) || 0, " of ", (users === null || users === void 0 ? void 0 : users.total) || 0, " results"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex items-center space-x-4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
     onClick: function onClick() {
       return handlePagination('prev');
     },
-    disabled: !users.prev_page_url,
-    className: "px-4 py-2 border rounded-md ".concat(users.prev_page_url ? 'border-gray-300 text-gray-700 hover:bg-gray-50' : 'border-gray-200 text-gray-400 cursor-not-allowed')
+    disabled: (users === null || users === void 0 ? void 0 : users.current_page) === 1,
+    className: "px-4 py-2 border rounded-md ".concat((users === null || users === void 0 ? void 0 : users.current_page) !== 1 ? 'border-gray-300 text-gray-700 hover:bg-gray-50' : 'border-gray-200 text-gray-400 cursor-not-allowed')
   }, "Previous"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
     onClick: function onClick() {
       return handlePagination('next');
     },
-    disabled: !users.next_page_url,
-    className: "px-4 py-2 border rounded-md ".concat(users.next_page_url ? 'border-gray-300 text-gray-700 hover:bg-gray-50' : 'border-gray-200 text-gray-400 cursor-not-allowed')
+    disabled: (users === null || users === void 0 ? void 0 : users.current_page) === (users === null || users === void 0 ? void 0 : users.last_page),
+    className: "px-4 py-2 border rounded-md ".concat((users === null || users === void 0 ? void 0 : users.current_page) !== (users === null || users === void 0 ? void 0 : users.last_page) ? 'border-gray-300 text-gray-700 hover:bg-gray-50' : 'border-gray-200 text-gray-400 cursor-not-allowed')
   }, "Next"))))))));
 }
 

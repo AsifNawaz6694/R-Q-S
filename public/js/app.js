@@ -61140,7 +61140,12 @@ function resolvePageComponent(name) {
       return null;
     }
 
-    // Wrap the page component with Layout
+    // Only exclude login page from Layout wrapper
+    if (name === 'Auth/Login' || name === 'login') {
+      return Component;
+    }
+
+    // Wrap other pages with Layout
     var WrappedComponent = function WrappedComponent(props) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_layouts_layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
         auth: props.auth,

@@ -29,6 +29,10 @@ export default function Login({ status, canResetPassword }) {
 
     return (
         <Guest>
+            <div className="text-center mb-8">
+                <h1 className="text-3xl font-bold text-gray-800">Welcome to</h1>
+                <h2 className="text-2xl font-semibold text-gray-600">Rental Quotation System</h2>
+            </div>
             <Head title="Log in" />
             {status && (
                 <div className="mb-4 font-medium text-sm text-green-600">{status}</div>

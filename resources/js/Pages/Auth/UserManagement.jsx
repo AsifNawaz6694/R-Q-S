@@ -1,15 +1,19 @@
-import React, { useState, useCallback, useMemo } from 'react';
-import { Head, Link, useForm, usePage } from '@inertiajs/react';
+import React, { useState, useCallback, useMemo, useEffect } from 'react';
+import { Head, Link, useForm, usePage, router } from '@inertiajs/react';
+import _ from 'lodash';
 
 export default function UserManagement({ users, filters }) {
     const { post, delete: inertiaDelete } = useForm();
     const [search, setSearch] = useState(filters.search || '');
-
     const handleSearch = useCallback((e) => {
         const value = e.target.value;
         setSearch(value);
+    }, []);
+
+    const handleSearchSubmit = useCallback((e) => {
+        const value = e.target.value;
         if (value === '') {
-            Inertia.get('/users', {
+            router.get('/users', {
                 preserveState: true,
                 preserveScroll: true,
                 only: ['users']
@@ -17,7 +21,7 @@ export default function UserManagement({ users, filters }) {
             return;
         }
         
-        Inertia.get('/users', {
+        router.get('/users', {
             search: value,
             preserveState: true,
             preserveScroll: true,
@@ -33,38 +37,29 @@ export default function UserManagement({ users, filters }) {
 
     // Handle pagination
     const handlePagination = useCallback((direction) => {
-        const currentPage = users.current_page;
+        const currentPage = users?.current_page || 1;
         const nextPage = direction === 'next' ? currentPage + 1 : currentPage - 1;
 
-        if (direction === 'next' && users.next_page_url) {
-            const page = usePage();
-            page.props.value.get('/users', {
-                data: {
-                    page: nextPage,
-                    search: search
-                },
-                preserveState: true,
-                preserveScroll: true,
-                only: ['users']
-            });
-        } else if (direction === 'prev' && users.prev_page_url) {
-            const page = usePage();
-            page.props.value.get('/users', {
-                data: {
-                    page: nextPage,
-                    search: search
-                },
-                preserveState: true,
-                preserveScroll: true,
-                only: ['users']
-            });
+        // Make sure we have valid pagination data
+        if (!users?.current_page || !users?.last_page) {
+            return;
         }
+
+        // Make the request with proper query parameters
+        router.get('/users', {
+            page: nextPage,
+            search: search
+        }, {
+            preserveState: true,
+            preserveScroll: true,
+            only: ['users']
+        });
     }, [users, search]);
 
     // Handle clear search
     const clearSearch = useCallback(() => {
         setSearch('');
-        Inertia.get('/users', {
+        router.get('/users', {
             search: '',
             page: 1,
             preserveState: true,
@@ -88,6 +83,12 @@ export default function UserManagement({ users, filters }) {
                                             type="text"
                                             value={search}
                                             onChange={handleSearch}
+                                            onBlur={handleSearchSubmit}
+                                            onKeyDown={(e) => {
+                                                if (e.key === 'Enter') {
+                                                    handleSearchSubmit(e);
+                                                }
+                                            }}
                                             placeholder="Search users..."
                                             className="block w-64 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                                         />
@@ -121,30 +122,32 @@ export default function UserManagement({ users, filters }) {
                                         </tr>
                                     </thead>
                                     <tbody className="bg-white divide-y divide-gray-200">
-                                        {users.data.map((user) => (
+                                        {(users?.data || []).map((user) => (
                                             <tr key={user.id}>
                                                 <td className="px-6 py-4 whitespace-nowrap">
-                                                    {user.name}
+                                                    {user?.name || 'N/A'}
                                                 </td>
                                                 <td className="px-6 py-4 whitespace-nowrap">
-                                                    {user.email}
+                                                    {user?.email || 'N/A'}
                                                 </td>
                                                 <td className="px-6 py-4 whitespace-nowrap">
-                                                    {user.profile?.company_name || 'N/A'}
+                                                    {user?.profile?.company_name || 'N/A'}
                                                 </td>
                                                 <td className="px-6 py-4 whitespace-nowrap">
-                                                    {user.profile?.contact_name || 'N/A'}
+                                                    {user?.profile?.contact_name || 'N/A'}
                                                 </td>
                                                 <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                                     <Link 
-                                                        href={`/users/${user.id}/edit`} 
+                                                        href={`/users/${user?.id}/edit`} 
                                                         className="text-indigo-600 hover:text-indigo-900 mr-2"
+                                                        disabled={!user?.id}
                                                     >
                                                         Edit
                                                     </Link>
                                                     <button
-                                                        onClick={() => deleteUser(user.id)}
+                                                        onClick={() => handleDelete(user?.id)}
                                                         className="text-red-600 hover:text-red-900"
+                                                        disabled={!user?.id}
                                                     >
                                                         Delete
                                                     </button>
@@ -158,20 +161,20 @@ export default function UserManagement({ users, filters }) {
                             {/* Pagination */}
                             <div className="flex justify-between items-center mt-6">
                                 <div className="text-sm text-gray-500">
-                                    Showing {users.from} to {users.to} of {users.total} results
+                                    Showing {(users?.from || 0)} to {(users?.to || 0)} of {(users?.total || 0)} results
                                 </div>
                                 <div className="flex items-center space-x-4">
                                     <button
                                         onClick={() => handlePagination('prev')}
-                                        disabled={!users.prev_page_url}
-                                        className={`px-4 py-2 border rounded-md ${users.prev_page_url ? 'border-gray-300 text-gray-700 hover:bg-gray-50' : 'border-gray-200 text-gray-400 cursor-not-allowed'}`}
+                                        disabled={users?.current_page === 1}
+                                        className={`px-4 py-2 border rounded-md ${users?.current_page !== 1 ? 'border-gray-300 text-gray-700 hover:bg-gray-50' : 'border-gray-200 text-gray-400 cursor-not-allowed'}`}
                                     >
                                         Previous
                                     </button>
                                     <button
                                         onClick={() => handlePagination('next')}
-                                        disabled={!users.next_page_url}
-                                        className={`px-4 py-2 border rounded-md ${users.next_page_url ? 'border-gray-300 text-gray-700 hover:bg-gray-50' : 'border-gray-200 text-gray-400 cursor-not-allowed'}`}
+                                        disabled={users?.current_page === users?.last_page}
+                                        className={`px-4 py-2 border rounded-md ${users?.current_page !== users?.last_page ? 'border-gray-300 text-gray-700 hover:bg-gray-50' : 'border-gray-200 text-gray-400 cursor-not-allowed'}`}
                                     >
                                         Next
                                     </button>

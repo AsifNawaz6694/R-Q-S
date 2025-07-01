@@ -43,7 +43,12 @@ export function resolvePageComponent(name) {
             return null;
         }
 
-        // Wrap the page component with Layout
+        // Only exclude login page from Layout wrapper
+        if (name === 'Auth/Login' || name === 'login') {
+            return Component;
+        }
+
+        // Wrap other pages with Layout
         const WrappedComponent = (props) => (
             <Layout 
                 auth={props.auth} 
