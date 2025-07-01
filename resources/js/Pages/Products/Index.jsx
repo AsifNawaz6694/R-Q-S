@@ -12,10 +12,30 @@ const Products = ({ products }) => {
     const handleSearchInput = (e) => {
         const value = e.target.value;
         setSearch(value);
-        router.get('/products', {
+        
+        // Make the request with proper state preservation and maintain focus
+        const params = {
             search: value,
             preserveScroll: true,
             preserveState: true,
+            preserveQuery: true
+        };
+
+        // Store the current cursor position
+        const input = e.target;
+        const cursorPosition = input.selectionStart;
+
+        // Make the request
+        router.get('/products', params, {
+            preserveState: true,
+            preserveScroll: true,
+            onSuccess: () => {
+                // Restore focus and cursor position
+                setTimeout(() => {
+                    input.focus();
+                    input.setSelectionRange(cursorPosition, cursorPosition);
+                }, 0);
+            }
         });
     };
 
@@ -92,7 +112,10 @@ const Products = ({ products }) => {
     useEffect(() => {
         const urlParams = new URLSearchParams(window.location.search);
         const trashedParam = urlParams.get('trashed');
+        const statusParam = urlParams.get('status');
+    
         setShowTrashed(trashedParam === 'only');
+        setStatusFilter(statusParam || '');
     
         return () => {
             isUnmountedRef.current = true;
@@ -134,12 +157,28 @@ const Products = ({ products }) => {
                                 <select
                                     value={statusFilter}
                                     onChange={(e) => {
-                                        setStatusFilter(e.target.value);
-                                        router.get('/products', {
-                                            status: e.target.value,
+                                        const selectedStatus = e.target.value;
+                                        setStatusFilter(selectedStatus);
+                                    
+                                        const params = {
                                             preserveScroll: true,
                                             preserveState: true,
-                                        });
+                                        };
+                                    
+                                        // Only include status if it's not empty
+                                        if (selectedStatus) {
+                                            params.status = selectedStatus;
+                                        }
+                                    
+                                        // Preserve current filters
+                                        if (search) {
+                                            params.search = search;
+                                        }
+                                        if (showTrashed) {
+                                            params.trashed = 'only';
+                                        }
+                                    
+                                        router.get('/products', params);
                                     }}
                                     className="block w-48 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                                 >

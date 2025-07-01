@@ -33,7 +33,7 @@ class ProductController extends BaseController
             $query->where(function ($query) use ($searchPattern) {
                 $query->whereRaw("LOWER(title) LIKE ?", [$searchPattern])
                     ->orWhereRaw("LOWER(item_code) LIKE ?", [$searchPattern])
-                    ->orWhereRaw("LOWER(description) LIKE ?", [$searchPattern])
+                    ->orWhereRaw("LOWER(description_english) LIKE ?", [$searchPattern])
                     ->orWhereRaw("LOWER(main_category) LIKE ?", [$searchPattern])
                     ->orWhereRaw("LOWER(sub_category) LIKE ?", [$searchPattern])
                     ->orWhereRaw("CAST(daily_rate AS CHAR) LIKE ?", [$searchPattern]);

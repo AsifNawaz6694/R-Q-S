@@ -164,7 +164,9 @@ var Products = function Products(_ref) {
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     var urlParams = new URLSearchParams(window.location.search);
     var trashedParam = urlParams.get('trashed');
+    var statusParam = urlParams.get('status');
     setShowTrashed(trashedParam === 'only');
+    setStatusFilter(statusParam || '');
     return function () {
       isUnmountedRef.current = true;
     };
@@ -201,12 +203,26 @@ var Products = function Products(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("select", {
     value: statusFilter,
     onChange: function onChange(e) {
-      setStatusFilter(e.target.value);
-      _inertiajs_react__WEBPACK_IMPORTED_MODULE_1__.router.get('/products', {
-        status: e.target.value,
+      var selectedStatus = e.target.value;
+      setStatusFilter(selectedStatus);
+      var params = {
         preserveScroll: true,
         preserveState: true
-      });
+      };
+
+      // Only include status if it's not empty
+      if (selectedStatus) {
+        params.status = selectedStatus;
+      }
+
+      // Preserve current filters
+      if (search) {
+        params.search = search;
+      }
+      if (showTrashed) {
+        params.trashed = 'only';
+      }
+      _inertiajs_react__WEBPACK_IMPORTED_MODULE_1__.router.get('/products', params);
     },
     className: "block w-48 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
