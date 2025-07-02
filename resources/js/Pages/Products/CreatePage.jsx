@@ -55,15 +55,30 @@ export default function CreatePage() {
     };
 
     return (
-        <Layout>
-            <div className="py-12">
-                <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                    <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                        <div className="p-6 bg-white border-b border-gray-200">
-                            <h2 className="text-2xl font-bold mb-6">Add New Product</h2>
-                            
-                            <form onSubmit={handleSubmit} className="space-y-6">
-                                {/* Title */}
+        <div className="py-12">
+            <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6">
+                    <div className="p-6 bg-white border-b border-gray-200">
+                        <h2 className="text-2xl font-bold mb-6">Add New Product</h2>
+                        
+                        <form onSubmit={handleSubmit} className="space-y-6">
+                            {/* Title */}
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700">
+                                    Product Title
+                                </label>
+                                <input
+                                    type="text"
+                                    name="title"
+                                    value={data.title}
+                                    onChange={(e) => setData('title', e.target.value)}
+                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                                    required
+                                />
+                                {errors.title && (
+                                    <p className="mt-1 text-sm text-red-600">{errors.title}</p>
+                                )}
+                            </div>
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700">
                                         Product Title
@@ -416,6 +431,5 @@ export default function CreatePage() {
                     </div>
                 </div>
             </div>
-        </Layout>
     );
 }

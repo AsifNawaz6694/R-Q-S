@@ -46,6 +46,15 @@ Route::middleware(['auth'])->group(function () {
         ->middleware(['verified'])
         ->name('dashboard');
 
+    // Products Routes
+    Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+    Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
+    Route::post('/products', [ProductController::class, 'store'])->name('products.store');
+    Route::get('/products/{product}/edit', [ProductController::class, 'edit'])->name('products.edit');
+    Route::put('/products/{product}', [ProductController::class, 'update'])->name('products.update');
+    Route::delete('/products/{product}', [ProductController::class, 'destroy'])->name('products.destroy');
+    Route::put('/products/{product}/restore', [ProductController::class, 'restore'])->name('products.restore');
+
     // Product Import Routes
     Route::get('/products/import', [ProductImportController::class, 'importForm'])->name('products.import.form');
     Route::post('/products/import', [ProductImportController::class, 'import'])->name('products.import');

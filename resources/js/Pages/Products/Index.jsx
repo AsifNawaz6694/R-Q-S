@@ -63,7 +63,7 @@ import ProductsLayout from '@/layouts/products-layout';
 
     const restoreProduct = (productId) => {
         if (window.confirm('Are you sure you want to restore this product?')) {
-            router.post(`/products/${productId}/restore`, {
+            router.put(`/products/${productId}/restore`, {
                 preserveScroll: true,
                 preserveState: true,
                 onSuccess: () => {

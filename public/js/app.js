@@ -61123,13 +61123,13 @@ var pages = {
     return __webpack_require__.e(/*! import() */ "resources_js_Pages_Products_Index_jsx").then(__webpack_require__.bind(__webpack_require__, /*! @/Pages/Products/Index */ "./resources/js/Pages/Products/Index.jsx"));
   },
   'products/create': function products_create() {
-    return __webpack_require__.e(/*! import() */ "resources_js_Pages_Products_Create_jsx").then(__webpack_require__.bind(__webpack_require__, /*! @/Pages/Products/Create */ "./resources/js/Pages/Products/Create.jsx"));
+    return __webpack_require__.e(/*! import() */ "resources_js_Pages_Products_CreatePage_jsx").then(__webpack_require__.bind(__webpack_require__, /*! @/Pages/Products/CreatePage */ "./resources/js/Pages/Products/CreatePage.jsx"));
   },
   'Products/Index': function Products_Index() {
     return __webpack_require__.e(/*! import() */ "resources_js_Pages_Products_Index_jsx").then(__webpack_require__.bind(__webpack_require__, /*! @/Pages/Products/Index */ "./resources/js/Pages/Products/Index.jsx"));
   },
   'Products/Create': function Products_Create() {
-    return __webpack_require__.e(/*! import() */ "resources_js_Pages_Products_Create_jsx").then(__webpack_require__.bind(__webpack_require__, /*! @/Pages/Products/Create */ "./resources/js/Pages/Products/Create.jsx"));
+    return __webpack_require__.e(/*! import() */ "resources_js_Pages_Products_CreatePage_jsx").then(__webpack_require__.bind(__webpack_require__, /*! @/Pages/Products/CreatePage */ "./resources/js/Pages/Products/CreatePage.jsx"));
   }
 };
 function resolvePageComponent(name) {
@@ -61286,7 +61286,7 @@ function resolvePageComponent(name) {
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_Pages_Auth_Login_jsx":1,"resources_js_Pages_Auth_Dashboard_jsx":1,"resources_js_Pages_Auth_UserManagement_jsx":1,"resources_js_Pages_Auth_UserManagementCreate_jsx":1,"resources_js_Pages_Auth_UserManagementEdit_jsx":1,"resources_js_Pages_Profile_Index_jsx":1,"resources_js_Pages_Products_Index_jsx":1,"resources_js_Pages_Products_Create_jsx":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_Pages_Auth_Login_jsx":1,"resources_js_Pages_Auth_Dashboard_jsx":1,"resources_js_Pages_Auth_UserManagement_jsx":1,"resources_js_Pages_Auth_UserManagementCreate_jsx":1,"resources_js_Pages_Auth_UserManagementEdit_jsx":1,"resources_js_Pages_Profile_Index_jsx":1,"resources_js_Pages_Products_Index_jsx":1,"resources_js_Pages_Products_CreatePage_jsx":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

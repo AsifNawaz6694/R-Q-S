@@ -140,7 +140,7 @@ var Products = function Products(_ref) {
   };
   var restoreProduct = function restoreProduct(productId) {
     if (window.confirm('Are you sure you want to restore this product?')) {
-      _inertiajs_react__WEBPACK_IMPORTED_MODULE_1__.router.post("/products/".concat(productId, "/restore"), {
+      _inertiajs_react__WEBPACK_IMPORTED_MODULE_1__.router.put("/products/".concat(productId, "/restore"), {
         preserveScroll: true,
         preserveState: true,
         onSuccess: function onSuccess() {

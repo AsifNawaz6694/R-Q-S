@@ -115,7 +115,7 @@ class ProductController extends BaseController
 
     public function create()
     {
-        return Inertia::render('Products/CreatePage');
+        return Inertia::render('Products/Create');
     }
 
     public function edit($id)
