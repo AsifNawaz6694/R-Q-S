@@ -41,7 +41,7 @@ class DashboardController extends BaseController
                     return [
                         'type' => 'user_registration',
                         'description' => $user->name,
-                        'time' => $user->created_at->diffForHumans(),
+                        'time' => $user->created_at,
                         'color' => 'bg-blue-500'
                     ];
                 })
@@ -49,28 +49,49 @@ class DashboardController extends BaseController
 
         // Add product activities
         $recentActivity = $recentActivity->merge(
-            Product::orderBy('created_at', 'desc')
-                ->take(5)
+            Product::select('id', 'title', 'created_at', 'updated_at', 'deleted_at')
+                ->withTrashed()
+                ->orderBy('created_at', 'desc')
+                ->take(10)
                 ->get()
                 ->map(function($product) {
-                    // Use the product's ID if name column doesn't exist
-                    $description = property_exists($product, 'name') ? $product->name : 'Product #' . $product->id;
+                    $description = $product->title ?? 'Product #' . $product->id;
                     
-                    // Check if product was updated recently
-                    $type = $product->created_at->diffInMinutes($product->updated_at) > 5 ? 'product_updated' : 'product_added';
+                    // Determine activity type based on product status
+                    $type = 'product_added';
+                    $time = $product->created_at;
+                    $color = 'bg-green-500';
+
+                    // Check if product was updated
+                    if ($product->created_at->lt($product->updated_at)) {
+                        $type = 'product_updated';
+                        $time = $product->updated_at;
+                        $color = 'bg-yellow-500';
+                    }
+
+                    // Check if product was deleted
+                    if ($product->trashed()) {
+                        $type = 'product_deleted';
+                        $time = $product->deleted_at;
+                        $color = 'bg-red-500';
+                    }
                     
                     return [
                         'type' => $type,
                         'description' => $description,
-                        'time' => $product->created_at->diffForHumans(),
-                        'color' => $type === 'product_updated' ? 'bg-yellow-500' : 'bg-green-500'
+                        'time' => $time,
+                        'color' => $color
                     ];
                 })
         );
 
-        // Sort activities by time
-        $recentActivity = $recentActivity->sortByDesc('time')->toArray();
-
+        // Sort activities by time (most recent first)
+        $recentActivity = $recentActivity
+        ->filter(fn ($activity) => $activity['time']) // removes null timestamps
+        ->sortByDesc('time')
+        ->take(10)
+        ->values()
+        ->toArray();
         $user = auth()->user();
         
         return Inertia::render('Auth/Dashboard', [

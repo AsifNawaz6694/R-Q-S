@@ -14,7 +14,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _inertiajs_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/react */ "./node_modules/@inertiajs/react/dist/index.esm.js");
 /* harmony import */ var _layouts_products_layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/layouts/products-layout */ "./resources/js/layouts/products-layout.jsx");
-var _this = undefined;
 function _slicedToArray(r, e) {
   return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest();
 }
@@ -66,7 +65,10 @@ function _arrayWithHoles(r) {
 
 
 
-var Products = function Products(_ref) {
+function Products(_ref) {
+  var _this = this,
+    _products$prev_page,
+    _products$next_page;
   var products = _ref.products,
     filters = _ref.filters;
   var searchInputRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
@@ -148,6 +150,17 @@ var Products = function Products(_ref) {
         }
       });
     }
+  };
+
+  // Function to toggle product status
+  var toggleStatus = function toggleStatus(productId) {
+    _inertiajs_react__WEBPACK_IMPORTED_MODULE_1__.router.put("/products/".concat(productId, "/toggle-status"), {
+      preserveScroll: true,
+      preserveState: true,
+      onSuccess: function onSuccess() {
+        window.alert('Product status toggled successfully');
+      }
+    });
   };
 
   // Function to toggle between trashed and untrashed states
@@ -305,9 +318,12 @@ var Products = function Products(_ref) {
       className: "px-6 py-4 whitespace-nowrap"
     }, product.sub_category), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", {
       className: "px-6 py-4 whitespace-nowrap"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
-      className: "px-2 inline-flex text-xs leading-5 font-semibold rounded-full ".concat(product.status === 'active' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800')
-    }, product.status)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", {
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+      onClick: function onClick() {
+        return toggleStatus(product.id);
+      },
+      className: "px-3 py-1.5 text-sm font-medium rounded-full ".concat(product.status === 'active' ? 'bg-green-100 text-green-800 hover:bg-green-200' : 'bg-red-100 text-red-800 hover:bg-red-200')
+    }, product.status === 'active' ? 'Active' : 'Inactive')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", {
       className: "px-6 py-4 whitespace-nowrap"
     }, product.fixed_assets_count), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", {
       className: "px-6 py-4 whitespace-nowrap"
@@ -340,23 +356,15 @@ var Products = function Products(_ref) {
   }, "Showing ", products.from, " to ", products.to, " of ", products.total, " products"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex justify-center space-x-4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-    href: "/products?page=".concat(products.current_page - 1, "&search=").concat(search),
-    method: "get",
-    preserveState: true,
-    preserveScroll: true,
-    only: ['products'],
-    className: "px-4 py-2 border rounded-md ".concat(products.prev_page_url ? 'border-gray-300 text-gray-700 hover:bg-gray-50' : 'border-gray-200 text-gray-400 cursor-not-allowed'),
-    disabled: !products.prev_page_url
+    href: "/products?page=".concat((_products$prev_page = products.prev_page) !== null && _products$prev_page !== void 0 ? _products$prev_page : 1),
+    className: "px-4 py-2 rounded-md ".concat(products.prev_page ? 'bg-indigo-600 text-white hover:bg-indigo-700' : 'bg-gray-200 text-gray-500 cursor-not-allowed'),
+    disabled: !products.prev_page
   }, "Previous"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-    href: "/products?page=".concat(products.current_page + 1, "&search=").concat(search),
-    method: "get",
-    preserveState: true,
-    preserveScroll: true,
-    only: ['products'],
-    className: "px-4 py-2 border rounded-md ".concat(products.next_page_url ? 'border-gray-300 text-gray-700 hover:bg-gray-50' : 'border-gray-200 text-gray-400 cursor-not-allowed'),
-    disabled: !products.next_page_url
+    href: "/products?page=".concat((_products$next_page = products.next_page) !== null && _products$next_page !== void 0 ? _products$next_page : products.last_page),
+    className: "px-4 py-2 rounded-md ".concat(products.next_page ? 'bg-indigo-600 text-white hover:bg-indigo-700' : 'bg-gray-200 text-gray-500 cursor-not-allowed'),
+    disabled: !products.next_page
   }, "Next")))));
-};
+}
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Products);
 
 /***/ }),

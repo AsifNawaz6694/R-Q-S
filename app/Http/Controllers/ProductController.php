@@ -113,6 +113,17 @@ class ProductController extends BaseController
         return redirect()->back()->with('success', 'Product status updated successfully.');
     }
 
+    public function toggleStatus($id)
+    {
+        $product = Product::findOrFail($id);
+        
+        // Toggle status
+        $product->status = $product->status === 'active' ? 'inactive' : 'active';
+        $product->save();
+
+        return redirect()->back()->with('success', 'Product status toggled successfully.');
+    }
+
     public function create()
     {
         return Inertia::render('Products/Create');

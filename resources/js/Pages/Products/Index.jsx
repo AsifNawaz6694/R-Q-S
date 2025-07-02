@@ -2,8 +2,8 @@ import React, { useRef, useState, useEffect } from 'react';
 import { Head, Link, router } from '@inertiajs/react';
 import ProductsLayout from '@/layouts/products-layout';
 
-    const Products = ({ products, filters }) => {
-        const searchInputRef = useRef(null);
+function Products({ products, filters }) {
+    const searchInputRef = useRef(null);
     const [search, setSearch] = useState('');
     const [statusFilter, setStatusFilter] = useState('');
     const [showTrashed, setShowTrashed] = useState(false);
@@ -73,25 +73,36 @@ import ProductsLayout from '@/layouts/products-layout';
         }
     };
 
+    // Function to toggle product status
+    const toggleStatus = (productId) => {
+        router.put(`/products/${productId}/toggle-status`, {
+            preserveScroll: true,
+            preserveState: true,
+            onSuccess: () => {
+                window.alert('Product status toggled successfully');
+            },
+        });
+    };
+
     // Function to toggle between trashed and untrashed states
     const toggleTrashedState = () => {
         if (isToggling) return;
         setIsToggling(true);
-    
+
         const newState = !showTrashed;
         setShowTrashed(newState);
-    
+
         // Prepare query params
         const params = {
             preserveScroll: true,
             preserveState: true,
         };
-    
+
         // Conditionally add the `trashed` param
         if (newState) {
             params.trashed = 'only';
         }
-    
+
         // Preserve current filters
         if (search) {
             params.search = search;
@@ -232,11 +243,16 @@ import ProductsLayout from '@/layouts/products-layout';
                                 <td className="px-6 py-4 whitespace-nowrap">{product.title}</td>
                                 <td className="px-6 py-4 whitespace-nowrap">{product.sub_category}</td>
                                 <td className="px-6 py-4 whitespace-nowrap">
-                                    <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
-                                        product.status === 'active' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
-                                    }`}>
-                                        {product.status}
-                                    </span>
+                                    <button
+                                        onClick={() => toggleStatus(product.id)}
+                                        className={`px-3 py-1.5 text-sm font-medium rounded-full ${
+                                            product.status === 'active' 
+                                                ? 'bg-green-100 text-green-800 hover:bg-green-200' 
+                                                : 'bg-red-100 text-red-800 hover:bg-red-200'
+                                        }`}
+                                    >
+                                        {product.status === 'active' ? 'Active' : 'Inactive'}
+                                    </button>
                                 </td>
                                 <td className="px-6 py-4 whitespace-nowrap">{product.fixed_assets_count}</td>
                                 <td className="px-6 py-4 whitespace-nowrap">{product.ekuep_selling_price}</td>
@@ -246,6 +262,7 @@ import ProductsLayout from '@/layouts/products-layout';
                                         <Link href={`/products/${product.id}/edit`} className="text-indigo-600 hover:text-indigo-900">
                                             Edit
                                         </Link>
+
                                         {!showTrashed && (
                                             <button
                                                 onClick={() => deleteProduct(product.id)}
@@ -280,24 +297,20 @@ import ProductsLayout from '@/layouts/products-layout';
                         </div>
                         <div className="flex justify-center space-x-4">
                             <Link
-                                href={`/products?page=${products.current_page - 1}&search=${search}`}
-                                method="get"
-                                preserveState
-                                preserveScroll
-                                only={['products']}
-                                className={`px-4 py-2 border rounded-md ${products.prev_page_url ? 'border-gray-300 text-gray-700 hover:bg-gray-50' : 'border-gray-200 text-gray-400 cursor-not-allowed'}`}
-                                disabled={!products.prev_page_url}
+                                href={`/products?page=${products.prev_page ?? 1}`}
+                                className={`px-4 py-2 rounded-md ${
+                                    products.prev_page ? 'bg-indigo-600 text-white hover:bg-indigo-700' : 'bg-gray-200 text-gray-500 cursor-not-allowed'
+                                }`}
+                                disabled={!products.prev_page}
                             >
                                 Previous
                             </Link>
                             <Link
-                                href={`/products?page=${products.current_page + 1}&search=${search}`}
-                                method="get"
-                                preserveState
-                                preserveScroll
-                                only={['products']}
-                                className={`px-4 py-2 border rounded-md ${products.next_page_url ? 'border-gray-300 text-gray-700 hover:bg-gray-50' : 'border-gray-200 text-gray-400 cursor-not-allowed'}`}
-                                disabled={!products.next_page_url}
+                                href={`/products?page=${products.next_page ?? products.last_page}`}
+                                className={`px-4 py-2 rounded-md ${
+                                    products.next_page ? 'bg-indigo-600 text-white hover:bg-indigo-700' : 'bg-gray-200 text-gray-500 cursor-not-allowed'
+                                }`}
+                                disabled={!products.next_page}
                             >
                                 Next
                             </Link>
@@ -307,6 +320,6 @@ import ProductsLayout from '@/layouts/products-layout';
             </div>
         </ProductsLayout>
     );
-};
+}
 
 export default Products;

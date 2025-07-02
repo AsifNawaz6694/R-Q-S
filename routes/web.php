@@ -54,6 +54,7 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/products/{product}', [ProductController::class, 'update'])->name('products.update');
     Route::delete('/products/{product}', [ProductController::class, 'destroy'])->name('products.destroy');
     Route::put('/products/{product}/restore', [ProductController::class, 'restore'])->name('products.restore');
+    Route::put('/products/{product}/toggle-status', [ProductController::class, 'toggleStatus'])->name('products.toggle-status');
 
     // Product Import Routes
     Route::get('/products/import', [ProductImportController::class, 'importForm'])->name('products.import.form');
