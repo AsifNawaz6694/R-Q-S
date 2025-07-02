@@ -2,7 +2,8 @@ import React, { useRef, useState, useEffect } from 'react';
 import { Head, Link, router } from '@inertiajs/react';
 import ProductsLayout from '@/layouts/products-layout';
 
-const Products = ({ products }) => {
+    const Products = ({ products, filters }) => {
+        const searchInputRef = useRef(null);
     const [search, setSearch] = useState('');
     const [statusFilter, setStatusFilter] = useState('');
     const [showTrashed, setShowTrashed] = useState(false);
@@ -12,33 +13,42 @@ const Products = ({ products }) => {
     const handleSearchInput = (e) => {
         const value = e.target.value;
         setSearch(value);
-        
-        // Make the request with proper state preservation and maintain focus
-        const params = {
-            search: value,
-            preserveScroll: true,
-            preserveState: true,
-            preserveQuery: true
-        };
-
-        // Store the current cursor position
-        const input = e.target;
-        const cursorPosition = input.selectionStart;
-
-        // Make the request
-        router.get('/products', params, {
-            preserveState: true,
-            preserveScroll: true,
-            onSuccess: () => {
-                // Restore focus and cursor position
-                setTimeout(() => {
-                    input.focus();
-                    input.setSelectionRange(cursorPosition, cursorPosition);
-                }, 0);
-            }
-        });
+        debouncedSearch(value);
     };
-
+    const debounce = (func, delay = 500) => {
+        let timer;
+        return (...args) => {
+            clearTimeout(timer);
+            timer = setTimeout(() => {
+                func.apply(this, args);
+            }, delay);
+        };
+    };
+    const debouncedSearch = useRef(
+        debounce((value) => {
+            const params = {
+                search: value || undefined,
+                status: statusFilter || undefined,
+                trashed: showTrashed ? 'only' : undefined,
+            };
+    
+            router.get('/products', {
+                search: value || undefined,
+                status: statusFilter || undefined,
+                trashed: showTrashed ? 'only' : undefined,
+              }, {
+                preserveScroll: true,
+                preserveState: true,
+                only: ['products', 'filters'],
+                replace: true,
+                onFinish: () => {
+                  if (searchInputRef.current) {
+                    searchInputRef.current.focus();
+                  }
+                },
+              });
+        }, 500)
+    ).current;
     const deleteProduct = (productId) => {
         if (window.confirm('Are you sure you want to delete this product?')) {
             router.delete(`/products/${productId}`, {
@@ -110,31 +120,24 @@ const Products = ({ products }) => {
     // }, []);
 
     useEffect(() => {
-        const urlParams = new URLSearchParams(window.location.search);
-        const trashedParam = urlParams.get('trashed');
-        const statusParam = urlParams.get('status');
-    
-        setShowTrashed(trashedParam === 'only');
-        setStatusFilter(statusParam || '');
-    
-        return () => {
-            isUnmountedRef.current = true;
-        };
-    }, []);
-
+        setShowTrashed(filters.trashed === 'only');
+        setStatusFilter(filters.status || '');
+        setSearch(filters.search || '');
+      }, []); // Run only once on mount
     return (
         <ProductsLayout>
             <div className="flex justify-between items-center mb-6">
                 <div className="flex items-center space-x-4">
                     <div className="relative">
                         <div className="flex items-center gap-2">
-                            <input
-                                type="text"
-                                placeholder="Search products..."
-                                value={search}
-                                onChange={handleSearchInput}
-                                className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                            />
+                        <input
+                        ref={searchInputRef}
+                        type="text"
+                        placeholder="Search products..."
+                        value={search}
+                        onChange={handleSearchInput}
+                        className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                        />
                             <div className="flex items-center space-x-2">
                                 {search && (
                                     <button

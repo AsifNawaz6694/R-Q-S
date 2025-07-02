@@ -63,9 +63,10 @@ class ProductController extends BaseController
             'filters' => [
                 'search' => $search,
                 'trashed' => $trashed,
-                'status' => $status
-            ]
-        ])->with(['products'])->with(['filters']);
+                'status' => $status,
+            ],
+        ]);
+        
     }
 
     public function clearSearch()

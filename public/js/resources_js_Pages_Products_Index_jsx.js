@@ -14,6 +14,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _inertiajs_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/react */ "./node_modules/@inertiajs/react/dist/index.esm.js");
 /* harmony import */ var _layouts_products_layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/layouts/products-layout */ "./resources/js/layouts/products-layout.jsx");
+var _this = undefined;
 function _slicedToArray(r, e) {
   return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest();
 }
@@ -66,7 +67,9 @@ function _arrayWithHoles(r) {
 
 
 var Products = function Products(_ref) {
-  var products = _ref.products;
+  var products = _ref.products,
+    filters = _ref.filters;
+  var searchInputRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
     _useState2 = _slicedToArray(_useState, 2),
     search = _useState2[0],
@@ -87,12 +90,43 @@ var Products = function Products(_ref) {
   var handleSearchInput = function handleSearchInput(e) {
     var value = e.target.value;
     setSearch(value);
-    _inertiajs_react__WEBPACK_IMPORTED_MODULE_1__.router.get('/products', {
-      search: value,
-      preserveScroll: true,
-      preserveState: true
-    });
+    debouncedSearch(value);
   };
+  var debounce = function debounce(func) {
+    var delay = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 500;
+    var timer;
+    return function () {
+      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+      clearTimeout(timer);
+      timer = setTimeout(function () {
+        func.apply(_this, args);
+      }, delay);
+    };
+  };
+  var debouncedSearch = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(debounce(function (value) {
+    var params = {
+      search: value || undefined,
+      status: statusFilter || undefined,
+      trashed: showTrashed ? 'only' : undefined
+    };
+    _inertiajs_react__WEBPACK_IMPORTED_MODULE_1__.router.get('/products', {
+      search: value || undefined,
+      status: statusFilter || undefined,
+      trashed: showTrashed ? 'only' : undefined
+    }, {
+      preserveScroll: true,
+      preserveState: true,
+      only: ['products', 'filters'],
+      replace: true,
+      onFinish: function onFinish() {
+        if (searchInputRef.current) {
+          searchInputRef.current.focus();
+        }
+      }
+    });
+  }, 500)).current;
   var deleteProduct = function deleteProduct(productId) {
     if (window.confirm('Are you sure you want to delete this product?')) {
       _inertiajs_react__WEBPACK_IMPORTED_MODULE_1__.router["delete"]("/products/".concat(productId), {
@@ -162,15 +196,10 @@ var Products = function Products(_ref) {
   // }, []);
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    var urlParams = new URLSearchParams(window.location.search);
-    var trashedParam = urlParams.get('trashed');
-    var statusParam = urlParams.get('status');
-    setShowTrashed(trashedParam === 'only');
-    setStatusFilter(statusParam || '');
-    return function () {
-      isUnmountedRef.current = true;
-    };
-  }, []);
+    setShowTrashed(filters.trashed === 'only');
+    setStatusFilter(filters.status || '');
+    setSearch(filters.search || '');
+  }, []); // Run only once on mount
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_layouts_products_layout__WEBPACK_IMPORTED_MODULE_2__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex justify-between items-center mb-6"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -180,6 +209,7 @@ var Products = function Products(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex items-center gap-2"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+    ref: searchInputRef,
     type: "text",
     placeholder: "Search products...",
     value: search,
