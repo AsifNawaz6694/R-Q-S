@@ -1,7 +1,9 @@
 import React from 'react'
-import { Head, Link } from '@inertiajs/react'
+import { Head, Link, usePage } from '@inertiajs/react'
 
 export default function Layout({ children, title = 'Rental Quotation System' }) {
+    const { props } = usePage()
+
     return (
         <>
             <Head title={title} />
@@ -18,31 +20,31 @@ export default function Layout({ children, title = 'Rental Quotation System' }) 
 
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <Link 
-                                    href="/dashboard" 
+                                    href={props.routes.dashboard} 
                                     className="inline-flex items-center px-1 pt-1 border-b-2 border-indigo-500 text-sm font-medium text-gray-900"
                                 >
                                     Dashboard
                                 </Link>
                                 <Link 
-                                    href="/users" 
+                                    href={props.routes.users} 
                                     className="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
                                 >
                                     User Management
                                 </Link>
                                 <Link 
-                                    href="/products" 
+                                    href={props.routes.products.index} 
                                     className="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
                                 >
                                     Products
                                 </Link>
                                 <Link 
-                                    href="/quotes" 
-                                    className="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
-                                >
-                                    Quotations
+                                        href={props.routes.quotations.index} 
+                                        className="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                                    >
+                                        Quotations
                                 </Link>
                                 <Link 
-                                    href="/clients" 
+                                    href={props.routes.clients.index} 
                                     className="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
                                 >
                                     Clients

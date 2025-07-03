@@ -14,6 +14,7 @@ use App\Http\Controllers\UserManagementController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\ClientsController;
 use App\Http\Controllers\ProductImportController;
+use App\Http\Controllers\QuotationController;
 use Illuminate\Support\Facades\URL;
 
 // Redirect root path to login
@@ -93,6 +94,10 @@ Route::middleware(['auth'])->group(function () {
 
     // Clients
     Route::resource('clients', ClientsController::class);
+
+    // Quotations
+    Route::resource('quotations', QuotationController::class);
+    Route::get('/quotations/{id}', [QuotationController::class, 'show'])->name('quotations.show');
 
 });// Close the auth middleware group
 

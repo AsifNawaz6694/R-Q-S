@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '@/layouts/layout';
+import Layout from '@/Layouts/Layout';
 
 const pages = {
     // Login
@@ -27,13 +27,23 @@ const pages = {
     'products': () => import('@/Pages/Products/Index'),
     'products/create': () => import('@/Pages/Products/CreatePage'),
     'Products/Index': () => import('@/Pages/Products/Index'),
-    'Products/Create': () => import('@/Pages/Products/CreatePage')
+    'Products/Create': () => import('@/Pages/Products/CreatePage'),
+    
+    // Quotations
+    'quotations': () => import('@/Pages/Quotations/Index.jsx'),
+    'quotations/index': () => import('@/Pages/Quotations/Index.jsx'),
+    'quotations/create': () => import('@/Pages/Quotations/Create.jsx'),
+    'quotations/show': () => import('@/Pages/Quotations/Show.jsx')
 };
 
 export function resolvePageComponent(name) {
-    const Page = pages[name];
+    // Normalize the route name to lowercase
+    const normalized = name.toLowerCase();
+    const Page = pages[normalized] || pages[name];
+    
     if (!Page) {
-        console.error(`Page not found for route: ${name}`);
+        console.error(`Page not found for route: ${name} (normalized: ${normalized})`);
+        console.error('Available pages:', Object.keys(pages));
         return null;
     }
     
