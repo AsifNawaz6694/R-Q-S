@@ -20,7 +20,8 @@ mix.js('resources/js/app.jsx', 'public/js')
                 '@': path.resolve(__dirname, 'resources/js'),
                 '@Pages': path.resolve(__dirname, 'resources/js/Pages'),
                 '@Components': path.resolve(__dirname, 'resources/js/Components'),
-                '@Layouts': path.resolve(__dirname, 'resources/js/Layouts')
+                '@Layouts': path.resolve(__dirname, 'resources/js/Pages/Shared'),
+                '@layouts': path.resolve(__dirname, 'resources/js/Pages/Shared')
             }
         },
         module: {
