@@ -1,13 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import Layout from '@/Layouts/Layout';
-import { Link, router, usePage } from '@inertiajs/react';
+import { Link, router } from '@inertiajs/react';
 import { format } from 'date-fns';
 import { tr } from 'date-fns/locale';
 
 export default function Index({ quotations }) {
-    const { props } = usePage();
     const [search, setSearch] = useState('');
     const [isLoading, setIsLoading] = useState(false);
+
+    const handleClear = () => {
+        setSearch('');
+        router.get('/quotations', {
+            preserveScroll: true
+        }, {
+            preserveState: true,
+            only: ['quotations'],
+            onFinish: () => setIsLoading(false)
+        });
+    };
 
     useEffect(() => {
         const handleSearch = (value) => {
@@ -49,21 +59,21 @@ export default function Index({ quotations }) {
                                     <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-indigo-600"></div>
                                 )}
                                 <div className="flex items-center space-x-2">
-                                    <Link
-                                        href={props.routes.quotations.index}
+                                    <button
+                                        onClick={handleClear}
                                         className="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                                     >
                                         Clear
                                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                                             <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
                                         </svg>
-                                    </Link>
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <Link
-                        href={props.routes.quotations.create}
+                        href="/quotations/create"
                         className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                     >
                         Create Quotation

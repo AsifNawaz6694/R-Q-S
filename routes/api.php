@@ -17,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// Products API
+Route::get('/products', function (Request $request) {
+    return \App\Models\Product::select('id', 'title as name', 'ekuep_selling_price as price')->get();
+});

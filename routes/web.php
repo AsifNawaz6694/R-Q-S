@@ -97,7 +97,6 @@ Route::middleware(['auth'])->group(function () {
 
     // Quotations
     Route::resource('quotations', QuotationController::class);
-    Route::get('/quotations/{id}', [QuotationController::class, 'show'])->name('quotations.show');
 
 });// Close the auth middleware group
 
