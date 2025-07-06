@@ -14,12 +14,14 @@ export default function Create({ auth, nextQuotationNumber }) {
         rental_period: '',
         details: [],
         products: [],
-        refundable_insurance: 0.0
+        refundable_insurance: 0.0,
+        isManualEntry: false
     });
 
     const [selectedProducts, setSelectedProducts] = useState([]);
     const [selectedProductId, setSelectedProductId] = useState(null);
     const [searchTerm, setSearchTerm] = useState('');
+    const [lineItemError, setLineItemError] = useState('');
 
     // Fetch products once on mount
     useEffect(() => {
@@ -32,31 +34,38 @@ export default function Create({ auth, nextQuotationNumber }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        e.stopPropagation();
         post('/quotations');
     };
 
-    const handleBack = () => {
+    const handleBack = (e) => {
+        e.preventDefault();
         router.visit('/quotations');
     };
 
     const handleProductSelect = (productId) => {
+        setLineItemError(''); // Clear previous errors
         const selectedProduct = data.products.find(p => p.id === productId);
-        console.log('Selected product:', selectedProduct);
     
         if (selectedProduct) {
+            // 🚨 Check for duplicate
+            const exists = data.details.some(
+                detail => detail.item_code?.toLowerCase() === selectedProduct.item_code.toLowerCase()
+            );
+            if (exists) {
+                setLineItemError("This item already exists in the list. Please increase its quantity instead.");
+                return;
+            }
+            // Your existing code to add the product
             const existingProduct = data.details.find(detail => detail.product_id === selectedProduct.id);
-            console.log('Existing product:', existingProduct);
-    
             if (existingProduct) {
-                const newDetails = data.details.map(detail =>
-                    detail.product_id === selectedProduct.id
-                        ? {
-                            ...detail,
-                            qty_required: detail.qty_required + 1,
-                            product_price: selectedProduct.price || existingProduct.product_price || 0.0
-                        }
-                        : detail
-                );
+                const newDetails = [...data.details];
+                const index = newDetails.findIndex(detail => detail.product_id === selectedProduct.id);
+                newDetails[index] = {
+                    ...existingProduct,
+                    qty_required: existingProduct.qty_required + 1,
+                    product_price: selectedProduct.price || existingProduct.product_price
+                };
                 setData('details', newDetails);
             } else {
                 const newDetail = {
@@ -68,8 +77,7 @@ export default function Create({ auth, nextQuotationNumber }) {
                     qty_required: 1,
                     original_price: selectedProduct.price || 0.0
                 };
-                console.log('New detail:', newDetail);
-                setData('details', [...data.details, newDetail]); // ✅ Only add once
+                setData('details', [...data.details, newDetail]);
             }
         }
     };
@@ -272,149 +280,249 @@ export default function Create({ auth, nextQuotationNumber }) {
                                 </div>
 
                                 <div className="mt-6">
-                                    <label className="block text-sm font-medium text-gray-700">
-                                        Add Product
-                                    </label>
-                                    <div className="mt-1">
-                                        <div className="relative">
-                                            <Select
-                                                id="product"
-                                                name="product"
-                                                value={selectedProductId}
-                                                onChange={(option) => {
-                                                    if (option) {
-                                                        handleProductSelect(Number(option.value));
-                                                        setSelectedProductId(null);
-                                                    }
-                                                }}
-                                                options={data.products?.map(product => ({
-                                                    value: product.id,
-                                                    label: `${product.name} - SAR ${product.price ? Number(product.price).toFixed(2) : '0.00'}`,
-                                                    disabled: data.details.some(detail => detail.product_id === product.id),
-                                                    price: product.price || 0.0
-                                                })) || []}
-                                                isSearchable
-                                                placeholder="Select a product..."
-                                                noOptionsMessage={() => "No products found"}
-                                                className="react-select-container"
-                                                classNamePrefix="react-select"
-                                                styles={{
-                                                    control: (provided) => ({
-                                                        ...provided,
-                                                        borderColor: 'var(--gray-300)',
-                                                        borderRadius: '0.5rem',
-                                                        boxShadow: 'none',
-                                                        '&:hover': {
-                                                            borderColor: 'var(--indigo-500)'
-                                                        }
-                                                    }),
-                                                    menu: (provided) => ({
-                                                        ...provided,
-                                                        borderRadius: '0.5rem',
-                                                        boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)'
-                                                    }),
-                                                    option: (provided, state) => ({
-                                                        ...provided,
-                                                        backgroundColor: state.isSelected ? 'var(--indigo-500)' : 'transparent',
-                                                        color: state.isSelected ? 'white' : 'var(--gray-900)',
-                                                        '&:hover': {
-                                                            backgroundColor: state.isSelected ? 'var(--indigo-600)' : 'var(--gray-100)'
-                                                        }
-                                                    })
-                                                }}
-                                            />
+                                    <div className="space-y-4">
+                                        <div>
+                                            <label className="block text-sm font-medium text-gray-700">
+                                                Add Product
+                                            </label>
+                                            <div className="mt-1">
+                                                <div className="relative">
+                                                    <Select
+                                                        id="product"
+                                                        name="product"
+                                                        value={selectedProductId}
+                                                        onChange={(option) => {
+                                                            if (option) {
+                                                                handleProductSelect(Number(option.value));
+                                                                setSelectedProductId(null);
+                                                            }
+                                                        }}
+                                                        options={data.products?.map(product => ({
+                                                            value: product.id,
+                                                            label: `${product.name} - SAR ${product.price ? Number(product.price).toFixed(2) : '0.00'}`,
+                                                            disabled: data.details.some(detail => detail.product_id === product.id),
+                                                            price: product.price || 0.0
+                                                        })) || []}
+                                                        isSearchable
+                                                        placeholder="Select a product..."
+                                                        noOptionsMessage={() => "No products found"}
+                                                        className="react-select-container"
+                                                        classNamePrefix="react-select"
+                                                        styles={{
+                                                            control: (provided) => ({
+                                                                ...provided,
+                                                                borderColor: 'var(--gray-300)',
+                                                                borderRadius: '0.5rem',
+                                                                boxShadow: 'none',
+                                                                '&:hover': {
+                                                                    borderColor: 'var(--indigo-500)'
+                                                                }
+                                                            }),
+                                                            menu: (provided) => ({
+                                                                ...provided,
+                                                                borderRadius: '0.5rem',
+                                                                boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)'
+                                                            }),
+                                                            option: (provided, state) => ({
+                                                                ...provided,
+                                                                backgroundColor: state.isSelected ? 'var(--indigo-500)' : 'transparent',
+                                                                color: state.isSelected ? 'white' : 'var(--gray-900)',
+                                                                '&:hover': {
+                                                                    backgroundColor: state.isSelected ? 'var(--indigo-600)' : 'var(--gray-100)'
+                                                                }
+                                                            })
+                                                        }}
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div className="flex justify-between items-center">
+                                            <div className="flex items-center space-x-4">
+                                                <span className="text-lg font-medium text-gray-900">Selected Products</span>
+                                                <button
+    type="button" // <-- add this line
+    onClick={() => {
+        const currentDetails = [...data.details];
+        const newProduct = {
+            product_id: null,
+            product_name: '',
+            item_code: '',
+            image_url: '',
+            product_price: 0.0,
+            qty_required: 1,
+            original_price: 0.0
+        };
+        const updatedDetails = [...currentDetails, newProduct];
+        setData('details', updatedDetails);
+    }}
+    className="inline-flex items-center px-3 py-1.5 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+>
+    Add Manual Product
+</button>
+                                            </div>
+                                            <span className="text-sm text-gray-600">
+                                                {data.details.length} items
+                                            </span>
                                         </div>
                                     </div>
-                                </div>
-
-                                <div className="mt-8">
-                                    <label className="block text-sm font-medium text-gray-700">
-                                        Selected Products
-                                    </label>
-                                    <div className="mt-2">
-                                        <div className="overflow-hidden">
-                                            <table className="table-auto w-full divide-y divide-gray-200">
+                                    <div className="mt-4">
+                                    {lineItemError && (
+                                        <div className="mb-4 text-red-600 font-semibold">
+                                            {lineItemError}
+                                        </div>
+                                    )}
+                                        <div className="overflow-x-auto">
+                                            <table className="min-w-full divide-y divide-gray-200">
                                                 <thead className="bg-gray-50">
                                                     <tr>
-                                                        <th className="px-2 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">#</th>
-                                                        <th className="px-2 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Item Code</th>
-                                                        <th className="px-2 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Product</th>
-                                                        <th className="px-2 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Image</th>
-                                                        <th className="px-2 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Quantity</th>
-                                                        <th className="px-2 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Unit Price</th>
-                                                        <th className="px-2 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Total</th>
-                                                        <th className="px-2 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                                                        <th className="px-2 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">#</th>
+                                                        <th className="px-2 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Product Name</th>
+                                                        <th className="px-2 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Item Code</th>
+                                                        <th className="px-2 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Image</th>
+                                                        <th className="px-2 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Quantity</th>
+                                                        <th className="px-2 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Unit Price</th>
+                                                        <th className="px-2 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Line Total</th>
+                                                        <th className="px-2 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody className="bg-white divide-y divide-gray-200">
                                                     {data.details.map((detail, index) => (
                                                         <tr key={index}>
                                                             <td className="px-2 py-2 whitespace-nowrap">
-                                                                {index + 1}
+                                                                <span className="text-sm font-medium text-gray-900">{index + 1}</span>
                                                             </td>
                                                             <td className="px-2 py-2 whitespace-nowrap">
-                                                                {detail.item_code}
+                                                                {detail.product_id ? (
+                                                                    <span className="text-sm font-medium text-gray-900">{detail.product_name}</span>
+                                                                ) : (
+                                                                    <input
+                                                                        type="text"
+                                                                        value={detail.product_name}
+                                                                        onChange={(e) => {
+                                                                            const newDetails = [...data.details];
+                                                                            newDetails[index] = {
+                                                                                ...detail,
+                                                                                product_name: e.target.value
+                                                                            };
+                                                                            setData('details', newDetails);
+                                                                        }}
+                                                                        className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                                                                    />
+                                                                )}
                                                             </td>
                                                             <td className="px-2 py-2 whitespace-nowrap">
-                                                                {detail.product_name}
-                                                            </td>
+    {detail.product_id ? (
+        <span className="text-sm font-medium text-gray-900">{detail.item_code}</span>
+    ) : (
+        <input
+    type="text"
+    value={detail.item_code}
+    onChange={(e) => {
+        setLineItemError(''); // Clear error on every change
+        const inputItemCode = e.target.value.trim();
+        const newDetails = [...data.details];
+
+        // 🚨 Check if item code already exists elsewhere in the table
+        if (
+            inputItemCode &&
+            data.details.some(
+                (detailItem, i) => i !== index &&
+                    detailItem.item_code?.toLowerCase() === inputItemCode.toLowerCase()
+            )
+        ) {
+            setLineItemError("This item already exists in the list. Please increase its quantity instead.");
+            return;
+        }
+
+        // Only for manual products (no product_id)
+        if (!detail.product_id && inputItemCode) {
+            // Find if item code matches a product in DB
+            const found = data.products?.find(
+                prod => prod.item_code?.toLowerCase() === inputItemCode.toLowerCase()
+            );
+            if (found) {
+                // Replace manual with DB row
+                newDetails[index] = {
+                    product_id: found.id,
+                    product_name: found.name,
+                    item_code: found.item_code,
+                    image_url: found.image_url,
+                    product_price: found.price || 0.0,
+                    qty_required: 1,  // or carry over previous quantity if you want
+                    original_price: found.price || 0.0
+                };
+                setData('details', newDetails);
+                return;
+            }
+        }
+        // Otherwise, update as manual
+        newDetails[index] = {
+            ...detail,
+            item_code: inputItemCode
+        };
+        setData('details', newDetails);
+    }}
+    className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
+/>
+    )}
+</td>
                                                             <td className="px-2 py-2 whitespace-nowrap">
                                                                 {detail.image_url && (
-                                                                    <img 
-                                                                        src={detail.image_url} 
+                                                                    <img
+                                                                        src={detail.image_url}
                                                                         alt={detail.product_name}
-                                                                        className="rounded object-cover"
-                                                                        style={{ maxWidth: '50px', maxHeight: '50px' }}
+                                                                        className="w-12 h-12 object-contain"
                                                                     />
                                                                 )}
                                                             </td>
                                                             <td className="px-2 py-2 whitespace-nowrap">
                                                                 <input
                                                                     type="number"
+                                                                    min="1"
                                                                     value={detail.qty_required}
                                                                     onChange={(e) => {
                                                                         const newDetails = [...data.details];
-                                                                        newDetails[index].qty_required = parseInt(e.target.value) || 1;
+                                                                        newDetails[index] = {
+                                                                            ...detail,
+                                                                            qty_required: parseInt(e.target.value) || 1
+                                                                        };
                                                                         setData('details', newDetails);
                                                                     }}
-                                                                    min="1"
-                                                                    className="w-16 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block sm:text-sm border-gray-300 rounded-md"
-                                                                    style={{ maxWidth: '60px' }}
+                                                                    className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-16 sm:text-sm border-gray-300 rounded-md"
                                                                 />
                                                             </td>
                                                             <td className="px-2 py-2 whitespace-nowrap">
-                                                                <div className="flex items-center">
-                                                                    <span className="mr-1">SAR</span>
-                                                                    <input
-                                                                        type="number"
-                                                                        step="0.01"
-                                                                        min="0"
-                                                                        value={detail.product_price}
-                                                                        onChange={(e) => {
-                                                                            const newDetails = [...data.details];
-                                                                            newDetails[index].product_price = parseFloat(e.target.value) || 0;
-                                                                            setData('details', newDetails);
-                                                                        }}
-                                                                        className="w-20 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block sm:text-sm border-gray-300 rounded-md"
-                                                                        style={{ maxWidth: '80px' }}
-                                                                    />
-                                                                </div>
+                                                                <input
+                                                                    type="number"
+                                                                    step="0.01"
+                                                                    min="0"
+                                                                    value={detail.product_price}
+                                                                    onChange={(e) => {
+                                                                        const newDetails = [...data.details];
+                                                                        newDetails[index] = {
+                                                                            ...detail,
+                                                                            product_price: parseFloat(e.target.value) || 0.0,
+                                                                            original_price: parseFloat(e.target.value) || 0.0
+                                                                        };
+                                                                        setData('details', newDetails);
+                                                                    }}
+                                                                    className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-24 sm:text-sm border-gray-300 rounded-md"
+                                                                />
                                                             </td>
                                                             <td className="px-2 py-2 whitespace-nowrap">
-                                                                <div className="flex items-center">
-                                                                    <span className="mr-1">SAR</span>
-                                                                    <span className="font-medium text-sm">
-                                                                        SAR {Number(detail.product_price * detail.qty_required).toFixed(2)}
-                                                                    </span>
-                                                                </div>
+                                                                <span className="text-sm font-medium text-gray-900">
+                                                                    SAR {(detail.product_price * detail.qty_required).toFixed(2)}
+                                                                </span>
                                                             </td>
                                                             <td className="px-2 py-2 whitespace-nowrap">
-                                                                <button
-                                                                    onClick={() => handleRemoveProduct(index)}
-                                                                    className="text-red-600 hover:text-red-900 text-sm"
-                                                                >
-                                                                    Remove
-                                                                </button>
+                                                            <button
+    type="button"       // <-- ADD THIS LINE!
+    onClick={() => handleRemoveProduct(index)}
+    className="text-red-600 hover:text-red-900 text-sm"
+>
+    Remove
+</button>
                                                             </td>
                                                         </tr>
                                                     ))}
@@ -422,76 +530,71 @@ export default function Create({ auth, nextQuotationNumber }) {
                                             </table>
                                         </div>
                                     </div>
-                                </div>
 
-{data.details.length > 0 && (
-                                    <div className="mt-8">
-                                        <div className="bg-white shadow rounded-lg p-6">
-                                            <h3 className="text-lg font-semibold mb-4">Calculations</h3>
+                                    {data.details.length > 0 && (
+                                        <div className="mt-6 p-4 bg-gray-50 rounded-lg">
+                                            <h3 className="text-lg font-medium text-gray-900 mb-4">Calculations</h3>
                                             <div className="space-y-4">
                                                 <div className="flex justify-between items-center">
                                                     <span className="text-gray-600">Total Net Price</span>
-                                                    <span className="font-medium">
+                                                    <span className="font-medium text-indigo-600">
                                                         SAR {data.details.reduce((sum, detail) => sum + (detail.product_price * detail.qty_required), 0).toFixed(2)}
                                                     </span>
                                                 </div>
-
                                                 <div className="flex justify-between items-center">
-                                                    <span className="text-gray-600">VAT 15%</span>
-                                                    <span className="font-medium">
-                                                        SAR {Number(data.details.reduce((sum, detail) => sum + (detail.product_price * detail.qty_required), 0) * 0.15).toFixed(2)}
+                                                    <span className="text-gray-600">VAT (15%)</span>
+                                                    <span className="font-medium text-indigo-600">
+                                                        SAR {(data.details.reduce((sum, detail) => sum + (detail.product_price * detail.qty_required), 0) * 0.15).toFixed(2)}
                                                     </span>
                                                 </div>
-
-                                                <div className="flex justify-between items-center">
-                                                    <span className="text-gray-600">Total with VAT</span>
-                                                    <span className="font-medium">
-                                                        SAR {Number(data.details.reduce((sum, detail) => sum + (detail.product_price * detail.qty_required), 0) * 1.15).toFixed(2)}
+                                                <div className="flex justify-between items-center border-t pt-4">
+                                                    <span className="text-gray-600 font-semibold">Total with VAT</span>
+                                                    <span className="font-bold text-indigo-600">
+                                                        SAR {(data.details.reduce((sum, detail) => sum + (detail.product_price * detail.qty_required), 0) * 1.15).toFixed(2)}
                                                     </span>
                                                 </div>
-
                                                 <div className="flex justify-between items-center">
                                                     <span className="text-gray-600">Refundable Insurance</span>
-                                                    <div className="flex items-center">
-                                                        <span className="mr-2">SAR</span>
-                                                        <input
-                                                            type="number"
-                                                            step="0.01"
-                                                            min="0"
-                                                            value={data.refundable_insurance}
-                                                            onChange={(e) => {
-                                                                const value = parseFloat(e.target.value) || 0;
-                                                                setData('refundable_insurance', value);
-                                                            }}
-                                                            className="w-24 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block sm:text-sm border-gray-300 rounded-md"
-                                                        />
-                                                    </div>
+                                                    <input
+                                                        type="number"
+                                                        step="0.01"
+                                                        min="0"
+                                                        value={data.refundable_insurance}
+                                                        onChange={(e) => setData('refundable_insurance', parseFloat(e.target.value).toFixed(2))}
+                                                        className="w-24 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block sm:text-sm border-gray-300 rounded-md"
+                                                    />
                                                 </div>
-
                                                 <div className="flex justify-between items-center border-t pt-4">
                                                     <span className="text-gray-600 font-semibold">Total Price with Insurance</span>
                                                     <span className="font-bold text-indigo-600">
-                                                        SAR {(
-                                                            data.details.reduce((sum, detail) => sum + (detail.product_price * detail.qty_required), 0) * 1.15 -
-                                                            data.refundable_insurance
-                                                        ).toFixed(2)}
+                                                        SAR {(data.details.reduce((sum, detail) => sum + (detail.product_price * detail.qty_required), 0) * 1.15 - data.refundable_insurance).toFixed(2)}
                                                     </span>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                )}
+                                    )}
+                                </div>
 
                                 <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
                                     <button
-                                        type="submit"
+                                        type="button"
+                                        onClick={(e) => {
+                                            e.preventDefault();
+                                            e.stopPropagation();
+                                            handleSubmit(e);
+                                        }}
                                         disabled={processing}
                                         className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                                     >
                                         {processing ? 'Creating...' : 'Create Quotation'}
                                     </button>
                                     <button
-                                        onClick={handleBack}
+                                        type="button"
+                                        onClick={(e) => {
+                                            e.preventDefault();
+                                            e.stopPropagation();
+                                            handleBack(e);
+                                        }}
                                         className="ml-3 inline-flex justify-center py-2 px-4 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                                     >
                                         Back
