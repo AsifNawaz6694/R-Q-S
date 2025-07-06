@@ -88,7 +88,7 @@ export default function Index({ quotations }) {
                                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
                                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Client</th>
                                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Rental Period</th>
-                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Total Amount</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Total Amount (SAR)</th>
                                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
                             </tr>
                         </thead>
@@ -100,13 +100,13 @@ export default function Index({ quotations }) {
                                     <td className="px-6 py-4 whitespace-nowrap">{quotation.client_name}</td>
                                     <td className="px-6 py-4 whitespace-nowrap">{quotation.rental_period}</td>
                                     <td className="px-6 py-4 whitespace-nowrap">
-                                        {(quotation.details && Array.isArray(quotation.details)
+                                         {(quotation.details && Array.isArray(quotation.details)
                                             ? quotation.details.reduce((sum, detail) => {
                                                 const price = parseFloat(detail.total_price_with_insurance_amount) || 0;
                                                 return sum + price;
                                             }, 0)
                                             : 0
-                                        ).toFixed(2)} TL
+                                        ).toFixed(2)}
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                         <div className="flex space-x-2">

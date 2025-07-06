@@ -11,6 +11,7 @@ export default function Create({ auth, nextQuotationNumber }) {
         quotation_date: formatInTimeZone(new Date(), 'Asia/Riyadh', 'yyyy-MM-dd'),
         rental_starts: formatInTimeZone(new Date(), 'Asia/Riyadh', 'yyyy-MM-dd'),
         rental_ends: formatInTimeZone(new Date(), 'Asia/Riyadh', 'yyyy-MM-dd'),
+        rental_period: '',
         details: [],
         products: [],
         refundable_insurance: 0.0
@@ -72,6 +73,42 @@ export default function Create({ auth, nextQuotationNumber }) {
             }
         }
     };
+
+    const calculateRentalPeriod = () => {
+        if (data.rental_starts && data.rental_ends) {
+            const start = new Date(data.rental_starts);
+            const end = new Date(data.rental_ends);
+            const days = Math.ceil((end - start) / (1000 * 60 * 60 * 24));
+            
+            if (days === 1) {
+                setData('rental_period', '1 Day');
+            } else if (days < 30) {
+                setData('rental_period', `${days} Days`);
+            } else if (days < 365) {
+                const months = Math.floor(days / 30);
+                const remainingDays = days % 30;
+                
+                if (remainingDays === 0) {
+                    setData('rental_period', `${months} Months`);
+                } else {
+                    setData('rental_period', `${months} Months and ${remainingDays} Days`);
+                }
+            } else {
+                const years = Math.floor(days / 365);
+                const remainingDays = days % 365;
+                
+                if (remainingDays === 0) {
+                    setData('rental_period', `${years} Years`);
+                } else {
+                    setData('rental_period', `${years} Years and ${remainingDays} Days`);
+                }
+            }
+        }
+    };
+
+    useEffect(() => {
+        calculateRentalPeriod();
+    }, [data.rental_starts, data.rental_ends]);
 
     const handleRemoveProduct = (index) => {
         setSelectedProducts(selectedProducts.filter((_, i) => i !== index));
@@ -193,8 +230,8 @@ export default function Create({ auth, nextQuotationNumber }) {
                                                         name="rental_period"
                                                         id="rental_period"
                                                         value={data.rental_period}
-                                                        onChange={(e) => setData('rental_period', e.target.value)}
-                                                        className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                                                        readOnly
+                                                        className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md bg-gray-50"
                                                     />
                                                 </div>
                                             </div>
