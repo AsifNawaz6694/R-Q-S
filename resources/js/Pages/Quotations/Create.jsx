@@ -230,16 +230,6 @@ export default function Create({ auth, nextQuotationNumber }) {
                                                 </div>
                                             </div>
                                         </div>
-
-                                        {/* Raqtan Rental Address */}
-                                        <div className="mt-4">
-                                            <h2 className="text-2xl font-bold text-gray-900">Raqtan Rental</h2>
-                                            <div className="mt-2 text-sm text-gray-600">
-                                                <p>P.O.Box 31952 Kobar</p>
-                                                <p>Saudi Arabia</p>
-                                                <p>VAT No. 3007748632003</p>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
 
@@ -304,38 +294,43 @@ export default function Create({ auth, nextQuotationNumber }) {
                                         Selected Products
                                     </label>
                                     <div className="mt-2">
-                                        <div className="overflow-x-auto">
-                                            <table className="min-w-full divide-y divide-gray-200">
-                                                <thead>
+                                        <div className="overflow-hidden">
+                                            <table className="table-auto w-full divide-y divide-gray-200">
+                                                <thead className="bg-gray-50">
                                                     <tr>
-                                                        <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Item Code</th>
-                                                        <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Product</th>
-                                                        <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Image</th>
-                                                        <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Quantity</th>
-                                                        <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Unit Price</th>
-                                                        <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Total</th>
-                                                        <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                                                        <th className="px-2 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">#</th>
+                                                        <th className="px-2 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Item Code</th>
+                                                        <th className="px-2 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Product</th>
+                                                        <th className="px-2 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Image</th>
+                                                        <th className="px-2 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Quantity</th>
+                                                        <th className="px-2 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Unit Price</th>
+                                                        <th className="px-2 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Total</th>
+                                                        <th className="px-2 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody className="bg-white divide-y divide-gray-200">
                                                     {data.details.map((detail, index) => (
                                                         <tr key={index}>
-                                                            <td className="px-6 py-4 whitespace-nowrap">
+                                                            <td className="px-2 py-2 whitespace-nowrap">
+                                                                {index + 1}
+                                                            </td>
+                                                            <td className="px-2 py-2 whitespace-nowrap">
                                                                 {detail.item_code}
                                                             </td>
-                                                            <td className="px-6 py-4 whitespace-nowrap">
+                                                            <td className="px-2 py-2 whitespace-nowrap">
                                                                 {detail.product_name}
                                                             </td>
-                                                            <td className="px-6 py-4 whitespace-nowrap">
+                                                            <td className="px-2 py-2 whitespace-nowrap">
                                                                 {detail.image_url && (
                                                                     <img 
                                                                         src={detail.image_url} 
                                                                         alt={detail.product_name}
-                                                                        className="w-12 h-12 rounded object-cover"
+                                                                        className="rounded object-cover"
+                                                                        style={{ maxWidth: '50px', maxHeight: '50px' }}
                                                                     />
                                                                 )}
                                                             </td>
-                                                            <td className="px-6 py-4 whitespace-nowrap">
+                                                            <td className="px-2 py-2 whitespace-nowrap">
                                                                 <input
                                                                     type="number"
                                                                     value={detail.qty_required}
@@ -345,38 +340,40 @@ export default function Create({ auth, nextQuotationNumber }) {
                                                                         setData('details', newDetails);
                                                                     }}
                                                                     min="1"
-                                                                    className="w-20 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block sm:text-sm border-gray-300 rounded-md"
+                                                                    className="w-16 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block sm:text-sm border-gray-300 rounded-md"
+                                                                    style={{ maxWidth: '60px' }}
                                                                 />
                                                             </td>
-                                                            <td className="px-6 py-4 whitespace-nowrap">
+                                                            <td className="px-2 py-2 whitespace-nowrap">
                                                                 <div className="flex items-center">
-                                                                    <span className="mr-2">SAR</span>
+                                                                    <span className="mr-1">SAR</span>
                                                                     <input
-    type="number"
-    step="0.01"
-    min="0"
-    value={detail.product_price}
-    onChange={(e) => {
-        const newDetails = [...data.details];
-        newDetails[index].product_price = parseFloat(e.target.value) || 0;
-        setData('details', newDetails);
-    }}
-    className="w-24 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block sm:text-sm border-gray-300 rounded-md"
-/>
+                                                                        type="number"
+                                                                        step="0.01"
+                                                                        min="0"
+                                                                        value={detail.product_price}
+                                                                        onChange={(e) => {
+                                                                            const newDetails = [...data.details];
+                                                                            newDetails[index].product_price = parseFloat(e.target.value) || 0;
+                                                                            setData('details', newDetails);
+                                                                        }}
+                                                                        className="w-20 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block sm:text-sm border-gray-300 rounded-md"
+                                                                        style={{ maxWidth: '80px' }}
+                                                                    />
                                                                 </div>
                                                             </td>
-                                                            <td className="px-6 py-4 whitespace-nowrap">
+                                                            <td className="px-2 py-2 whitespace-nowrap">
                                                                 <div className="flex items-center">
-                                                                    <span className="mr-2">SAR</span>
-                                                                    <span className="font-medium">
+                                                                    <span className="mr-1">SAR</span>
+                                                                    <span className="font-medium text-sm">
                                                                         SAR {Number(detail.product_price * detail.qty_required).toFixed(2)}
                                                                     </span>
                                                                 </div>
                                                             </td>
-                                                            <td className="px-6 py-4 whitespace-nowrap">
+                                                            <td className="px-2 py-2 whitespace-nowrap">
                                                                 <button
                                                                     onClick={() => handleRemoveProduct(index)}
-                                                                    className="text-red-600 hover:text-red-900"
+                                                                    className="text-red-600 hover:text-red-900 text-sm"
                                                                 >
                                                                     Remove
                                                                 </button>
@@ -388,22 +385,22 @@ export default function Create({ auth, nextQuotationNumber }) {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
-                                <button
-                                    type="submit"
-                                    disabled={processing}
-                                    className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                                >
-                                    {processing ? 'Creating...' : 'Create Quotation'}
-                                </button>
-                                <button
-                                    onClick={handleBack}
-                                    className="ml-3 inline-flex justify-center py-2 px-4 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                                >
-                                    Back
-                                </button>
+                                <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
+                                    <button
+                                        type="submit"
+                                        disabled={processing}
+                                        className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                    >
+                                        {processing ? 'Creating...' : 'Create Quotation'}
+                                    </button>
+                                    <button
+                                        onClick={handleBack}
+                                        className="ml-3 inline-flex justify-center py-2 px-4 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                    >
+                                        Back
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </form>
