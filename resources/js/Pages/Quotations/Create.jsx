@@ -12,7 +12,8 @@ export default function Create({ auth, nextQuotationNumber }) {
         rental_starts: formatInTimeZone(new Date(), 'Asia/Riyadh', 'yyyy-MM-dd'),
         rental_ends: formatInTimeZone(new Date(), 'Asia/Riyadh', 'yyyy-MM-dd'),
         details: [],
-        products: []
+        products: [],
+        refundable_insurance: 0.0
     });
 
     const [selectedProducts, setSelectedProducts] = useState([]);
@@ -385,6 +386,64 @@ export default function Create({ auth, nextQuotationNumber }) {
                                         </div>
                                     </div>
                                 </div>
+
+{data.details.length > 0 && (
+                                    <div className="mt-8">
+                                        <div className="bg-white shadow rounded-lg p-6">
+                                            <h3 className="text-lg font-semibold mb-4">Calculations</h3>
+                                            <div className="space-y-4">
+                                                <div className="flex justify-between items-center">
+                                                    <span className="text-gray-600">Total Net Price</span>
+                                                    <span className="font-medium">
+                                                        SAR {data.details.reduce((sum, detail) => sum + (detail.product_price * detail.qty_required), 0).toFixed(2)}
+                                                    </span>
+                                                </div>
+
+                                                <div className="flex justify-between items-center">
+                                                    <span className="text-gray-600">VAT 15%</span>
+                                                    <span className="font-medium">
+                                                        SAR {Number(data.details.reduce((sum, detail) => sum + (detail.product_price * detail.qty_required), 0) * 0.15).toFixed(2)}
+                                                    </span>
+                                                </div>
+
+                                                <div className="flex justify-between items-center">
+                                                    <span className="text-gray-600">Total with VAT</span>
+                                                    <span className="font-medium">
+                                                        SAR {Number(data.details.reduce((sum, detail) => sum + (detail.product_price * detail.qty_required), 0) * 1.15).toFixed(2)}
+                                                    </span>
+                                                </div>
+
+                                                <div className="flex justify-between items-center">
+                                                    <span className="text-gray-600">Refundable Insurance</span>
+                                                    <div className="flex items-center">
+                                                        <span className="mr-2">SAR</span>
+                                                        <input
+                                                            type="number"
+                                                            step="0.01"
+                                                            min="0"
+                                                            value={data.refundable_insurance}
+                                                            onChange={(e) => {
+                                                                const value = parseFloat(e.target.value) || 0;
+                                                                setData('refundable_insurance', value);
+                                                            }}
+                                                            className="w-24 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block sm:text-sm border-gray-300 rounded-md"
+                                                        />
+                                                    </div>
+                                                </div>
+
+                                                <div className="flex justify-between items-center border-t pt-4">
+                                                    <span className="text-gray-600 font-semibold">Total Price with Insurance</span>
+                                                    <span className="font-bold text-indigo-600">
+                                                        SAR {(
+                                                            data.details.reduce((sum, detail) => sum + (detail.product_price * detail.qty_required), 0) * 1.15 -
+                                                            data.refundable_insurance
+                                                        ).toFixed(2)}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                )}
 
                                 <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
                                     <button
