@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useForm } from '@inertiajs/react';
+import { Link, useForm, router } from '@inertiajs/react';
 import Select from 'react-select';
 import { formatInTimeZone } from 'date-fns-tz';
 
@@ -39,27 +39,35 @@ export default function Create({ auth, nextQuotationNumber }) {
 
     const handleProductSelect = (productId) => {
         const selectedProduct = data.products.find(p => p.id === productId);
+        console.log('Selected product:', selectedProduct);
+    
         if (selectedProduct) {
-            // Check if product is already selected
             const existingProduct = data.details.find(detail => detail.product_id === selectedProduct.id);
+            console.log('Existing product:', existingProduct);
+    
             if (existingProduct) {
-                // If product already exists, just update the quantity
-                const newDetails = data.details.map(detail => 
-                    detail.product_id === selectedProduct.id ? 
-                    { ...detail, qty_required: detail.qty_required + 1 } : 
-                    detail
+                const newDetails = data.details.map(detail =>
+                    detail.product_id === selectedProduct.id
+                        ? {
+                            ...detail,
+                            qty_required: detail.qty_required + 1,
+                            product_price: selectedProduct.price || existingProduct.product_price || 0.0
+                        }
+                        : detail
                 );
                 setData('details', newDetails);
             } else {
-                // If product is new, add it to the list
                 const newDetail = {
                     product_id: selectedProduct.id,
                     product_name: selectedProduct.name,
-                    product_price: selectedProduct.price,
-                    qty_required: 1
+                    item_code: selectedProduct.item_code,
+                    image_url: selectedProduct.image_url,
+                    product_price: selectedProduct.price || 0.0,
+                    qty_required: 1,
+                    original_price: selectedProduct.price || 0.0
                 };
-                setData('details', [...data.details, newDetail]);
-                console.log('Added product:', newDetail);
+                console.log('New detail:', newDetail);
+                setData('details', [...data.details, newDetail]); // ✅ Only add once
             }
         }
     };
@@ -89,141 +97,151 @@ export default function Create({ auth, nextQuotationNumber }) {
                 <div className="mt-8">
                     <form onSubmit={handleSubmit}>
                         <div className="shadow sm:rounded-md sm:overflow-hidden">
-                             <div className="px-4 py-5 bg-white sm:p-6">
-                                 <div className="flex flex-col md:flex-row gap-6">
-                                     {/* Left Column */}
-                                     <div className="flex flex-col flex-1">
-                                         <div className="flex flex-col gap-6">
-                                             <div>
-                                                 <label className="block text-sm font-medium text-gray-700">
-                                                     Quotation Number
-                                                 </label>
-                                                 <div className="mt-1">
-                                                     <input
-                                                         type="text"
-                                                         name="quotation_number"
-                                                         id="quotation_number"
-                                                         value={data.quotation_number}
-                                                         readOnly
-                                                         className="shadow-sm bg-gray-50 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                                                     />
-                                                 </div>
-                                             </div>
+                            <div className="px-4 py-5 bg-white sm:p-6">
+                                <div className="flex flex-col md:flex-row gap-6">
+                                    {/* Left Column */}
+                                    <div className="flex flex-col flex-1">
+                                        <div className="flex flex-col gap-6">
+                                            <div>
+                                                <label className="block text-sm font-medium text-gray-700">
+                                                    Quotation Number
+                                                </label>
+                                                <div className="mt-1">
+                                                    <input
+                                                        type="text"
+                                                        name="quotation_number"
+                                                        id="quotation_number"
+                                                        value={data.quotation_number}
+                                                        readOnly
+                                                        className="shadow-sm bg-gray-50 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                                                    />
+                                                </div>
+                                            </div>
 
-                                             <div>
-                                                 <label htmlFor="client_name" className="block text-sm font-medium text-gray-700">
-                                                     Client Name
-                                                 </label>
-                                                 <div className="mt-1">
-                                                     <input
-                                                         type="text"
-                                                         name="client_name"
-                                                         id="client_name"
-                                                         value={data.client_name}
-                                                         onChange={(e) => setData('client_name', e.target.value)}
-                                                         className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                                                     />
-                                                 </div>
-                                             </div>
+                                            <div>
+                                                <label htmlFor="client_name" className="block text-sm font-medium text-gray-700">
+                                                    Client Name
+                                                </label>
+                                                <div className="mt-1">
+                                                    <input
+                                                        type="text"
+                                                        name="client_name"
+                                                        id="client_name"
+                                                        value={data.client_name}
+                                                        onChange={(e) => setData('client_name', e.target.value)}
+                                                        className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                                                    />
+                                                </div>
+                                            </div>
 
-                                             <div>
-                                                 <label htmlFor="quotation_date" className="block text-sm font-medium text-gray-700">
-                                                     Quotation Date
-                                                 </label>
-                                                 <div className="mt-1">
-                                                     <input
-                                                         type="date"
-                                                         name="quotation_date"
-                                                         id="quotation_date"
-                                                         value={data.quotation_date}
-                                                         onChange={(e) => setData('quotation_date', e.target.value)}
-                                                         className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                                                     />
-                                                 </div>
-                                             </div>
+                                            <div>
+                                                <label htmlFor="quotation_date" className="block text-sm font-medium text-gray-700">
+                                                    Quotation Date
+                                                </label>
+                                                <div className="mt-1">
+                                                    <input
+                                                        type="date"
+                                                        name="quotation_date"
+                                                        id="quotation_date"
+                                                        value={data.quotation_date}
+                                                        onChange={(e) => setData('quotation_date', e.target.value)}
+                                                        className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                                                    />
+                                                </div>
+                                            </div>
 
-                                         </div>
+                                        </div>
 
-                                         {/* Raqtan Rental Address */}
-                                         <div className="mt-4">
-                                             <h2 className="text-2xl font-bold text-gray-900">Raqtan Rental</h2>
-                                             <div className="mt-2 text-sm text-gray-600">
-                                                 <p>P.O.Box 31952 Kobar</p>
-                                                 <p>Saudi Arabia</p>
-                                                 <p>VAT No. 3007748632003</p>
-                                             </div>
-                                         </div>
-                                     </div>
+                                        {/* Raqtan Rental Address */}
+                                        <div className="mt-4">
+                                            <h2 className="text-2xl font-bold text-gray-900">Raqtan Rental</h2>
+                                            <div className="mt-2 text-sm text-gray-600">
+                                                <p>P.O.Box 31952 Kobar</p>
+                                                <p>Saudi Arabia</p>
+                                                <p>VAT No. 3007748632003</p>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                                     {/* Right Column */}
-                                     <div className="flex flex-col flex-1">
-                                         <div className="flex flex-col gap-6">
-                                             <div>
-                                                 <label htmlFor="client_reference" className="block text-sm font-medium text-gray-700">
-                                                     Client Reference
-                                                 </label>
-                                                 <div className="mt-1">
-                                                     <input
-                                                         type="text"
-                                                         name="client_reference"
-                                                         id="client_reference"
-                                                         value={data.client_reference}
-                                                         onChange={(e) => setData('client_reference', e.target.value)}
-                                                         className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                                                     />
-                                                 </div>
-                                             </div>
+                                    {/* Right Column */}
+                                    <div className="flex flex-col flex-1">
+                                        <div className="flex flex-col gap-6">
+                                            <div>
+                                                <label htmlFor="client_reference" className="block text-sm font-medium text-gray-700">
+                                                    Client Reference
+                                                </label>
+                                                <div className="mt-1">
+                                                    <input
+                                                        type="text"
+                                                        name="client_reference"
+                                                        id="client_reference"
+                                                        value={data.client_reference}
+                                                        onChange={(e) => setData('client_reference', e.target.value)}
+                                                        className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                                                    />
+                                                </div>
+                                            </div>
 
-                                             <div>
-                                                 <label htmlFor="rental_period" className="block text-sm font-medium text-gray-700">
-                                                     Rental Period
-                                                 </label>
-                                                 <div className="mt-1">
-                                                     <input
-                                                         type="text"
-                                                         name="rental_period"
-                                                         id="rental_period"
-                                                         value={data.rental_period}
-                                                         onChange={(e) => setData('rental_period', e.target.value)}
-                                                         className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                                                     />
-                                                 </div>
-                                             </div>
+                                            <div>
+                                                <label htmlFor="rental_period" className="block text-sm font-medium text-gray-700">
+                                                    Rental Period
+                                                </label>
+                                                <div className="mt-1">
+                                                    <input
+                                                        type="text"
+                                                        name="rental_period"
+                                                        id="rental_period"
+                                                        value={data.rental_period}
+                                                        onChange={(e) => setData('rental_period', e.target.value)}
+                                                        className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                                                    />
+                                                </div>
+                                            </div>
 
-                                             <div>
-                                                 <label htmlFor="rental_starts" className="block text-sm font-medium text-gray-700">
-                                                     Rental Starts
-                                                 </label>
-                                                 <div className="mt-1">
-                                                     <input
-                                                         type="date"
-                                                         name="rental_starts"
-                                                         id="rental_starts"
-                                                         value={data.rental_starts}
-                                                         onChange={(e) => setData('rental_starts', e.target.value)}
-                                                         className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                                                     />
-                                                 </div>
-                                             </div>
+                                            <div>
+                                                <label htmlFor="rental_starts" className="block text-sm font-medium text-gray-700">
+                                                    Rental Starts
+                                                </label>
+                                                <div className="mt-1">
+                                                    <input
+                                                        type="date"
+                                                        name="rental_starts"
+                                                        id="rental_starts"
+                                                        value={data.rental_starts}
+                                                        onChange={(e) => setData('rental_starts', e.target.value)}
+                                                        className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                                                    />
+                                                </div>
+                                            </div>
 
-                                             <div>
-                                                 <label htmlFor="rental_ends" className="block text-sm font-medium text-gray-700">
-                                                     Rental Ends
-                                                 </label>
-                                                 <div className="mt-1">
-                                                     <input
-                                                         type="date"
-                                                         name="rental_ends"
-                                                         id="rental_ends"
-                                                         value={data.rental_ends}
-                                                         onChange={(e) => setData('rental_ends', e.target.value)}
-                                                         className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                                                     />
-                                                 </div>
-                                             </div>
-                                         </div>
-                                     </div>
-                                 </div>
+                                            <div>
+                                                <label htmlFor="rental_ends" className="block text-sm font-medium text-gray-700">
+                                                    Rental Ends
+                                                </label>
+                                                <div className="mt-1">
+                                                    <input
+                                                        type="date"
+                                                        name="rental_ends"
+                                                        id="rental_ends"
+                                                        value={data.rental_ends}
+                                                        onChange={(e) => setData('rental_ends', e.target.value)}
+                                                        className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Raqtan Rental Address */}
+                                        <div className="mt-4">
+                                            <h2 className="text-2xl font-bold text-gray-900">Raqtan Rental</h2>
+                                            <div className="mt-2 text-sm text-gray-600">
+                                                <p>P.O.Box 31952 Kobar</p>
+                                                <p>Saudi Arabia</p>
+                                                <p>VAT No. 3007748632003</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
                                 <div className="mt-6">
                                     <label className="block text-sm font-medium text-gray-700">
@@ -243,8 +261,9 @@ export default function Create({ auth, nextQuotationNumber }) {
                                                 }}
                                                 options={data.products?.map(product => ({
                                                     value: product.id,
-                                                    label: `${product.name} - SAR ${Number(product.price).toFixed(2)}`,
-                                                    disabled: data.details.some(detail => detail.product_id === product.id)
+                                                    label: `${product.name} - SAR ${product.price ? Number(product.price).toFixed(2) : '0.00'}`,
+                                                    disabled: data.details.some(detail => detail.product_id === product.id),
+                                                    price: product.price || 0.0
                                                 })) || []}
                                                 isSearchable
                                                 placeholder="Select a product..."
@@ -289,7 +308,9 @@ export default function Create({ auth, nextQuotationNumber }) {
                                             <table className="min-w-full divide-y divide-gray-200">
                                                 <thead>
                                                     <tr>
+                                                        <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Item Code</th>
                                                         <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Product</th>
+                                                        <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Image</th>
                                                         <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Quantity</th>
                                                         <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Unit Price</th>
                                                         <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Total</th>
@@ -300,7 +321,19 @@ export default function Create({ auth, nextQuotationNumber }) {
                                                     {data.details.map((detail, index) => (
                                                         <tr key={index}>
                                                             <td className="px-6 py-4 whitespace-nowrap">
+                                                                {detail.item_code}
+                                                            </td>
+                                                            <td className="px-6 py-4 whitespace-nowrap">
                                                                 {detail.product_name}
+                                                            </td>
+                                                            <td className="px-6 py-4 whitespace-nowrap">
+                                                                {detail.image_url && (
+                                                                    <img 
+                                                                        src={detail.image_url} 
+                                                                        alt={detail.product_name}
+                                                                        className="w-12 h-12 rounded object-cover"
+                                                                    />
+                                                                )}
                                                             </td>
                                                             <td className="px-6 py-4 whitespace-nowrap">
                                                                 <input
@@ -316,10 +349,29 @@ export default function Create({ auth, nextQuotationNumber }) {
                                                                 />
                                                             </td>
                                                             <td className="px-6 py-4 whitespace-nowrap">
-                                                                SAR {Number(detail.product_price).toFixed(2)}
+                                                                <div className="flex items-center">
+                                                                    <span className="mr-2">SAR</span>
+                                                                    <input
+    type="number"
+    step="0.01"
+    min="0"
+    value={detail.product_price}
+    onChange={(e) => {
+        const newDetails = [...data.details];
+        newDetails[index].product_price = parseFloat(e.target.value) || 0;
+        setData('details', newDetails);
+    }}
+    className="w-24 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block sm:text-sm border-gray-300 rounded-md"
+/>
+                                                                </div>
                                                             </td>
                                                             <td className="px-6 py-4 whitespace-nowrap">
-                                                                SAR {Number(detail.product_price * detail.qty_required).toFixed(2)}
+                                                                <div className="flex items-center">
+                                                                    <span className="mr-2">SAR</span>
+                                                                    <span className="font-medium">
+                                                                        SAR {Number(detail.product_price * detail.qty_required).toFixed(2)}
+                                                                    </span>
+                                                                </div>
                                                             </td>
                                                             <td className="px-6 py-4 whitespace-nowrap">
                                                                 <button
@@ -337,7 +389,7 @@ export default function Create({ auth, nextQuotationNumber }) {
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
                                 <button
                                     type="submit"

@@ -19,6 +19,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 // Products API
-Route::get('/products', function (Request $request) {
-    return \App\Models\Product::select('id', 'title as name', 'ekuep_selling_price as price')->get();
-});
+use App\Http\Controllers\Api\ProductApiController;
+
+Route::get('/products', [ProductApiController::class, 'index']);
