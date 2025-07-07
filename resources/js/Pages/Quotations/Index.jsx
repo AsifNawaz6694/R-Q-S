@@ -3,10 +3,13 @@ import Layout from '@/Layouts/Layout';
 import { Link, router } from '@inertiajs/react';
 import { format } from 'date-fns';
 import { enGB } from 'date-fns/locale';
+import { PencilIcon, TrashIcon, EyeIcon } from '@heroicons/react/24/outline';
+import { Dialog, Transition } from '@headlessui/react';
 
 export default function Index({ quotations }) {
     const [search, setSearch] = useState('');
     const [isLoading, setIsLoading] = useState(false);
+    const [deleteConfirmation, setDeleteConfirmation] = useState({ open: false, id: null });
 
     const handleClear = () => {
         setSearch('');
@@ -128,10 +131,28 @@ export default function Index({ quotations }) {
                 <div className="flex space-x-2">
                     <Link
                         href={`/quotations/${quotation.id}`}
-                        className="text-indigo-600 hover:text-indigo-900"
+                        className="text-indigo-600 hover:text-indigo-900 p-1 rounded-md hover:bg-indigo-50 transition-colors"
+                        title="View"
                     >
-                        View
+                        <EyeIcon className="w-5 h-5" />
                     </Link>
+                    <Link
+                        href={`/quotations/${quotation.id}/edit`}
+                        className="text-blue-600 hover:text-blue-900 p-1 rounded-md hover:bg-blue-50 transition-colors"
+                        title="Edit"
+                    >
+                        <PencilIcon className="w-5 h-5" />
+                    </Link>
+                    <button
+    onClick={() => {
+        if (confirm('Are you sure you want to delete this quotation?')) {
+            router.delete(`/quotations/${quotation.id}`);
+        }
+    }}
+    className="text-red-600 hover:text-red-900"
+>
+    Delete
+</button>
                 </div>
             </td>
         </tr>
@@ -176,4 +197,6 @@ export default function Index({ quotations }) {
     );
 }
 
-Index.layout = Layout;
+Index.layout = function ({ children }) {
+    return <Layout title="Quotations">{children}</Layout>;
+};

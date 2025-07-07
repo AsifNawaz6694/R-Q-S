@@ -179,16 +179,26 @@ class QuotationController extends BaseController
     return redirect()->route('quotations.index')->with('success', 'Quotation created successfully');
 }
 
-public function show($id)
-{
-    $quotation = Quotation::with('details')->findOrFail($id);
-    return inertia('quotations/Show', [
-        'quotation' => $quotation,
-        'routes' => [
-            'quotations' => [
-                'index' => route('quotations.index'),
+    public function show($id)
+    {
+        $quotation = Quotation::with('details')->findOrFail($id);
+        return inertia('quotations/Show', [
+            'quotation' => $quotation,
+            'routes' => [
+                'quotations' => [
+                    'index' => route('quotations.index'),
+                ],
             ],
-        ],
-    ]);
+        ]);
+    }
+
+    public function destroy($id)
+{
+    $quotation = Quotation::findOrFail($id);
+    // Soft-deletes details via relationship if set up with 'cascadeOnDelete' or manual delete.
+    $quotation->details()->delete();
+    $quotation->delete();
+
+    return redirect()->route('quotations.index')->with('success', 'Quotation has been deleted successfully.');
 }
 }
