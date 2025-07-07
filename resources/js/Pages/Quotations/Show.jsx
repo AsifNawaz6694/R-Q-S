@@ -6,7 +6,7 @@ import { enGB } from 'date-fns/locale';
 
 export default function Show({ quotation }) {
     const calculateTotal = () => {
-        return quotation.details.reduce((sum, detail) => sum + detail.total_price_with_insurance_amount, 0).toFixed(2);
+        return quotation.total_price_with_insurance_amount.toFixed(2);
     };
 
     return (
@@ -83,7 +83,7 @@ export default function Show({ quotation }) {
                                                     <td className="px-6 py-4 whitespace-nowrap">{detail.product_name}</td>
                                                     <td className="px-6 py-4 whitespace-nowrap">{detail.qty_required}</td>
                                                     <td className="px-6 py-4 whitespace-nowrap">{detail.unit_price.toFixed(2)} TL</td>
-                                                    <td className="px-6 py-4 whitespace-nowrap">{detail.total_price_with_insurance_amount.toFixed(2)} TL</td>
+                                                    <td className="px-6 py-4 whitespace-nowrap">{detail.total_price.toFixed(2)} TL</td>
                                                 </tr>
                                             ))}
                                         </tbody>

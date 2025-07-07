@@ -19,7 +19,7 @@ class QuotationController extends BaseController
         $search = $request->query('search');
         
         $query = Quotation::with(['details' => function($query) {
-            $query->select('id', 'quotation_id', 'product_name', 'qty_required', 'total_price_with_insurance_amount');
+            $query->select('id', 'quotation_id', 'product_name', 'qty_required', 'total_price');
         }]);
 
         if ($search) {
@@ -69,7 +69,7 @@ class QuotationController extends BaseController
         $request->request->set('details', $detailsDecoded);
     }
 
-    // 2. Validate all incoming fields (using migration field names)
+    // 2. Validate incoming fields
     $validated = $request->validate([
         'quotation_number' => 'required|string',
         'client_name' => 'required|string',
@@ -83,9 +83,78 @@ class QuotationController extends BaseController
         'details.*.item_code' => 'required|string',
         'details.*.qty_required' => 'required|numeric|min:1',
         'details.*.product_price' => 'required|numeric|min:0',
+        'refundable_insurance' => 'nullable|numeric|min:0',
     ]);
 
-    // 3. Create the main quotation record
+    // Prepare to calculate the totals for the master quotation
+    $manual_counter = 1;
+    $total_net_price_amount = 0;
+    $total_discount_amount = 0; // (set as needed)
+    $vat_15_percent_amount = 0;
+    $total_with_vat_amount = 0;
+    $refundable_insurance_amount = $validated['refundable_insurance'] ?? 0;
+
+    // We'll need to build these inside the details loop now!
+    $detailsForInsert = [];
+    foreach ($validated['details'] as $i => $detail) {
+        $isManual = empty($detail['product_id']) || !is_numeric($detail['product_id']);
+        $product_id = $detail['product_id'];
+        if ($isManual) {
+            $product_id = 'Manual-' . $manual_counter;
+            $manual_counter++;
+        }
+        $product_name = $detail['product_name'] ?? null;
+        $item_code = $detail['item_code'] ?? null;
+        $qty = $detail['qty_required'];
+        $unit_price = $detail['product_price'] ?? 0;
+
+        // Fill from DB if missing (for existing products)
+        if ($product_id && is_numeric($product_id) && (empty($product_name) || empty($item_code))) {
+            $product = \App\Models\Product::find($product_id);
+            if ($product) {
+                $product_name = $product->name;
+                $item_code = $product->item_code;
+                $unit_price = $unit_price ?: $product->price;
+            }
+        }
+
+        $total_price = $unit_price * $qty;
+        $net = $total_price;
+        $vat = $net * 0.15;
+        $with_vat = $net + $vat;
+
+        $product_image = null;
+        if ($isManual && $request->hasFile("images.$i")) {
+            $imgFile = $request->file("images.$i");
+            $imgName = 'quotation_img_' . uniqid() . '.' . $imgFile->getClientOriginalExtension();
+            $imgFile->move(public_path('images/quotation_images'), $imgName);
+            $product_image = 'images/quotation_images/' . $imgName;
+        } elseif (isset($detail['image_url']) && $detail['image_url']) {
+            $product_image = $detail['image_url'];
+        }
+
+        // Collect for overall totals
+        $total_net_price_amount += $net;
+        $vat_15_percent_amount += $vat;
+        $total_with_vat_amount += $with_vat;
+
+        // Prepare detail for database (no summary fields now)
+        $detailsForInsert[] = [
+            'product_id' => $product_id,
+            'item_code' => $item_code,
+            'product_name' => $product_name,
+            'product_image' => $product_image,
+            'qty_required' => $qty,
+            'unit_price' => $unit_price,
+            'total_price' => $total_price
+        ];
+    }
+    // --- End loop: we now have totals and per-line items
+
+    // Calculate grand total including insurance
+    $total_price_with_insurance_amount = $total_with_vat_amount + $refundable_insurance_amount;
+
+    // 3. Create the master quotation record with correct totals
     $quotation = \App\Models\Quotation::create([
         'quotation_number' => $validated['quotation_number'],
         'quotation_date' => $validated['quotation_date'],
@@ -94,64 +163,17 @@ class QuotationController extends BaseController
         'rental_period' => $validated['rental_period'],
         'rental_starts_date' => $validated['rental_starts_date'],
         'rental_ends_date' => $validated['rental_ends_date'],
+        'total_net_price_amount' => $total_net_price_amount,
+        'total_with_vat_amount' => $total_with_vat_amount,
+        'total_discount_amount' => $total_discount_amount,
+        'vat_15_percent_amount' => $vat_15_percent_amount,
+        'refundable_insurance_amount' => $refundable_insurance_amount,
+        'total_price_with_insurance_amount' => $total_price_with_insurance_amount,
     ]);
-    $manual_counter = 1; // counter for manual lines in this quotation
 
-    // 4. Store details rows, both manual and normal product lines (handle images for manual)
-    foreach ($validated['details'] as $i => $detail) {
-        $isManual = empty($detail['product_id']) || !is_numeric($detail['product_id']);
-    $product_id = $detail['product_id'];
-
-    if ($isManual) {
-        $product_id = 'Manual-' . $manual_counter;
-        $manual_counter++;
-    }
-        $product_name = $detail['product_name'] ?? null;
-        $item_code = $detail['item_code'] ?? null;
-        $qty = $detail['qty_required'];
-        $unit_price = $detail['product_price'] ?? 0;
-    
-        // --- fix: fill in missing name/item_code if product_id is set
-        if ($product_id && (empty($product_name) || empty($item_code))) {
-            $product = \App\Models\Product::find($product_id);
-            if ($product) {
-                $product_name = $product->name; // always use DB value if missing
-                $item_code = $product->item_code;
-                $unit_price = $unit_price ?: $product->price;
-            }
-        }
-    
-        $total_price = $unit_price * $qty;
-        $vat_amount = $total_price * 0.15;
-        $refundable_insurance = $detail['refundable_insurance'] ?? 0;
-        $total_with_vat = $total_price + $vat_amount;
-        $total_with_insurance = $total_with_vat + $refundable_insurance;
-    
-        $product_image = null;
-        if ($product_id === null && $request->hasFile("images.$i")) {
-            $imgFile = $request->file("images.$i");
-            $imgName = 'quotation_img_'.uniqid().'.'.$imgFile->getClientOriginalExtension();
-            $imgFile->move(public_path('images/quotation_images'), $imgName);
-            $product_image = 'images/quotation_images/' . $imgName;
-        } elseif (isset($detail['image_url']) && $detail['image_url']) {
-            $product_image = $detail['image_url'];
-        }
-    
-        $quotation->details()->create([
-            'product_id' => $product_id,     // <-- string for both types now!
-            'item_code' => $item_code,
-            'product_name' => $product_name,
-            'product_image' => $product_image,
-            'qty_required' => $qty,
-            'unit_price' => $unit_price,
-            'total_price' => $total_price,
-            'total_net_price_amount' => $total_price,
-            'total_discount_amount' => 0,
-            'vat_15_percent_amount' => $vat_amount,
-            'total_with_vat_amount' => $total_with_vat,
-            'refundable_insurance_amount' => $refundable_insurance,
-            'total_price_with_insurance_amount' => $total_with_insurance,
-        ]);
+    // 4. Insert all details
+    foreach ($detailsForInsert as $detail) {
+        $quotation->details()->create($detail);
     }
 
     return redirect()->route('quotations.index')->with('success', 'Quotation created successfully');
