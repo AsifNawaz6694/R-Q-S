@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Layout from '@/Layouts/Layout';
 import { Link, router } from '@inertiajs/react';
 import { format } from 'date-fns';
-import { tr } from 'date-fns/locale';
+import { enGB } from 'date-fns/locale';
 
 export default function Index({ quotations }) {
     const [search, setSearch] = useState('');
@@ -96,7 +96,7 @@ export default function Index({ quotations }) {
                             {quotations.data.map((quotation) => (
                                 <tr key={quotation.id}>
                                     <td className="px-6 py-4 whitespace-nowrap">{quotation.quotation_number}</td>
-                                    <td className="px-6 py-4 whitespace-nowrap">{format(new Date(quotation.quotation_date), 'dd MMM yyyy', { locale: tr })}</td>
+                                    <td className="px-6 py-4 whitespace-nowrap">{format(new Date(quotation.quotation_date), 'd MMMM yyyy', { locale: enGB })}</td>
                                     <td className="px-6 py-4 whitespace-nowrap">{quotation.client_name}</td>
                                     <td className="px-6 py-4 whitespace-nowrap">{quotation.rental_period}</td>
                                     <td className="px-6 py-4 whitespace-nowrap">

@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from '@layouts/layout';
 import { Link, usePage } from '@inertiajs/react';
 import { format } from 'date-fns';
-import { tr } from 'date-fns/locale';
+import { enGB } from 'date-fns/locale';
 
 export default function Show({ quotation }) {
     const calculateTotal = () => {
@@ -55,11 +55,11 @@ export default function Show({ quotation }) {
                                         </div>
                                         <div>
                                             <label className="block text-sm font-medium text-gray-700">Rental Starts</label>
-                                            <p className="mt-1 text-gray-900">{format(new Date(quotation.rental_starts_date), 'dd MMM yyyy', { locale: tr })}</p>
+                                            <p className="mt-1 text-gray-900">{format(new Date(quotation.rental_starts_date), 'd MMMM yyyy', { locale: enGB })}</p>
                                         </div>
                                         <div>
                                             <label className="block text-sm font-medium text-gray-700">Rental Ends</label>
-                                            <p className="mt-1 text-gray-900">{format(new Date(quotation.rental_ends_date), 'dd MMM yyyy', { locale: tr })}</p>
+                                            <p className="mt-1 text-gray-900">{format(new Date(quotation.rental_ends_date), 'd MMMM yyyy', { locale: enGB })}</p>
                                         </div>
                                     </div>
                                 </div>

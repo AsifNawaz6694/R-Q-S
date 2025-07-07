@@ -95,10 +95,17 @@ class QuotationController extends BaseController
         'rental_starts_date' => $validated['rental_starts_date'],
         'rental_ends_date' => $validated['rental_ends_date'],
     ]);
+    $manual_counter = 1; // counter for manual lines in this quotation
 
     // 4. Store details rows, both manual and normal product lines (handle images for manual)
     foreach ($validated['details'] as $i => $detail) {
-        $product_id = $detail['product_id'] ?? null;
+        $isManual = empty($detail['product_id']) || !is_numeric($detail['product_id']);
+    $product_id = $detail['product_id'];
+
+    if ($isManual) {
+        $product_id = 'Manual-' . $manual_counter;
+        $manual_counter++;
+    }
         $product_name = $detail['product_name'] ?? null;
         $item_code = $detail['item_code'] ?? null;
         $qty = $detail['qty_required'];
@@ -131,7 +138,7 @@ class QuotationController extends BaseController
         }
     
         $quotation->details()->create([
-            'product_id' => $product_id,
+            'product_id' => $product_id,     // <-- string for both types now!
             'item_code' => $item_code,
             'product_name' => $product_name,
             'product_image' => $product_image,
