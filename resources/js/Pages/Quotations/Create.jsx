@@ -9,8 +9,8 @@ export default function Create({ auth, nextQuotationNumber }) {
         client_name: '',
         client_reference: '',
         quotation_date: formatInTimeZone(new Date(), 'Asia/Riyadh', 'yyyy-MM-dd'),
-        rental_starts: formatInTimeZone(new Date(), 'Asia/Riyadh', 'yyyy-MM-dd'),
-        rental_ends: formatInTimeZone(new Date(), 'Asia/Riyadh', 'yyyy-MM-dd'),
+        rental_starts_date: formatInTimeZone(new Date(), 'Asia/Riyadh', 'yyyy-MM-dd'),  // CORRECT
+        rental_ends_date: formatInTimeZone(new Date(), 'Asia/Riyadh', 'yyyy-MM-dd'),    // CORRECT
         rental_period: '',
         details: [],
         products: [],
@@ -34,8 +34,36 @@ export default function Create({ auth, nextQuotationNumber }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        e.stopPropagation();
-        post('/quotations');
+        const formData = new FormData();
+    
+        // Add all fields except details first
+        Object.entries(data).forEach(([key, value]) => {
+          if (key !== 'details' && value !== undefined) {
+            formData.append(key, value);
+          }
+        });
+    
+        // Handle serialized details and files
+        const detailsData = data.details.map((d, i) => {
+          // Remove the file object from what gets serialized,
+          // put file in FormData separately
+          const { local_image_file, local_image_url, ...rest } = d;
+          return rest;
+        });
+    
+        formData.append('details', JSON.stringify(detailsData));
+    
+        // Add images for manual products, keyed by index
+        data.details.forEach((detail, idx) => {
+          if (!detail.product_id && detail.local_image_file) {
+            formData.append(`images[${idx}]`, detail.local_image_file);
+          }
+        });
+    
+        // Use Inertia POST with FormData
+        router.post('/quotations', formData, {
+          forceFormData: true
+        });
     };
 
     const handleBack = (e) => {
@@ -83,9 +111,9 @@ export default function Create({ auth, nextQuotationNumber }) {
     };
 
     const calculateRentalPeriod = () => {
-        if (data.rental_starts && data.rental_ends) {
-            const start = new Date(data.rental_starts);
-            const end = new Date(data.rental_ends);
+        if (data.rental_starts_date && data.rental_ends_date) {
+            const start = new Date(data.rental_starts_date);
+            const end = new Date(data.rental_ends_date);
             const days = Math.ceil((end - start) / (1000 * 60 * 60 * 24));
             
             if (days === 1) {
@@ -116,7 +144,7 @@ export default function Create({ auth, nextQuotationNumber }) {
 
     useEffect(() => {
         calculateRentalPeriod();
-    }, [data.rental_starts, data.rental_ends]);
+    }, [data.rental_starts_date, data.rental_ends_date]);
 
     const handleRemoveProduct = (index) => {
         setSelectedProducts(selectedProducts.filter((_, i) => i !== index));
@@ -245,32 +273,32 @@ export default function Create({ auth, nextQuotationNumber }) {
                                             </div>
 
                                             <div>
-                                                <label htmlFor="rental_starts" className="block text-sm font-medium text-gray-700">
+                                                <label htmlFor="rental_starts_date" className="block text-sm font-medium text-gray-700">
                                                     Rental Starts
                                                 </label>
                                                 <div className="mt-1">
                                                     <input
                                                         type="date"
-                                                        name="rental_starts"
-                                                        id="rental_starts"
-                                                        value={data.rental_starts}
-                                                        onChange={(e) => setData('rental_starts', e.target.value)}
+                                                        name="rental_starts_date"
+                                                        id="rental_starts_date"
+                                                        value={data.rental_starts_date}
+                                                        onChange={(e) => setData('rental_starts_date', e.target.value)}
                                                         className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
                                                     />
                                                 </div>
                                             </div>
 
                                             <div>
-                                                <label htmlFor="rental_ends" className="block text-sm font-medium text-gray-700">
+                                                <label htmlFor="rental_ends_date" className="block text-sm font-medium text-gray-700">
                                                     Rental Ends
                                                 </label>
                                                 <div className="mt-1">
                                                     <input
                                                         type="date"
-                                                        name="rental_ends"
-                                                        id="rental_ends"
-                                                        value={data.rental_ends}
-                                                        onChange={(e) => setData('rental_ends', e.target.value)}
+                                                        name="rental_ends_date"
+                                                        id="rental_ends_date"
+                                                        value={data.rental_ends_date}
+                                                        onChange={(e) => setData('rental_ends_date', e.target.value)}
                                                         className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
                                                     />
                                                 </div>
@@ -467,15 +495,73 @@ export default function Create({ auth, nextQuotationNumber }) {
 />
     )}
 </td>
-                                                            <td className="px-2 py-2 whitespace-nowrap">
-                                                                {detail.image_url && (
-                                                                    <img
-                                                                        src={detail.image_url}
-                                                                        alt={detail.product_name}
-                                                                        className="w-12 h-12 object-contain"
-                                                                    />
-                                                                )}
-                                                            </td>
+<td className="px-2 py-2 whitespace-nowrap">
+  {/* For manual products (where product_id is null), allow user to upload image */}
+  {!detail.product_id ? (
+    <>
+      {!detail.local_image_url ? (
+        <>
+          <button
+            type="button"
+            className="inline-flex items-center px-2 py-1 text-xs bg-blue-600 text-white rounded hover:bg-blue-700 focus:outline-none"
+            onClick={() => document.getElementById(`file-upload-${index}`).click()}
+          >
+            Upload Image
+          </button>
+          <input
+            id={`file-upload-${index}`}
+            type="file"
+            className="hidden"
+            accept="image/*"
+            onChange={e => {
+              const file = e.target.files[0];
+              if (file) {
+                const reader = new FileReader();
+                reader.onloadend = () => {
+                  const newDetails = [...data.details];
+                  newDetails[index].local_image_file = file;
+                  newDetails[index].local_image_url = reader.result;
+                  setData('details', newDetails);
+                };
+                reader.readAsDataURL(file);
+              }
+            }}
+          />
+        </>
+      ) : (
+        <div className="relative display-inline w-16 h-16">
+          <img
+            src={detail.local_image_url}
+            alt={detail.product_name}
+            className="w-12 h-12 object-contain border rounded"
+          />
+          <button
+            type="button"
+            className="absolute top-0 right-0 bg-red-600 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs hover:bg-red-800"
+            onClick={() => {
+              const newDetails = [...data.details];
+              newDetails[index].local_image_file = null;
+              newDetails[index].local_image_url = '';
+              setData('details', newDetails);
+            }}
+            title="Remove image"
+          >
+            ×
+          </button>
+        </div>
+      )}
+    </>
+  ) : (
+    // For products from DB, just display existing image (already in detail.image_url)
+    detail.image_url && (
+      <img
+        src={detail.image_url}
+        alt={detail.product_name}
+        className="w-12 h-12 object-contain"
+      />
+    )
+  )}
+</td>
                                                             <td className="px-2 py-2 whitespace-nowrap">
                                                                 <input
                                                                     type="number"
