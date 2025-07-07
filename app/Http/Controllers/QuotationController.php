@@ -179,12 +179,16 @@ class QuotationController extends BaseController
     return redirect()->route('quotations.index')->with('success', 'Quotation created successfully');
 }
 
-    public function show($id)
-    {
-        $quotation = Quotation::with('details.product')->findOrFail($id);
-        
-        return inertia('quotations/Show', [
-            'quotation' => $quotation
-        ]);
-    }
+public function show($id)
+{
+    $quotation = Quotation::with('details')->findOrFail($id);
+    return inertia('quotations/Show', [
+        'quotation' => $quotation,
+        'routes' => [
+            'quotations' => [
+                'index' => route('quotations.index'),
+            ],
+        ],
+    ]);
+}
 }

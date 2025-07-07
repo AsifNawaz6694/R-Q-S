@@ -82,45 +82,61 @@ export default function Index({ quotations }) {
 
                 <div className="overflow-x-auto">
                     <table className="min-w-full divide-y divide-gray-200">
-                        <thead className="bg-gray-50">
-                            <tr>
-                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Quotation Number</th>
-                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
-                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Client</th>
-                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Rental Period</th>
-                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Total Amount (SAR)</th>
-                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
-                            </tr>
-                        </thead>
+                    <thead className="bg-gray-50">
+    <tr>
+        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Quotation Number</th>
+        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Client</th>
+        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Rental Period</th>
+        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Net Price (SAR)</th>
+        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Discount (SAR)</th>
+        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">VAT 15% (SAR)</th>
+        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Total W/ VAT (SAR)</th>
+        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Refundable Insurance (SAR)</th>
+        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Total W/ Insurance (SAR)</th>
+        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+    </tr>
+</thead>
                         <tbody className="bg-white divide-y divide-gray-200">
-                            {quotations.data.map((quotation) => (
-                                <tr key={quotation.id}>
-                                    <td className="px-6 py-4 whitespace-nowrap">{quotation.quotation_number}</td>
-                                    <td className="px-6 py-4 whitespace-nowrap">{format(new Date(quotation.quotation_date), 'd MMMM yyyy', { locale: enGB })}</td>
-                                    <td className="px-6 py-4 whitespace-nowrap">{quotation.client_name}</td>
-                                    <td className="px-6 py-4 whitespace-nowrap">{quotation.rental_period}</td>
-                                    <td className="px-6 py-4 whitespace-nowrap">
-                                         {(quotation.details && Array.isArray(quotation.details)
-                                            ? quotation.details.reduce((sum, detail) => {
-                                                const price = parseFloat(detail.total_price_with_insurance_amount) || 0;
-                                                return sum + price;
-                                            }, 0)
-                                            : 0
-                                        ).toFixed(2)}
-                                    </td>
-                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                        <div className="flex space-x-2">
-                                            <Link
-                                                href={`/quotations/${quotation.id}`}
-                                                className="text-indigo-600 hover:text-indigo-900"
-                                            >
-                                                View
-                                            </Link>
-                                        </div>
-                                    </td>
-                                </tr>
-                            ))}
-                        </tbody>
+    {quotations.data.map((quotation) => (
+        <tr key={quotation.id}>
+            <td className="px-6 py-4 whitespace-nowrap">{quotation.quotation_number}</td>
+            <td className="px-6 py-4 whitespace-nowrap">
+                {quotation.quotation_date ? format(new Date(quotation.quotation_date), 'd MMMM yyyy', { locale: enGB }) : ''}
+            </td>
+            <td className="px-6 py-4 whitespace-nowrap">{quotation.client_name}</td>
+            <td className="px-6 py-4 whitespace-nowrap">{quotation.rental_period}</td>
+            <td className="px-6 py-4 whitespace-nowrap">
+                {Number(quotation.total_net_price_amount ?? 0).toFixed(2)}
+            </td>
+            <td className="px-6 py-4 whitespace-nowrap">
+                {Number(quotation.total_discount_amount ?? 0).toFixed(2)}
+            </td>
+            <td className="px-6 py-4 whitespace-nowrap">
+                {Number(quotation.vat_15_percent_amount ?? 0).toFixed(2)}
+            </td>
+            <td className="px-6 py-4 whitespace-nowrap">
+                {Number(quotation.total_with_vat_amount ?? 0).toFixed(2)}
+            </td>
+            <td className="px-6 py-4 whitespace-nowrap">
+                {Number(quotation.refundable_insurance_amount ?? 0).toFixed(2)}
+            </td>
+            <td className="px-6 py-4 whitespace-nowrap font-bold text-indigo-700">
+                {Number(quotation.total_price_with_insurance_amount ?? 0).toFixed(2)}
+            </td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                <div className="flex space-x-2">
+                    <Link
+                        href={`/quotations/${quotation.id}`}
+                        className="text-indigo-600 hover:text-indigo-900"
+                    >
+                        View
+                    </Link>
+                </div>
+            </td>
+        </tr>
+    ))}
+</tbody>
                     </table>
 
                     {quotations.total > 0 && (

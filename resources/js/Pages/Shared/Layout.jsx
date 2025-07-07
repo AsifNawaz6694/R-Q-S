@@ -1,8 +1,11 @@
 import React from 'react'
 import { Head, Link, usePage } from '@inertiajs/react'
 
-export default function Layout({ children, title = 'Rental Quotation System' }) {
-    const { props } = usePage()
+export default function Layout({ children, title = 'Rental Quotation System', routes }) {
+    const { props } = usePage();
+    const sharedRoutes = props.routes || {};
+    const finalRoutes = routes || sharedRoutes;
+    const auth = props.auth || {};
 
     return (
         <>
@@ -20,31 +23,31 @@ export default function Layout({ children, title = 'Rental Quotation System' }) 
 
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <Link 
-                                    href={props.routes.dashboard} 
+                                    href={finalRoutes.dashboard} 
                                     className="inline-flex items-center px-1 pt-1 border-b-2 border-indigo-500 text-sm font-medium text-gray-900"
                                 >
                                     Dashboard
                                 </Link>
                                 <Link 
-                                    href={props.routes.users} 
+                                    href={finalRoutes.users} 
                                     className="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
                                 >
                                     User Management
                                 </Link>
                                 <Link 
-                                    href={props.routes.products.index} 
+                                    href={finalRoutes.products?.index} 
                                     className="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
                                 >
                                     Products
                                 </Link>
                                 <Link 
-                                        href={props.routes.quotations.index} 
+                                        href={finalRoutes.quotations?.index} 
                                         className="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
                                     >
                                         Quotations
                                 </Link>
                                 <Link 
-                                    href={props.routes.clients.index} 
+                                    href={finalRoutes.clients?.index} 
                                     className="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
                                 >
                                     Clients
@@ -55,14 +58,14 @@ export default function Layout({ children, title = 'Rental Quotation System' }) 
                         <div className="hidden sm:ml-6 sm:flex sm:items-center">
                             <div className="flex items-center">
                                 <div className="flex-shrink-0">
-                                    <img className="h-8 w-8 rounded-full" src="https://ui-avatars.com/api/?name={auth.user.name}" alt="User avatar" />
+                                    <img className="h-8 w-8 rounded-full" src={`https://ui-avatars.com/api/?name=${auth.user?.name || 'User'}`} alt="User avatar" />
                                 </div>
                                 <div className="ml-3">
                                     <div className="text-sm font-medium text-gray-700">
-                                        {auth.user.name}
+                                        {auth.user?.name || 'Guest'}
                                     </div>
                                     <div className="text-sm text-gray-500">
-                                        {auth.user.profile?.company_name || 'No company'}
+                                        {auth.user?.profile?.company_name || 'No company'}
                                     </div>
                                 </div>
                             </div>
