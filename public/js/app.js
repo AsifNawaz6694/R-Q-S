@@ -61143,6 +61143,9 @@ var pages = {
   },
   'quotations/show': function quotations_show() {
     return __webpack_require__.e(/*! import() */ "resources_js_Pages_Quotations_Show_jsx").then(__webpack_require__.bind(__webpack_require__, /*! @/Pages/Quotations/Show.jsx */ "./resources/js/Pages/Quotations/Show.jsx"));
+  },
+  'quotations/edit': function quotations_edit() {
+    return __webpack_require__.e(/*! import() */ "resources_js_Pages_Quotations_Edit_jsx").then(__webpack_require__.bind(__webpack_require__, /*! @/Pages/Quotations/Edit.jsx */ "./resources/js/Pages/Quotations/Edit.jsx"));
   }
 };
 function resolvePageComponent(name) {
@@ -61332,7 +61335,7 @@ function resolvePageComponent(name) {
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_Pages_Auth_Login_jsx":1,"resources_js_Pages_Auth_Dashboard_jsx":1,"resources_js_Pages_Auth_UserManagement_jsx":1,"resources_js_Pages_Auth_UserManagementCreate_jsx":1,"resources_js_Pages_Auth_UserManagementEdit_jsx":1,"resources_js_Pages_Profile_Index_jsx":1,"resources_js_Pages_Products_Index_jsx":1,"resources_js_Pages_Products_CreatePage_jsx":1,"resources_js_Pages_Quotations_Index_jsx":1,"resources_js_Pages_Quotations_Create_jsx":1,"resources_js_Pages_Quotations_Show_jsx":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_Pages_Auth_Login_jsx":1,"resources_js_Pages_Auth_Dashboard_jsx":1,"resources_js_Pages_Auth_UserManagement_jsx":1,"resources_js_Pages_Auth_UserManagementCreate_jsx":1,"resources_js_Pages_Auth_UserManagementEdit_jsx":1,"resources_js_Pages_Profile_Index_jsx":1,"resources_js_Pages_Products_Index_jsx":1,"resources_js_Pages_Products_CreatePage_jsx":1,"resources_js_Pages_Quotations_Index_jsx":1,"resources_js_Pages_Quotations_Create_jsx":1,"resources_js_Pages_Quotations_Show_jsx":1,"resources_js_Pages_Quotations_Edit_jsx":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

@@ -33,7 +33,8 @@ const pages = {
     'quotations': () => import('@/Pages/Quotations/Index.jsx'),
     'quotations/index': () => import('@/Pages/Quotations/Index.jsx'),
     'quotations/create': () => import('@/Pages/Quotations/Create.jsx'),
-    'quotations/show': () => import('@/Pages/Quotations/Show.jsx')
+    'quotations/show': () => import('@/Pages/Quotations/Show.jsx'),
+    'quotations/edit': () => import('@/Pages/Quotations/Edit.jsx')
 };
 
 export function resolvePageComponent(name) {

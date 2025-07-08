@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\Quotation;
 use App\Models\QuotationDetail;
-use Illuminate\Http\Request;
+use App\Models\Product;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
+use Inertia\Inertia;
 
 class QuotationController extends BaseController
 {
@@ -184,6 +186,29 @@ class QuotationController extends BaseController
         $quotation = Quotation::with('details')->findOrFail($id);
         return inertia('quotations/Show', [
             'quotation' => $quotation,
+            'routes' => [
+                'quotations' => [
+                    'index' => route('quotations.index'),
+                ],
+            ],
+        ]);
+    }
+    public function edit($id)
+    {
+        $quotation = Quotation::with('details')->findOrFail($id);
+        $products = \App\Models\Product::all();
+        
+        // Format all date fields
+        // $quotation->quotation_date = $quotation->quotation_date ? date('Y-m-d', strtotime($quotation->quotation_date)) : '';
+        // $quotation->rental_starts_date = $quotation->rental_starts_date ? date('Y-m-d', strtotime($quotation->rental_starts_date)) : '';
+        // $quotation->rental_ends_date = $quotation->rental_ends_date ? date('Y-m-d', strtotime($quotation->rental_ends_date)) : '';
+        
+        $quotation->quotation_date = $quotation->quotation_date ? date('Y-m-d', strtotime($quotation->quotation_date)) : '';
+        $quotation->rental_starts_date = $quotation->rental_starts_date ? date('Y-m-d', strtotime($quotation->rental_starts_date)) : '';
+        $quotation->rental_ends_date = $quotation->rental_ends_date ? date('Y-m-d', strtotime($quotation->rental_ends_date)) : '';
+        return Inertia::render('Quotations/Edit', [
+            'quotation' => $quotation,
+            'products' => $products,
             'routes' => [
                 'quotations' => [
                     'index' => route('quotations.index'),

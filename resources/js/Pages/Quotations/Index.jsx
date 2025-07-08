@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Layout from '@/Layouts/Layout';
-import { Link, router } from '@inertiajs/react';
+import { Link, router, usePage } from '@inertiajs/react';
 import { format } from 'date-fns';
 import { enGB } from 'date-fns/locale';
 import { PencilIcon, TrashIcon, EyeIcon } from '@heroicons/react/24/outline';
