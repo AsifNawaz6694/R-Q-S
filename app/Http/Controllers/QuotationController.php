@@ -216,6 +216,143 @@ class QuotationController extends BaseController
             ],
         ]);
     }
+    public function update(Request $request, $id)
+{
+    // Decode details if sent as a JSON string (FormData case)
+    $detailsRaw = $request->input('details');
+    if (is_string($detailsRaw)) {
+        $detailsDecoded = json_decode($detailsRaw, true);
+        $request->request->set('details', $detailsDecoded);
+    }
+
+    $validated = $request->validate([
+        'quotation_number' => 'required|string',
+        'client_name' => 'required|string',
+        'client_reference' => 'nullable|string',
+        'quotation_date' => 'required|date',
+        'rental_starts_date' => 'required|date',
+        'rental_ends_date' => 'required|date|after:rental_starts_date',
+        'rental_period' => 'required|string',
+        'details' => 'required|array|min:1',
+        'details.*.product_name' => 'required|string',
+        'details.*.item_code' => 'required|string',
+        'details.*.qty_required' => 'required|numeric|min:1',
+        'details.*.product_price' => 'required|numeric|min:0',
+        'refundable_insurance' => 'nullable|numeric|min:0',
+    ]);
+
+    $quotation = \App\Models\Quotation::findOrFail($id);
+
+    // Totals calculation (reset)
+    $manual_counter = 1;
+    $total_net_price_amount = 0;
+    $total_discount_amount = 0;
+    $vat_15_percent_amount = 0;
+    $total_with_vat_amount = 0;
+    $refundable_insurance_amount = $validated['refundable_insurance'] ?? 0;
+
+    $detailsForSync = [];
+    $detailIDsFromRequest = [];
+
+    foreach ($validated['details'] as $i => $detail) {
+        $isManual = empty($detail['product_id']) || !is_numeric($detail['product_id']);
+        $product_id = $detail['product_id'] ?? null;
+        if ($isManual) {
+            $product_id = 'Manual-' . $manual_counter;
+            $manual_counter++;
+        }
+        $product_name = $detail['product_name'] ?? null;
+        $item_code = $detail['item_code'] ?? null;
+        $qty = $detail['qty_required'];
+        $unit_price = $detail['product_price'] ?? 0;
+        
+        // If an existing Product, fill missing fields
+        if ($product_id && is_numeric($product_id) && (empty($product_name) || empty($item_code))) {
+            $product = \App\Models\Product::find($product_id);
+            if ($product) {
+                $product_name = $product->name;
+                $item_code = $product->item_code;
+                $unit_price = $unit_price ?: $product->price;
+            }
+        }
+
+        $total_price = $unit_price * $qty;
+        $net = $total_price;
+        $vat = $net * 0.15;
+        $with_vat = $net + $vat;
+
+        $product_image = null;
+        // If manual product, handle new image uploads (images.$i in FormData)
+        if ($isManual && $request->hasFile("images.$i")) {
+            $imgFile = $request->file("images.$i");
+            $imgName = 'quotation_img_' . uniqid() . '.' . $imgFile->getClientOriginalExtension();
+            $imgFile->move(public_path('images/quotation_images'), $imgName);
+            $product_image = 'images/quotation_images/' . $imgName;
+        } elseif (isset($detail['image_url']) && $detail['image_url']) {
+            $product_image = $detail['image_url'];
+        }
+
+        $total_net_price_amount += $net;
+        $vat_15_percent_amount += $vat;
+        $total_with_vat_amount += $with_vat;
+
+        // --- Handle update or creation ---
+        if (!empty($detail['id'])) {
+            // Update existing detail
+            $quotationDetail = \App\Models\QuotationDetail::find($detail['id']);
+            if ($quotationDetail) {
+                $quotationDetail->update([
+                    'product_id' => $product_id,
+                    'item_code' => $item_code,
+                    'product_name' => $product_name,
+                    'product_image' => $product_image,
+                    'qty_required' => $qty,
+                    'unit_price' => $unit_price,
+                    'total_price' => $total_price
+                ]);
+                $detailIDsFromRequest[] = $quotationDetail->id;
+                continue;
+            }
+            // If not found fall through to create new below...
+        }
+
+        // Create new one (no detail id)
+        $newDetail = $quotation->details()->create([
+            'product_id' => $product_id,
+            'item_code' => $item_code,
+            'product_name' => $product_name,
+            'product_image' => $product_image,
+            'qty_required' => $qty,
+            'unit_price' => $unit_price,
+            'total_price' => $total_price
+        ]);
+        $detailIDsFromRequest[] = $newDetail->id;
+    }
+
+    $total_price_with_insurance_amount = $total_with_vat_amount + $refundable_insurance_amount;
+
+    // --- Update the master quotation ---
+    $quotation->update([
+        'quotation_number' => $validated['quotation_number'],
+        'quotation_date' => $validated['quotation_date'],
+        'client_name' => $validated['client_name'],
+        'client_reference' => $validated['client_reference'],
+        'rental_period' => $validated['rental_period'],
+        'rental_starts_date' => $validated['rental_starts_date'],
+        'rental_ends_date' => $validated['rental_ends_date'],
+        'total_net_price_amount' => $total_net_price_amount,
+        'total_with_vat_amount' => $total_with_vat_amount,
+        'total_discount_amount' => $total_discount_amount,
+        'vat_15_percent_amount' => $vat_15_percent_amount,
+        'refundable_insurance_amount' => $refundable_insurance_amount,
+        'total_price_with_insurance_amount' => $total_price_with_insurance_amount
+    ]);
+
+    // --- Remove deleted details (present in DB but not in "details" array) ---
+    $quotation->details()->whereNotIn('id', $detailIDsFromRequest)->delete();
+
+    return redirect()->route('quotations.index')->with('success', 'Quotation updated successfully');
+}
 
     public function destroy($id)
 {

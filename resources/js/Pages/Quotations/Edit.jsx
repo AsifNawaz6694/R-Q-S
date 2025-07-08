@@ -14,18 +14,19 @@ export default function Edit({ quotation, products }) {
         rental_ends_date: quotation.rental_ends_date ? new Date(quotation.rental_ends_date).toISOString().split('T')[0] : '',
         rental_period: quotation.rental_period || '',
         details:
-            (quotation.details || []).map((d) => ({
-                product_id: d.product_id ?? null,
-                product_name: d.product_name ?? '',
-                item_code: d.item_code ?? '',
-                product_price: Number(d.product_price ?? d.unit_price ?? d.original_price ?? 0),
-                qty_required: Number(d.qty_required ?? 1),
-                original_price: Number(d.original_price ?? d.product_price ?? d.unit_price ?? 0),
-                image_url: d.image_url ?? '',
-                product_image: d.product_image ?? '',
-                local_image_url: d.product_image ?? d.image_url ?? '',
-                local_image_file: null,
-            })),
+    (quotation.details || []).map((d) => ({
+        id: d.id,                 // <-- ADD THIS LINE!
+        product_id: d.product_id ?? null,
+        product_name: d.product_name ?? '',
+        item_code: d.item_code ?? '',
+        product_price: Number(d.product_price ?? d.unit_price ?? d.original_price ?? 0),
+        qty_required: Number(d.qty_required ?? 1),
+        original_price: Number(d.original_price ?? d.product_price ?? d.unit_price ?? 0),
+        image_url: d.image_url ?? '',
+        product_image: d.product_image ?? '',
+        local_image_url: d.product_image ?? d.image_url ?? '',
+        local_image_file: null,
+    })),
         products: products ?? [],
         refundable_insurance: Number(quotation.refundable_insurance_amount ?? 0),
         isManualEntry: false,
@@ -103,23 +104,40 @@ export default function Edit({ quotation, products }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const formData = new FormData();
-        Object.entries(data).forEach(([key, value]) => {
-            if (key !== 'details' && value !== undefined) formData.append(key, value);
-        });
-        const detailsData = data.details.map((d) => {
-            const { local_image_file, local_image_url, ...rest } = d;
-            return rest;
-        });
-        formData.append('details', JSON.stringify(detailsData));
+        const form = {
+            ...data,
+            details: data.details.map(d => ({
+                ...d,
+                local_image_file: null // Remove file from the object
+            })),
+            _method: 'PUT'
+        };
+        
+        // Handle file uploads
+        const files = [];
         data.details.forEach((detail, idx) => {
             if (!detail.product_id && detail.local_image_file) {
-                formData.append(`images[${idx}]`, detail.local_image_file);
+                files.push({
+                    key: `images[${idx}]`,
+                    file: detail.local_image_file
+                });
             }
         });
-        router.post(`/quotations/${quotation.id}`, formData, {
-            forceFormData: true,
-            method: 'put'
+
+        // Submit form
+        router.put(`/quotations/${quotation.id}`, form, {
+            preserveScroll: true,
+            preserveState: true,
+            onSuccess: () => {
+                router.visit('/quotations', {
+                    preserveScroll: true,
+                    preserveState: true,
+                    only: ['flash']
+                });
+            },
+            onError: (errors) => {
+                console.error('Form submission errors:', errors);
+            }
         });
     };
 
