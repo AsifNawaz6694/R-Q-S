@@ -4,30 +4,34 @@ import Select from 'react-select';
 import Layout from '@/Layouts/Layout';
 
 export default function Edit({ quotation, products }) {
-    // Defensive mapping for every field on initialization
+    // Validate and initialize form data
+    if (!quotation || !quotation.id) {
+        throw new Error('Invalid quotation data');
+    }
+
+    // Defensive initialization with fallbacks
     const { data, setData, processing } = useForm({
         quotation_number: quotation.quotation_number || '',
         client_name: quotation.client_name || '',
         client_reference: quotation.client_reference || '',
-        quotation_date: quotation.quotation_date ? new Date(quotation.quotation_date).toISOString().split('T')[0] : '',
+        quotation_date: quotation.quotation_date ? new Date(quotation.quotation_date).toISOString().split('T')[0] : new Date().toISOString().split('T')[0],
         rental_starts_date: quotation.rental_starts_date ? new Date(quotation.rental_starts_date).toISOString().split('T')[0] : '',
         rental_ends_date: quotation.rental_ends_date ? new Date(quotation.rental_ends_date).toISOString().split('T')[0] : '',
         rental_period: quotation.rental_period || '',
-        details:
-    (quotation.details || []).map((d) => ({
-        id: d.id,                 // <-- ADD THIS LINE!
-        product_id: d.product_id ?? null,
-        product_name: d.product_name ?? '',
-        item_code: d.item_code ?? '',
-        product_price: Number(d.product_price ?? d.unit_price ?? d.original_price ?? 0),
-        qty_required: Number(d.qty_required ?? 1),
-        original_price: Number(d.original_price ?? d.product_price ?? d.unit_price ?? 0),
-        image_url: d.image_url ?? '',
-        product_image: d.product_image ?? '',
-        local_image_url: d.product_image ?? d.image_url ?? '',
-        local_image_file: null,
-    })),
-        products: products ?? [],
+        details: Array.isArray(quotation.details) ? quotation.details.map((d) => ({
+            id: d.id || null,
+            product_id: d.product_id ?? null,
+            product_name: d.product_name ?? '',
+            item_code: d.item_code ?? '',
+            product_price: Number(d.product_price ?? d.unit_price ?? d.original_price ?? 0),
+            qty_required: Number(d.qty_required ?? 1),
+            original_price: Number(d.original_price ?? d.product_price ?? d.unit_price ?? 0),
+            image_url: d.image_url ?? '',
+            product_image: d.product_image ?? '',
+            local_image_url: d.product_image ?? d.image_url ?? '',
+            local_image_file: null,
+        })) : [],
+        products: Array.isArray(products) ? products : [],
         refundable_insurance: Number(quotation.refundable_insurance_amount ?? 0),
         isManualEntry: false,
     });
@@ -104,39 +108,82 @@ export default function Edit({ quotation, products }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const form = {
-            ...data,
-            details: data.details.map(d => ({
-                ...d,
-                local_image_file: null // Remove file from the object
-            })),
-            _method: 'PUT'
-        };
-        
-        // Handle file uploads
-        const files = [];
-        data.details.forEach((detail, idx) => {
-            if (!detail.product_id && detail.local_image_file) {
-                files.push({
-                    key: `images[${idx}]`,
-                    file: detail.local_image_file
-                });
-            }
-        });
 
-        // Submit form
-        router.put(`/quotations/${quotation.id}`, form, {
+        // Client-side validation
+        const validationErrors = {};
+
+        // Validate main form fields
+        if (!data.quotation_number?.trim()) validationErrors.quotation_number = 'Quotation number is required';
+        if (!data.client_name?.trim()) validationErrors.client_name = 'Client name is required';
+        if (!data.quotation_date) validationErrors.quotation_date = 'Quotation date is required';
+        if (!data.rental_starts_date) validationErrors.rental_starts_date = 'Rental starts date is required';
+        if (!data.rental_ends_date) validationErrors.rental_ends_date = 'Rental ends date is required';
+        if (!data.rental_period) validationErrors.rental_period = 'Rental period is required';
+
+        // Validate details
+        if (!Array.isArray(data.details) || data.details.length === 0) {
+            validationErrors.details = 'Please add at least one product';
+        } else {
+            data.details.forEach((detail, index) => {
+                if (!detail.product_name?.trim()) validationErrors[`details[${index}].product_name`] = 'Product name is required';
+                if (!detail.item_code?.trim()) validationErrors[`details[${index}].item_code`] = 'Item code is required';
+                if (!detail.qty_required || detail.qty_required < 1) validationErrors[`details[${index}].qty_required`] = 'Quantity must be at least 1';
+                if (detail.product_price === undefined || detail.product_price === null || isNaN(detail.product_price) || Number(detail.product_price) < 0) 
+                    validationErrors[`details[${index}].product_price`] = 'Price must be at least 0';
+            });
+        }
+
+        // If there are validation errors, show them and return
+        if (Object.keys(validationErrors).length > 0) {
+            const errorMessages = Object.entries(validationErrors)
+                .map(([field, message]) => `${field}: ${message}`)
+                .join('\n');
+            alert(`Please fix the following errors:\n\n${errorMessages}`);
+            return;
+        }
+
+        // Prepare form data object
+        const formObject = {
+            quotation_number: data.quotation_number?.trim(),
+            client_name: data.client_name?.trim(),
+            client_reference: data.client_reference?.trim() || '',
+            quotation_date: data.quotation_date,
+            rental_starts_date: data.rental_starts_date,
+            rental_ends_date: data.rental_ends_date,
+            rental_period: data.rental_period,
+            refundable_insurance: Number(data.refundable_insurance) || 0,
+            details: data.details.map(detail => ({
+                product_name: detail.product_name?.trim() || '',
+                item_code: detail.item_code?.trim() || '',
+                qty_required: Number(detail.qty_required) || 1,
+                product_price: Number(detail.product_price) || 0,
+                id: detail.id || null,
+                image_url: detail.image_url || detail.product_image || '',
+                product_id: detail.product_id || null,
+                original_price: Number(detail.original_price) || 0,
+            })),
+        };
+
+        // Debug: Log what's being sent
+        console.log('Submitting form data:', formObject);
+
+        // Submit using Inertia's router
+        router.put(`/quotations/${quotation.id}`, formObject, {
             preserveScroll: true,
             preserveState: true,
             onSuccess: () => {
                 router.visit('/quotations', {
                     preserveScroll: true,
                     preserveState: true,
-                    only: ['flash']
+                    only: ['flash'],
                 });
             },
             onError: (errors) => {
                 console.error('Form submission errors:', errors);
+                const errorMessages = Object.entries(errors)
+                    .map(([field, message]) => `${field}: ${message}`)
+                    .join('\n');
+                alert(`Form submission failed:\n\n${errorMessages}`);
             }
         });
     };
@@ -171,8 +218,13 @@ export default function Edit({ quotation, products }) {
                                         {/* Left column */}
                                         <div>
                                             <label className="block text-sm font-medium text-gray-700">Quotation Number</label>
-                                            <input type="text" name="quotation_number" readOnly value={data.quotation_number} className="shadow-sm bg-gray-50 block w-full sm:text-sm border-gray-300 rounded-md" />
-                                        </div>
+                                            <input
+  type="text"
+  name="quotation_number"
+  readOnly
+  value={data.quotation_number}
+  className="shadow-sm bg-gray-50 block w-full sm:text-sm border-gray-300 rounded-md"
+/>                                        </div>
                                         <div>
                                             <label className="block text-sm font-medium text-gray-700">Client Name</label>
                                             <input type="text" name="client_name" value={data.client_name} onChange={e => setData('client_name', e.target.value)} className="shadow-sm block w-full sm:text-sm border-gray-300 rounded-md" />
@@ -246,7 +298,6 @@ export default function Edit({ quotation, products }) {
                                     <div className="mt-4">
                                         {lineItemError && <div className="mb-4 text-red-600 font-semibold">{lineItemError}</div>}
                                         <div className="overflow-x-auto">
-                                            {/* You can use the same table code from Create.jsx, making sure every access is safe */}
                                             <table className="min-w-full divide-y divide-gray-200">
                                                 <thead className="bg-gray-50">
                                                     <tr>
@@ -289,9 +340,45 @@ export default function Edit({ quotation, products }) {
                                                                 />
                                                             </td>
                                                             <td className="px-2 py-2">
-                                                                {(detail.image_url || detail.product_image) && (
-                                                                    <img src={detail.image_url || detail.product_image} alt={detail.product_name} className="w-12 h-12 object-contain" />
-                                                                )}
+                                                                <div className="flex flex-col items-center space-y-2">
+                                                                    {/* Preview existing or new image */}
+                                                                    {detail.local_image_file ? (
+                                                                        <img 
+                                                                            src={URL.createObjectURL(detail.local_image_file)} 
+                                                                            alt={detail.product_name} 
+                                                                            className="w-12 h-12 object-contain"
+                                                                            onLoad={(e) => URL.revokeObjectURL(e.target.src)}
+                                                                        />
+                                                                    ) : (
+                                                                        <img 
+                                                                            src={detail.image_url || detail.product_image || ''} 
+                                                                            alt={detail.product_name} 
+                                                                            className="w-12 h-12 object-contain"
+                                                                        />
+                                                                    )}
+                                                                    
+                                                                    {/* Image upload for manual products */}
+                                                                    {detail.product_id === null && (
+                                                                        <input
+                                                                            type="file"
+                                                                            accept="image/*"
+                                                                            onChange={(e) => {
+                                                                                const newDetails = [...data.details];
+                                                                                const file = e.target.files[0];
+                                                                                if (file) {
+                                                                                    newDetails[index] = {
+                                                                                        ...newDetails[index],
+                                                                                        local_image_file: file,
+                                                                                        image_url: '', // Clear existing URL if new file is selected
+                                                                                        product_image: ''
+                                                                                    };
+                                                                                    setData('details', newDetails);
+                                                                                }
+                                                                            }}
+                                                                            className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100"
+                                                                        />
+                                                                    )}
+                                                                </div>
                                                             </td>
                                                             <td className="px-2 py-2">
                                                                 <input
@@ -389,8 +476,8 @@ export default function Edit({ quotation, products }) {
                                 </div>
                                 <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
                                     <button type="submit" disabled={processing}
-                                            className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
-                                        {processing ? 'Updating...' : 'Update Quotation'}
+                                            className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                        {processing ? 'Saving...' : 'Save Changes'}
                                     </button>
                                     <button
                                         type="button"
