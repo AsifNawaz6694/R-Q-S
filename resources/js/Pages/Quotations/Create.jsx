@@ -34,6 +34,47 @@ export default function Create({ auth, nextQuotationNumber }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        
+        // Client-side validation
+        const validationErrors = {};
+
+        // Validate main form fields
+        if (!data.quotation_number?.trim()) validationErrors.quotation_number = 'Quotation number is required';
+        if (!data.client_name?.trim()) validationErrors.client_name = 'Client name is required';
+        if (!data.client_reference?.trim()) validationErrors.client_reference = 'Client reference is required';
+        if (!data.quotation_date) validationErrors.quotation_date = 'Quotation date is required';
+        if (!data.rental_starts_date) validationErrors.rental_starts_date = 'Rental starts date is required';
+        if (!data.rental_ends_date) validationErrors.rental_ends_date = 'Rental ends date is required';
+        if (!data.rental_period) validationErrors.rental_period = 'Rental period is required';
+
+        // Validate details
+        if (!Array.isArray(data.details) || data.details.length === 0) {
+            validationErrors.details = 'Please add at least one product';
+        } else {
+            data.details.forEach((detail, index) => {
+                if (!detail.product_name?.trim()) validationErrors[`details[${index}].product_name`] = 'Product name is required';
+                if (!detail.item_code?.trim()) validationErrors[`details[${index}].item_code`] = 'Item code is required';
+                if (!detail.qty_required || detail.qty_required < 1) validationErrors[`details[${index}].qty_required`] = 'Quantity must be at least 1';
+                if (detail.product_price === undefined || detail.product_price === null || isNaN(detail.product_price) || Number(detail.product_price) < 0) 
+                    validationErrors[`details[${index}].product_price`] = 'Price must be at least 0';
+                
+                // Validate image
+                if (!detail.image_url && !detail.local_image_file) {
+                    validationErrors[`details[${index}].image`] = 'Product image is required';
+                }
+            });
+        }
+
+        // If there are validation errors, show them and return
+        if (Object.keys(validationErrors).length > 0) {
+            const errorMessages = Object.entries(validationErrors)
+                .map(([field, message]) => `${field}: ${message}`)
+                .join('\n');
+            alert(`Please fix the following errors:\n\n${errorMessages}`);
+            return;
+        }
+
+        // If validation passes, create form data
         const formData = new FormData();
     
         // Add all fields except details first
@@ -53,9 +94,9 @@ export default function Create({ auth, nextQuotationNumber }) {
     
         formData.append('details', JSON.stringify(detailsData));
     
-        // Add images for manual products, keyed by index
+        // Add images for all products (manual and existing)
         data.details.forEach((detail, idx) => {
-          if (!detail.product_id && detail.local_image_file) {
+          if (detail.local_image_file) {
             formData.append(`images[${idx}]`, detail.local_image_file);
           }
         });
@@ -92,7 +133,8 @@ export default function Create({ auth, nextQuotationNumber }) {
                 newDetails[index] = {
                     ...existingProduct,
                     qty_required: existingProduct.qty_required + 1,
-                    product_price: selectedProduct.price || existingProduct.product_price
+                    product_price: selectedProduct.price || existingProduct.product_price,
+                    image_url: selectedProduct.image_url || existingProduct.image_url
                 };
                 setData('details', newDetails);
             } else {
@@ -100,7 +142,7 @@ export default function Create({ auth, nextQuotationNumber }) {
                     product_id: selectedProduct.id,
                     product_name: selectedProduct.name,
                     item_code: selectedProduct.item_code,
-                    image_url: selectedProduct.image_url,
+                    image_url: selectedProduct.image_url || '',
                     product_price: selectedProduct.price || 0.0,
                     qty_required: 1,
                     original_price: selectedProduct.price || 0.0
@@ -642,18 +684,24 @@ export default function Create({ auth, nextQuotationNumber }) {
                                                 <div className="flex justify-between items-center">
                                                     <span className="text-gray-600">Refundable Insurance</span>
                                                     <input
-                                                        type="number"
-                                                        step="0.01"
-                                                        min="0"
-                                                        value={data.refundable_insurance}
-                                                        onChange={(e) => setData('refundable_insurance', parseFloat(e.target.value).toFixed(2))}
-                                                        className="w-24 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block sm:text-sm border-gray-300 rounded-md"
-                                                    />
+    type="number"
+    step="0.01"
+    min="0"
+    value={data.refundable_insurance}
+    onChange={(e) => {
+        const value = e.target.value;
+        setData('refundable_insurance', value === '' ? '' : Number(value));
+    }}
+    className="w-24 shadow-sm focus:ring-indigo-500 ..."
+/>
                                                 </div>
                                                 <div className="flex justify-between items-center border-t pt-4">
                                                     <span className="text-gray-600 font-semibold">Total Price with Insurance</span>
                                                     <span className="font-bold text-indigo-600">
-                                                        SAR {(data.details.reduce((sum, detail) => sum + (detail.product_price * detail.qty_required), 0) * 1.15 - data.refundable_insurance).toFixed(2)}
+                                                    SAR {(
+    (data.details?.reduce((sum, detail) => sum + ((parseFloat(detail.product_price) || 0) * (parseFloat(detail.qty_required) || 0)), 0) * 1.15)
+    + (parseFloat(data.refundable_insurance) || 0)
+).toFixed(2)}
                                                     </span>
                                                 </div>
                                             </div>

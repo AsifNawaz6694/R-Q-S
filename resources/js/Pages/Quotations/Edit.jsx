@@ -26,8 +26,8 @@ export default function Edit({ quotation, products }) {
             product_price: Number(d.product_price ?? d.unit_price ?? d.original_price ?? 0),
             qty_required: Number(d.qty_required ?? 1),
             original_price: Number(d.original_price ?? d.product_price ?? d.unit_price ?? 0),
-            image_url: d.image_url ?? '',
-            product_image: d.product_image ?? '',
+            image_url: d.image_url ?? d.product_image ?? '',
+            product_image: d.product_image ?? d.image_url ?? '',
             local_image_url: d.product_image ?? d.image_url ?? '',
             local_image_file: null,
         })) : [],
@@ -38,6 +38,8 @@ export default function Edit({ quotation, products }) {
 
     const [selectedProductId, setSelectedProductId] = useState(null);
     const [lineItemError, setLineItemError] = useState('');
+    const [formErrors, setFormErrors] = useState({});
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     // Recalculate rental period when dates change
     useEffect(() => {
@@ -108,10 +110,17 @@ export default function Edit({ quotation, products }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
+        
+        // Prevent multiple submissions
+        if (isSubmitting) return;
+        setIsSubmitting(true);
+        
+        // Reset previous errors
+        setFormErrors({});
+        
         // Client-side validation
         const validationErrors = {};
-
+        
         // Validate main form fields
         if (!data.quotation_number?.trim()) validationErrors.quotation_number = 'Quotation number is required';
         if (!data.client_name?.trim()) validationErrors.client_name = 'Client name is required';
@@ -119,7 +128,16 @@ export default function Edit({ quotation, products }) {
         if (!data.rental_starts_date) validationErrors.rental_starts_date = 'Rental starts date is required';
         if (!data.rental_ends_date) validationErrors.rental_ends_date = 'Rental ends date is required';
         if (!data.rental_period) validationErrors.rental_period = 'Rental period is required';
-
+        
+        // Validate dates
+        if (data.rental_starts_date && data.rental_ends_date) {
+            const start = new Date(data.rental_starts_date);
+            const end = new Date(data.rental_ends_date);
+            if (end <= start) {
+                validationErrors.rental_ends_date = 'Rental ends date must be after starts date';
+            }
+        }
+        
         // Validate details
         if (!Array.isArray(data.details) || data.details.length === 0) {
             validationErrors.details = 'Please add at least one product';
@@ -130,45 +148,67 @@ export default function Edit({ quotation, products }) {
                 if (!detail.qty_required || detail.qty_required < 1) validationErrors[`details[${index}].qty_required`] = 'Quantity must be at least 1';
                 if (detail.product_price === undefined || detail.product_price === null || isNaN(detail.product_price) || Number(detail.product_price) < 0) 
                     validationErrors[`details[${index}].product_price`] = 'Price must be at least 0';
+    
+                // Validate image
+                if (!detail.image_url && !detail.local_image_file) {
+                    validationErrors[`details[${index}].image`] = 'Product image is required';
+                }
             });
         }
-
+        
         // If there are validation errors, show them and return
         if (Object.keys(validationErrors).length > 0) {
-            const errorMessages = Object.entries(validationErrors)
-                .map(([field, message]) => `${field}: ${message}`)
-                .join('\n');
-            alert(`Please fix the following errors:\n\n${errorMessages}`);
+            setFormErrors(validationErrors);
+            setIsSubmitting(false);
             return;
         }
+    
+        // Build FormData for update (with images)
+        const formData = new FormData();
+    formData.append('quotation_number', data.quotation_number || '');
+    formData.append('client_name', data.client_name || '');
+    formData.append('client_reference', data.client_reference || '');
+    formData.append('quotation_date', data.quotation_date || '');
+    formData.append('rental_starts_date', data.rental_starts_date || '');
+    formData.append('rental_ends_date', data.rental_ends_date || '');
+    formData.append('rental_period', data.rental_period || '');
+    formData.append('refundable_insurance', data.refundable_insurance || 0);
+    
+        // Prepare details (strip file fields) & attach as JSON string
+        // Enforce image_url to always be correct for manual details
+        const detailsData = data.details.map((detail, idx) => {
+            const { local_image_file, local_image_url, ...rest } = detail;
+    
+            if ((rest.product_id === null || rest.product_id === undefined)
+                && !local_image_file
+                && !!detail.product_image
+            ) {
+                rest.image_url = detail.product_image;
+            }
+            if (rest.image_url === "null" || rest.image_url === null) {
+                rest.image_url = "";
+            }
+            return rest;
+        });
+        formData.append('details', JSON.stringify(detailsData));
+    
+        // Attach files for details
+        data.details.forEach((detail, idx) => {
+            if (detail.local_image_file) {
+                formData.append(`images[${idx}]`, detail.local_image_file);
+            }
+        });
+    
+        // Optional debug (remove after successful testing)
+        // for (let [k, v] of formData.entries()) {
+        //     console.log(k, v);
+        // }
+    
+        // Send as FormData PUT via Inertia
+        formData.append('_method', 'PUT');
 
-        // Prepare form data object
-        const formObject = {
-            quotation_number: data.quotation_number?.trim(),
-            client_name: data.client_name?.trim(),
-            client_reference: data.client_reference?.trim() || '',
-            quotation_date: data.quotation_date,
-            rental_starts_date: data.rental_starts_date,
-            rental_ends_date: data.rental_ends_date,
-            rental_period: data.rental_period,
-            refundable_insurance: Number(data.refundable_insurance) || 0,
-            details: data.details.map(detail => ({
-                product_name: detail.product_name?.trim() || '',
-                item_code: detail.item_code?.trim() || '',
-                qty_required: Number(detail.qty_required) || 1,
-                product_price: Number(detail.product_price) || 0,
-                id: detail.id || null,
-                image_url: detail.image_url || detail.product_image || '',
-                product_id: detail.product_id || null,
-                original_price: Number(detail.original_price) || 0,
-            })),
-        };
-
-        // Debug: Log what's being sent
-        console.log('Submitting form data:', formObject);
-
-        // Submit using Inertia's router
-        router.put(`/quotations/${quotation.id}`, formObject, {
+        router.post(`/quotations/${quotation.id}`, formData, {
+            forceFormData: true,
             preserveScroll: true,
             preserveState: true,
             onSuccess: () => {
@@ -180,10 +220,10 @@ export default function Edit({ quotation, products }) {
             },
             onError: (errors) => {
                 console.error('Form submission errors:', errors);
-                const errorMessages = Object.entries(errors)
-                    .map(([field, message]) => `${field}: ${message}`)
-                    .join('\n');
-                alert(`Form submission failed:\n\n${errorMessages}`);
+                setFormErrors(errors);
+                setIsSubmitting(false);
+                // Show error toast instead of alert
+                alert(`Form submission failed. Please check the form for error messages.`);
             }
         });
     };
